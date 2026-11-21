@@ -1,0 +1,3861 @@
+{
+  "meta": {
+    "generated_utc": "2026-11-21T05:38:00+00:00",
+    "source": "data/raw/nyc311_2023.parquet",
+    "downloaded_at_utc": "2026-11-20T15:10:13+00:00",
+    "rows": 3224723,
+    "columns": 25,
+    "rows_match_manifest": true,
+    "created_min": "2023-01-01T00:00:00.000",
+    "created_max": "2023-12-31T23:59:42.000",
+    "runtime_s": 123.2,
+    "seconds_by_step": {
+      "load_and_flag": 51.0,
+      "profile_volume": 6.6,
+      "profile_completeness": 2.5,
+      "profile_dates": 13.7,
+      "profile_status": 3.6,
+      "profile_location": 6.7,
+      "profile_zip": 3.0,
+      "profile_city": 3.5,
+      "profile_categories": 9.9,
+      "profile_duplicates": 15.9,
+      "profile_text": 6.0
+    }
+  },
+  "summary": [
+    "near_duplicate_candidate",
+    "placeholder_any",
+    "address_extra_spaces",
+    "mojibake",
+    "updated_before_created",
+    "closed_equals_created",
+    "city_is_borough_name",
+    "closed_after_a_year",
+    "latlon_missing",
+    "still_open_at_download",
+    "closed_without_closed_date",
+    "entered_late",
+    "complaint_type_case_variants",
+    "near_duplicate_respelled",
+    "open_with_closed_date",
+    "closed_before_created",
+    "same_content_new_key",
+    "resolution_contradicts_status",
+    "pii_like_free_text",
+    "test_records"
+  ],
+  "findings": [
+    {
+      "id": "dup_unique_key",
+      "section": "volume",
+      "title": "unique_key seen before",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "exact_duplicate_row",
+      "section": "volume",
+      "title": "Row identical to an earlier row in every column",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "same_content_new_key",
+      "section": "volume",
+      "title": "Identical to an earlier row in every column except unique_key",
+      "rows": 2275,
+      "pct": 0.0705,
+      "top_agencies": [
+        {
+          "agency": "DEP",
+          "rows": 1108,
+          "pct_of_agency": 0.6507
+        },
+        {
+          "agency": "DOT",
+          "rows": 565,
+          "pct_of_agency": 0.2913
+        },
+        {
+          "agency": "HPD",
+          "rows": 423,
+          "pct_of_agency": 0.0616
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56411233,
+          "created_date": "2023-01-01T00:18:00.000",
+          "agency": "DOT",
+          "complaint_type": "Traffic Signal Condition",
+          "incident_address": null
+        },
+        {
+          "unique_key": 56923748,
+          "created_date": "2023-02-28T10:23:00.000",
+          "agency": "DEP",
+          "complaint_type": "Air Quality",
+          "incident_address": "640 8 AVENUE"
+        },
+        {
+          "unique_key": 58170811,
+          "created_date": "2023-07-11T18:20:00.000",
+          "agency": "DEP",
+          "complaint_type": "Air Quality",
+          "incident_address": "640 8 AVENUE"
+        },
+        {
+          "unique_key": 59307340,
+          "created_date": "2023-11-02T21:47:00.000",
+          "agency": "DEP",
+          "complaint_type": "Noise",
+          "incident_address": null
+        },
+        {
+          "unique_key": 59891275,
+          "created_date": "2023-12-31T19:56:00.000",
+          "agency": "DEP",
+          "complaint_type": "Air Quality",
+          "incident_address": "78-15 PARSONS BOULEVARD"
+        }
+      ],
+      "note": "double submission: an exact duplicate under a new key",
+      "details": {}
+    },
+    {
+      "id": "entered_late",
+      "section": "volume",
+      "title": "Entered at least 7 days after its created_date (back-filled)",
+      "rows": 20100,
+      "pct": 0.6233,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 13632,
+          "pct_of_agency": 1.9844
+        },
+        {
+          "agency": "DEP",
+          "rows": 3202,
+          "pct_of_agency": 1.8805
+        },
+        {
+          "agency": "NYPD",
+          "rows": 1495,
+          "pct_of_agency": 0.1074
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56545932,
+          "created_date": "2023-01-01T08:42:20.000",
+          "agency": "DSNY",
+          "complaint_type": "Residential Disposal Complaint",
+          "entered_not_before": "2023-01-18T02:40:47"
+        },
+        {
+          "unique_key": 59457075,
+          "created_date": "2023-09-29T10:26:55.000",
+          "agency": "HPD",
+          "complaint_type": "Flooring/Stairs",
+          "entered_not_before": "2023-11-16T02:09:07"
+        },
+        {
+          "unique_key": 59446426,
+          "created_date": "2023-09-30T14:35:34.000",
+          "agency": "HPD",
+          "complaint_type": "Appliance",
+          "entered_not_before": "2023-11-16T02:09:07"
+        },
+        {
+          "unique_key": 59453197,
+          "created_date": "2023-10-03T12:22:19.000",
+          "agency": "HPD",
+          "complaint_type": "Water Leak",
+          "entered_not_before": "2023-11-16T02:09:07"
+        },
+        {
+          "unique_key": 60041177,
+          "created_date": "2023-12-19T11:54:40.000",
+          "agency": "OTI",
+          "complaint_type": "LinkNYC",
+          "entered_not_before": "2023-12-31T23:59:42"
+        }
+      ],
+      "note": "late-arriving rows: past days' counts change after a dashboard was built",
+      "details": {
+        "entry_days": {
+          "2023-11-16": 17094,
+          "2023-06-15": 1171,
+          "2023-01-18": 406,
+          "2023-01-27": 313,
+          "2023-04-18": 302
+        },
+        "created_months": {
+          "2023-10": 9365,
+          "2023-09": 7785,
+          "2023-06": 1401,
+          "2023-01": 893,
+          "2023-04": 430
+        }
+      }
+    },
+    {
+      "id": "placeholder_any",
+      "section": "completeness",
+      "title": "Row holds a placeholder ('N/A', 'Unspecified', 'UNKNOWN', ...) in some column",
+      "rows": 602452,
+      "pct": 18.6823,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 160470,
+          "pct_of_agency": 82.7391
+        },
+        {
+          "agency": "DSNY",
+          "rows": 154882,
+          "pct_of_agency": 51.2805
+        },
+        {
+          "agency": "DOB",
+          "rows": 100712,
+          "pct_of_agency": 99.7563
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56417527,
+          "descriptor": "N/A"
+        },
+        {
+          "unique_key": 57358487,
+          "open_data_channel_type": "UNKNOWN"
+        },
+        {
+          "unique_key": 58191107,
+          "open_data_channel_type": "UNKNOWN"
+        },
+        {
+          "unique_key": 59449232,
+          "descriptor_2": "N/A",
+          "community_board": "Unspecified BRONX"
+        },
+        {
+          "unique_key": 59891533,
+          "descriptor": "N/A"
+        }
+      ],
+      "note": "missing values a null-rate check cannot see",
+      "details": {}
+    },
+    {
+      "id": "bad_datetime_format",
+      "section": "dates",
+      "title": "Date value not in the source ISO format, or not a real date",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "source format: YYYY-MM-DDTHH:MM:SS.000",
+      "details": {
+        "offending_shapes": {
+          "created_date": {},
+          "closed_date": {},
+          "due_date": {},
+          "resolution_action_updated_date": {}
+        }
+      }
+    },
+    {
+      "id": "closed_before_created",
+      "section": "dates",
+      "title": "closed_date earlier than created_date",
+      "rows": 4313,
+      "pct": 0.1337,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 3837,
+          "pct_of_agency": 1.9784
+        },
+        {
+          "agency": "HPD",
+          "rows": 319,
+          "pct_of_agency": 0.0464
+        },
+        {
+          "agency": "NYPD",
+          "rows": 104,
+          "pct_of_agency": 0.0075
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56430946,
+          "created_date": "2023-01-03T09:17:00.000",
+          "closed_date": "2022-12-29T09:17:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 56829248,
+          "created_date": "2023-02-17T08:50:00.000",
+          "closed_date": "2023-02-16T08:49:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 57238086,
+          "created_date": "2023-04-05T11:09:00.000",
+          "closed_date": "2023-03-30T11:08:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 57949427,
+          "created_date": "2023-06-20T08:01:00.000",
+          "closed_date": "2023-06-18T18:30:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 59871154,
+          "created_date": "2023-12-29T09:38:00.000",
+          "closed_date": "2023-12-28T09:37:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        }
+      ],
+      "note": "mostly DOT street lights still 'Pending': closed_date is not a closing date there",
+      "details": {
+        "status": {
+          "Pending": 3819,
+          "Closed": 494
+        },
+        "complaint_type": {
+          "Street Light Condition": 3802,
+          "Heat/Hot Water": 184,
+          "Paint/Plaster": 45,
+          "Noise - Residential": 40,
+          "Street Condition": 33
+        },
+        "median_gap_hours": 72.0
+      }
+    },
+    {
+      "id": "closed_before_2023",
+      "section": "dates",
+      "title": "closed_date before 2023 (every row was created in 2023)",
+      "rows": 80,
+      "pct": 0.0025,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 79,
+          "pct_of_agency": 0.0407
+        },
+        {
+          "agency": "DSNY",
+          "rows": 1,
+          "pct_of_agency": 0.0003
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56430946,
+          "created_date": "2023-01-03T09:17:00.000",
+          "closed_date": "2022-12-29T09:17:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 56429900,
+          "created_date": "2023-01-03T09:33:00.000",
+          "closed_date": "2022-12-30T09:32:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 56432915,
+          "created_date": "2023-01-03T09:53:00.000",
+          "closed_date": "2022-12-30T09:53:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 56427609,
+          "created_date": "2023-01-03T13:56:00.000",
+          "closed_date": "2022-12-29T13:56:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 57040556,
+          "created_date": "2023-03-14T17:42:00.000",
+          "closed_date": "2022-11-30T17:42:00.000",
+          "status": "Pending",
+          "complaint_type": "Street Light Condition"
+        }
+      ],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "closed_after_download",
+      "section": "dates",
+      "title": "closed_date after the download (2026-11-20)",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "closed_equals_created",
+      "section": "dates",
+      "title": "closed_date equal to created_date to the second",
+      "rows": 62611,
+      "pct": 1.9416,
+      "top_agencies": [
+        {
+          "agency": "DOHMH",
+          "rows": 30942,
+          "pct_of_agency": 36.3216
+        },
+        {
+          "agency": "DOB",
+          "rows": 12651,
+          "pct_of_agency": 12.531
+        },
+        {
+          "agency": "DOT",
+          "rows": 12324,
+          "pct_of_agency": 6.3543
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56419266,
+          "created_date": "2023-01-01T02:02:43.000",
+          "closed_date": "2023-01-01T02:02:43.000",
+          "status": "Closed",
+          "complaint_type": "Rodent"
+        },
+        {
+          "unique_key": 57103662,
+          "created_date": "2023-03-21T09:07:19.000",
+          "closed_date": "2023-03-21T09:07:19.000",
+          "status": "Closed",
+          "complaint_type": "Building/Use"
+        },
+        {
+          "unique_key": 57899396,
+          "created_date": "2023-06-14T06:55:46.000",
+          "closed_date": "2023-06-14T06:55:46.000",
+          "status": "Closed",
+          "complaint_type": "Rodent"
+        },
+        {
+          "unique_key": 58675636,
+          "created_date": "2023-08-31T11:01:25.000",
+          "closed_date": "2023-08-31T11:01:25.000",
+          "status": "Closed",
+          "complaint_type": "General Construction/Plumbing"
+        },
+        {
+          "unique_key": 59887453,
+          "created_date": "2023-12-31T23:50:00.000",
+          "closed_date": "2023-12-31T23:50:00.000",
+          "status": "Closed",
+          "complaint_type": "Water System"
+        }
+      ],
+      "note": "0-minute resolution times (auto-closed or back-filled requests)",
+      "details": {
+        "complaint_type": {
+          "Rodent": 25835,
+          "Street Light Condition": 7580,
+          "General Construction/Plumbing": 6197,
+          "Water System": 5266,
+          "Street Condition": 4484
+        }
+      }
+    },
+    {
+      "id": "closed_after_a_year",
+      "section": "dates",
+      "title": "Closed more than 365 days after creation",
+      "rows": 51625,
+      "pct": 1.6009,
+      "top_agencies": [
+        {
+          "agency": "DPR",
+          "rows": 27882,
+          "pct_of_agency": 21.8179
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 12398,
+          "pct_of_agency": 14.5535
+        },
+        {
+          "agency": "DOB",
+          "rows": 5099,
+          "pct_of_agency": 5.0506
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56416833,
+          "created_date": "2023-01-01T00:35:38.000",
+          "closed_date": "2024-06-04T00:55:53.000",
+          "status": "Closed",
+          "complaint_type": "Smoking"
+        },
+        {
+          "unique_key": 57233147,
+          "created_date": "2023-04-05T12:49:39.000",
+          "closed_date": "2024-10-24T13:30:00.000",
+          "status": "Closed",
+          "complaint_type": "Noise - Helicopter"
+        },
+        {
+          "unique_key": 57732871,
+          "created_date": "2023-05-28T01:38:57.000",
+          "closed_date": "2024-10-24T13:55:09.000",
+          "status": "Closed",
+          "complaint_type": "Noise - Helicopter"
+        },
+        {
+          "unique_key": 58520113,
+          "created_date": "2023-08-15T09:25:05.000",
+          "closed_date": "2024-09-25T00:00:00.000",
+          "status": "Closed",
+          "complaint_type": "Building/Use"
+        },
+        {
+          "unique_key": 59893772,
+          "created_date": "2023-12-31T23:29:58.000",
+          "closed_date": "2025-05-13T17:33:49.000",
+          "status": "Closed",
+          "complaint_type": "New Tree Request"
+        }
+      ],
+      "note": "long tail that dominates average resolution times",
+      "details": {}
+    },
+    {
+      "id": "created_at_midnight",
+      "section": "dates",
+      "title": "created_date exactly 00:00:00",
+      "rows": 2439,
+      "pct": 0.0756,
+      "top_agencies": [
+        {
+          "agency": "DOHMH",
+          "rows": 2362,
+          "pct_of_agency": 2.7727
+        },
+        {
+          "agency": "DOT",
+          "rows": 25,
+          "pct_of_agency": 0.0129
+        },
+        {
+          "agency": "NYPD",
+          "rows": 25,
+          "pct_of_agency": 0.0018
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56416396,
+          "created_date": "2023-01-01T00:00:00.000",
+          "closed_date": "2023-01-03T14:56:48.000",
+          "status": "Closed",
+          "complaint_type": "Food Poisoning"
+        },
+        {
+          "unique_key": 57054531,
+          "created_date": "2023-03-15T00:00:00.000",
+          "closed_date": "2023-03-15T00:00:01.000",
+          "status": "Closed",
+          "complaint_type": "Food Poisoning"
+        },
+        {
+          "unique_key": 57956468,
+          "created_date": "2023-06-20T00:00:00.000",
+          "closed_date": "2023-06-20T16:31:24.000",
+          "status": "Closed",
+          "complaint_type": "Food Poisoning"
+        },
+        {
+          "unique_key": 58892871,
+          "created_date": "2023-09-23T00:00:00.000",
+          "closed_date": "2023-09-23T09:11:00.000",
+          "status": "Closed",
+          "complaint_type": "Derelict Vehicles"
+        },
+        {
+          "unique_key": 59891038,
+          "created_date": "2023-12-31T00:00:00.000",
+          "closed_date": "2024-01-02T09:45:55.000",
+          "status": "Closed",
+          "complaint_type": "Food Poisoning"
+        }
+      ],
+      "note": "date-only precision for some agencies (table above), not midnight traffic",
+      "details": {}
+    },
+    {
+      "id": "created_in_dst_unclear_hour",
+      "section": "dates",
+      "title": "created_date in a local hour that is skipped or repeated by a DST change",
+      "rows": 716,
+      "pct": 0.0222,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 620,
+          "pct_of_agency": 0.0445
+        },
+        {
+          "agency": "HPD",
+          "rows": 55,
+          "pct_of_agency": 0.008
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 8,
+          "pct_of_agency": 0.0094
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 59335632,
+          "created_date": "2023-11-05T01:00:00.000",
+          "agency": "DOT"
+        },
+        {
+          "unique_key": 59333318,
+          "created_date": "2023-11-05T01:14:50.000",
+          "agency": "NYPD"
+        },
+        {
+          "unique_key": 59331204,
+          "created_date": "2023-11-05T01:29:33.000",
+          "agency": "NYPD"
+        },
+        {
+          "unique_key": 59331591,
+          "created_date": "2023-11-05T01:44:55.000",
+          "agency": "NYPD"
+        },
+        {
+          "unique_key": 59331538,
+          "created_date": "2023-11-05T01:59:55.000",
+          "agency": "NYPD"
+        }
+      ],
+      "note": "local time without a UTC offset: the skipped hour is empty, the repeated one holds two hours of requests",
+      "details": {
+        "rows_per_hour": {
+          "2023-03-12 02:00": 0,
+          "2023-11-05 01:00": 716
+        },
+        "median_rows_per_hour": 377.0
+      }
+    },
+    {
+      "id": "updated_before_created",
+      "section": "dates",
+      "title": "resolution_action_updated_date before created_date",
+      "rows": 72731,
+      "pct": 2.2554,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 41979,
+          "pct_of_agency": 6.111
+        },
+        {
+          "agency": "DOB",
+          "rows": 12719,
+          "pct_of_agency": 12.5983
+        },
+        {
+          "agency": "DOT",
+          "rows": 11637,
+          "pct_of_agency": 6.0001
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56413194,
+          "created_date": "2023-01-01T00:16:58.000",
+          "resolution_action_updated_date": "2023-01-01T00:00:00.000",
+          "status": "Closed"
+        },
+        {
+          "unique_key": 56935145,
+          "created_date": "2023-03-02T13:48:00.000",
+          "resolution_action_updated_date": "2023-03-01T13:48:00.000",
+          "status": "Closed"
+        },
+        {
+          "unique_key": 57552262,
+          "created_date": "2023-05-09T07:00:23.000",
+          "resolution_action_updated_date": "2023-05-09T00:00:00.000",
+          "status": "Closed"
+        },
+        {
+          "unique_key": 59178530,
+          "created_date": "2023-10-20T13:00:16.000",
+          "resolution_action_updated_date": "2023-10-20T00:00:00.000",
+          "status": "Closed"
+        },
+        {
+          "unique_key": 59889140,
+          "created_date": "2023-12-31T18:04:15.000",
+          "resolution_action_updated_date": "2023-12-31T00:00:00.000",
+          "status": "Closed"
+        }
+      ],
+      "note": "mostly a same-day update stored at date precision (00:00)",
+      "details": {
+        "stored_as_midnight_of_the_created_day": 54723
+      }
+    },
+    {
+      "id": "updated_day_before_created",
+      "section": "dates",
+      "title": "resolution_action_updated_date more than a day before created_date",
+      "rows": 5343,
+      "pct": 0.1657,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 3936,
+          "pct_of_agency": 2.0294
+        },
+        {
+          "agency": "DSNY",
+          "rows": 1359,
+          "pct_of_agency": 0.45
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 31,
+          "pct_of_agency": 0.0364
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56420242,
+          "created_date": "2023-01-02T16:14:29.000",
+          "resolution_action_updated_date": "2022-12-30T05:39:22.000",
+          "status": "Closed"
+        },
+        {
+          "unique_key": 56877096,
+          "created_date": "2023-02-23T09:24:00.000",
+          "resolution_action_updated_date": "2023-02-22T09:23:00.000",
+          "status": "Pending"
+        },
+        {
+          "unique_key": 57280359,
+          "created_date": "2023-04-10T14:05:00.000",
+          "resolution_action_updated_date": "2023-04-06T14:05:00.000",
+          "status": "Pending"
+        },
+        {
+          "unique_key": 58126384,
+          "created_date": "2023-07-07T17:58:23.000",
+          "resolution_action_updated_date": "2023-07-06T12:31:54.000",
+          "status": "Closed"
+        },
+        {
+          "unique_key": 59891197,
+          "created_date": "2023-12-31T17:51:28.000",
+          "resolution_action_updated_date": "2023-12-22T07:07:29.000",
+          "status": "Closed"
+        }
+      ],
+      "note": "",
+      "details": {
+        "updated_year": {
+          "2023": 5229,
+          "2022": 91,
+          "2019": 20,
+          "2020": 2,
+          "2021": 1
+        }
+      }
+    },
+    {
+      "id": "due_more_than_a_year_out",
+      "section": "dates",
+      "title": "due_date more than a year after created_date",
+      "rows": 472,
+      "pct": 0.0146,
+      "top_agencies": [
+        {
+          "agency": "DSNY",
+          "rows": 472,
+          "pct_of_agency": 0.1563
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56412534,
+          "created_date": "2023-01-01T18:15:08.000",
+          "due_date": "2024-03-18T02:22:24.000",
+          "closed_date": "2024-01-11T14:03:33.000"
+        },
+        {
+          "unique_key": 56702498,
+          "created_date": "2023-02-03T07:49:59.000",
+          "due_date": "2024-03-28T02:22:24.000",
+          "closed_date": "2024-01-11T14:03:33.000"
+        },
+        {
+          "unique_key": 56712945,
+          "created_date": "2023-02-04T12:24:27.000",
+          "due_date": "2024-03-28T02:22:24.000",
+          "closed_date": "2024-01-11T14:03:33.000"
+        },
+        {
+          "unique_key": 56916666,
+          "created_date": "2023-02-28T10:05:14.000",
+          "due_date": "2024-03-28T02:22:24.000",
+          "closed_date": "2024-01-11T14:03:33.000"
+        },
+        {
+          "unique_key": 59595699,
+          "created_date": "2023-11-30T11:27:45.000",
+          "due_date": "2025-10-24T10:19:20.000",
+          "closed_date": "2025-09-29T00:00:00.000"
+        }
+      ],
+      "note": "only DSNY fills due_date; hundreds of rows share one bulk-assigned due timestamp",
+      "details": {
+        "due_date_rows_by_agency": {
+          "DSNY": 12477
+        },
+        "due_before_created": 0,
+        "most_shared_due_dates": {
+          "2024-03-28T02:22:24.000": 458,
+          "2023-02-22T14:31:15.000": 205,
+          "2023-11-13T07:16:34.000": 126
+        }
+      }
+    },
+    {
+      "id": "bulk_closed_same_second",
+      "section": "dates",
+      "title": ">= 500 rows closed in the same second (not midnight)",
+      "rows": 4357,
+      "pct": 0.1351,
+      "top_agencies": [
+        {
+          "agency": "DSNY",
+          "rows": 3600,
+          "pct_of_agency": 1.1919
+        },
+        {
+          "agency": "DEP",
+          "rows": 757,
+          "pct_of_agency": 0.4446
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56421749,
+          "created_date": "2023-01-02T07:06:22.000",
+          "closed_date": "2023-12-20T11:07:09.000",
+          "status": "Closed",
+          "complaint_type": "Graffiti"
+        },
+        {
+          "unique_key": 57830121,
+          "created_date": "2023-06-07T06:50:00.000",
+          "closed_date": "2023-06-08T23:00:00.000",
+          "status": "Closed",
+          "complaint_type": "Water System"
+        },
+        {
+          "unique_key": 58374123,
+          "created_date": "2023-07-31T05:59:45.000",
+          "closed_date": "2023-12-20T11:07:09.000",
+          "status": "Closed",
+          "complaint_type": "Graffiti"
+        },
+        {
+          "unique_key": 58878654,
+          "created_date": "2023-09-20T17:24:35.000",
+          "closed_date": "2023-12-20T11:07:09.000",
+          "status": "Closed",
+          "complaint_type": "Graffiti"
+        },
+        {
+          "unique_key": 59801153,
+          "created_date": "2023-12-20T09:01:12.000",
+          "closed_date": "2023-12-20T11:07:10.000",
+          "status": "Closed",
+          "complaint_type": "Graffiti"
+        }
+      ],
+      "note": "administrative batch closures: the resolution time is the job's, not the work's",
+      "details": {
+        "timestamps": {
+          "2023-12-20T11:07:09.000": 2539,
+          "2023-12-20T11:07:10.000": 1061,
+          "2023-06-08T23:00:00.000": 757
+        }
+      }
+    },
+    {
+      "id": "closed_without_closed_date",
+      "section": "status",
+      "title": "status Closed but no closed_date",
+      "rows": 20251,
+      "pct": 0.628,
+      "top_agencies": [
+        {
+          "agency": "DHS",
+          "rows": 20137,
+          "pct_of_agency": 42.2806
+        },
+        {
+          "agency": "DOT",
+          "rows": 103,
+          "pct_of_agency": 0.0531
+        },
+        {
+          "agency": "DSNY",
+          "rows": 11,
+          "pct_of_agency": 0.0036
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56686328,
+          "status": "Closed",
+          "closed_date": null,
+          "complaint_type": "Graffiti"
+        },
+        {
+          "unique_key": 58466098,
+          "status": "Closed",
+          "closed_date": null,
+          "complaint_type": "Homeless Person Assistance"
+        },
+        {
+          "unique_key": 58840936,
+          "status": "Closed",
+          "closed_date": null,
+          "complaint_type": "Homeless Person Assistance"
+        },
+        {
+          "unique_key": 59279867,
+          "status": "Closed",
+          "closed_date": null,
+          "complaint_type": "Homeless Person Assistance"
+        },
+        {
+          "unique_key": 59892119,
+          "status": "Closed",
+          "closed_date": null,
+          "complaint_type": "Homeless Person Assistance"
+        }
+      ],
+      "note": "closed requests missing from resolution-time charts",
+      "details": {}
+    },
+    {
+      "id": "open_with_closed_date",
+      "section": "status",
+      "title": "Open status (Open, In Progress, Pending, ...) but closed_date set",
+      "rows": 5493,
+      "pct": 0.1703,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 3935,
+          "pct_of_agency": 2.0289
+        },
+        {
+          "agency": "DOB",
+          "rows": 1481,
+          "pct_of_agency": 1.4669
+        },
+        {
+          "agency": "DEP",
+          "rows": 34,
+          "pct_of_agency": 0.02
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56420192,
+          "status": "Open",
+          "closed_date": "2023-01-02T18:03:44.000",
+          "complaint_type": "Building/Use"
+        },
+        {
+          "unique_key": 56857641,
+          "status": "Pending",
+          "closed_date": "2023-02-17T11:16:00.000",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 57279605,
+          "status": "Pending",
+          "closed_date": "2023-04-07T13:10:00.000",
+          "complaint_type": "Street Light Condition"
+        },
+        {
+          "unique_key": 58171844,
+          "status": "Assigned",
+          "closed_date": "2023-07-11T12:37:20.000",
+          "complaint_type": "Dept of Investigations"
+        },
+        {
+          "unique_key": 59889504,
+          "status": "Assigned",
+          "closed_date": "2024-01-03T00:00:00.000",
+          "complaint_type": "General Construction/Plumbing"
+        }
+      ],
+      "note": "open or closed depending on which field a dashboard reads",
+      "details": {}
+    },
+    {
+      "id": "status_unspecified",
+      "section": "status",
+      "title": "status 'Unspecified' (in neither status group)",
+      "rows": 1414,
+      "pct": 0.0438,
+      "top_agencies": [
+        {
+          "agency": "DSNY",
+          "rows": 1310,
+          "pct_of_agency": 0.4337
+        },
+        {
+          "agency": "DPR",
+          "rows": 44,
+          "pct_of_agency": 0.0344
+        },
+        {
+          "agency": "NYPD",
+          "rows": 20,
+          "pct_of_agency": 0.0014
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56421800,
+          "status": "Unspecified",
+          "closed_date": "2023-01-12T14:34:53.000",
+          "complaint_type": "Missed Collection"
+        },
+        {
+          "unique_key": 57646292,
+          "status": "Unspecified",
+          "closed_date": "2023-07-25T09:36:07.000",
+          "complaint_type": "New Tree Request"
+        },
+        {
+          "unique_key": 58268995,
+          "status": "Unspecified",
+          "closed_date": "2023-07-26T08:42:43.000",
+          "complaint_type": "Missed Collection"
+        },
+        {
+          "unique_key": 58819458,
+          "status": "Unspecified",
+          "closed_date": "2023-09-14T15:07:35.000",
+          "complaint_type": "Missed Collection"
+        },
+        {
+          "unique_key": 59893362,
+          "status": "Unspecified",
+          "closed_date": "2023-12-31T22:07:20.000",
+          "complaint_type": "Noise - Commercial"
+        }
+      ],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "still_open_at_download",
+      "section": "status",
+      "title": "Still in an open status at download",
+      "rows": 47071,
+      "pct": 1.4597,
+      "top_agencies": [
+        {
+          "agency": "EDC",
+          "rows": 13599,
+          "pct_of_agency": 22.9996
+        },
+        {
+          "agency": "DPR",
+          "rows": 10376,
+          "pct_of_agency": 8.1193
+        },
+        {
+          "agency": "DOT",
+          "rows": 5388,
+          "pct_of_agency": 2.7781
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56417152,
+          "created_date": "2023-01-01T02:19:59.000",
+          "status": "In Progress",
+          "complaint_type": "Taxi Report"
+        },
+        {
+          "unique_key": 57488229,
+          "created_date": "2023-05-02T15:49:50.000",
+          "status": "In Progress",
+          "complaint_type": "Standing Water"
+        },
+        {
+          "unique_key": 58422845,
+          "created_date": "2023-08-05T12:59:25.000",
+          "status": "In Progress",
+          "complaint_type": "Consumer Complaint"
+        },
+        {
+          "unique_key": 59268980,
+          "created_date": "2023-10-30T14:12:12.000",
+          "status": "In Progress",
+          "complaint_type": "Harboring Bees/Wasps"
+        },
+        {
+          "unique_key": 59888398,
+          "created_date": "2023-12-31T22:21:23.000",
+          "status": "In Progress",
+          "complaint_type": "Unleashed Dog"
+        }
+      ],
+      "note": "never closed: inflates open-backlog counts",
+      "details": {
+        "min_age_years": 2.9,
+        "status": {
+          "In Progress": 38305,
+          "Pending": 4803,
+          "Open": 2068,
+          "Assigned": 1447,
+          "Started": 448
+        }
+      }
+    },
+    {
+      "id": "closed_without_resolution",
+      "section": "status",
+      "title": "status Closed but no resolution_description",
+      "rows": 20475,
+      "pct": 0.6349,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 10698,
+          "pct_of_agency": 1.5573
+        },
+        {
+          "agency": "DSNY",
+          "rows": 5136,
+          "pct_of_agency": 1.7005
+        },
+        {
+          "agency": "DEP",
+          "rows": 3571,
+          "pct_of_agency": 2.0972
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56419021,
+          "status": "Closed",
+          "closed_date": "2023-01-04T14:13:01.000",
+          "complaint_type": "Green Taxi Complaint"
+        },
+        {
+          "unique_key": 59438928,
+          "status": "Closed",
+          "closed_date": "2023-09-30T13:45:00.000",
+          "complaint_type": "Sewer Maintenance"
+        },
+        {
+          "unique_key": 59442011,
+          "status": "Closed",
+          "closed_date": "2023-09-30T16:10:00.000",
+          "complaint_type": "Sewer Maintenance"
+        },
+        {
+          "unique_key": 59442419,
+          "status": "Closed",
+          "closed_date": "2023-10-11T00:00:00.000",
+          "complaint_type": "Unsanitary Condition"
+        },
+        {
+          "unique_key": 59890478,
+          "status": "Closed",
+          "closed_date": "2024-02-08T02:22:23.000",
+          "complaint_type": "Graffiti"
+        }
+      ],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "latlon_missing",
+      "section": "location",
+      "title": "latitude and longitude both missing",
+      "rows": 48579,
+      "pct": 1.5065,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 26635,
+          "pct_of_agency": 13.7331
+        },
+        {
+          "agency": "NYPD",
+          "rows": 9614,
+          "pct_of_agency": 0.6904
+        },
+        {
+          "agency": "DSNY",
+          "rows": 7535,
+          "pct_of_agency": 2.4948
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56418774,
+          "incident_address": "7 AVENUE",
+          "borough": "BROOKLYN"
+        },
+        {
+          "unique_key": 57178470,
+          "incident_address": "ARMSTRONG AVENUE",
+          "borough": "STATEN ISLAND"
+        },
+        {
+          "unique_key": 57983531,
+          "incident_address": "EAST   10 STREET",
+          "borough": "BROOKLYN"
+        },
+        {
+          "unique_key": 58822887,
+          "incident_address": null,
+          "borough": "QUEENS"
+        },
+        {
+          "unique_key": 59892201,
+          "incident_address": "ESPLANADE AVENUE",
+          "borough": "BRONX"
+        }
+      ],
+      "note": "rows that vanish from every map",
+      "details": {}
+    },
+    {
+      "id": "latlon_outside_nyc",
+      "section": "location",
+      "title": "lat/lon outside the NYC box (incl. swapped)",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "latlon_half_missing",
+      "section": "location",
+      "title": "Exactly one of latitude / longitude missing",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "coordinates_but_borough_unspecified",
+      "section": "location",
+      "title": "Coordinates present but borough 'Unspecified'",
+      "rows": 2729,
+      "pct": 0.0846,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 1803,
+          "pct_of_agency": 0.1295
+        },
+        {
+          "agency": "DSNY",
+          "rows": 423,
+          "pct_of_agency": 0.1401
+        },
+        {
+          "agency": "DOT",
+          "rows": 206,
+          "pct_of_agency": 0.1062
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56420723,
+          "latitude": 40.699971,
+          "longitude": -73.992268,
+          "borough": "Unspecified",
+          "incident_zip": null
+        },
+        {
+          "unique_key": 57988624,
+          "latitude": 40.699531,
+          "longitude": -73.911037,
+          "borough": "Unspecified",
+          "incident_zip": "11237"
+        },
+        {
+          "unique_key": 58867375,
+          "latitude": 40.647364,
+          "longitude": -74.016634,
+          "borough": "Unspecified",
+          "incident_zip": null
+        },
+        {
+          "unique_key": 58850234,
+          "latitude": 40.66316,
+          "longitude": -73.931609,
+          "borough": "Unspecified",
+          "incident_zip": null
+        },
+        {
+          "unique_key": 59859261,
+          "latitude": 40.671381,
+          "longitude": -73.859474,
+          "borough": "Unspecified",
+          "incident_zip": "11208"
+        }
+      ],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "state_plane_presence_mismatch",
+      "section": "location",
+      "title": "x/y state-plane presence differs from lat/lon presence",
+      "rows": 826,
+      "pct": 0.0256,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 582,
+          "pct_of_agency": 0.0418
+        },
+        {
+          "agency": "DSNY",
+          "rows": 118,
+          "pct_of_agency": 0.0391
+        },
+        {
+          "agency": "DPR",
+          "rows": 36,
+          "pct_of_agency": 0.0282
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56420876,
+          "x_coordinate_state_plane": null,
+          "y_coordinate_state_plane": 250753.0,
+          "latitude": null
+        },
+        {
+          "unique_key": 58083384,
+          "x_coordinate_state_plane": null,
+          "y_coordinate_state_plane": 226907.0,
+          "latitude": null
+        },
+        {
+          "unique_key": 58861201,
+          "x_coordinate_state_plane": null,
+          "y_coordinate_state_plane": 268158.0,
+          "latitude": null
+        },
+        {
+          "unique_key": 58865313,
+          "x_coordinate_state_plane": null,
+          "y_coordinate_state_plane": 216120.0,
+          "latitude": null
+        },
+        {
+          "unique_key": 59712792,
+          "x_coordinate_state_plane": null,
+          "y_coordinate_state_plane": 216953.0,
+          "latitude": null
+        }
+      ],
+      "note": "x or y alone, without lat/lon: a half-finished geocode",
+      "details": {}
+    },
+    {
+      "id": "state_plane_disagrees",
+      "section": "location",
+      "title": "x/y and lat/lon more than 250 m apart (affine fit)",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "x/y is an independent cross-check of lat/lon",
+      "details": {
+        "gap_m_quantiles": {
+          "0.5": 5.2,
+          "0.99": 37.0,
+          "0.999": 71.5,
+          "1.0": 80.9
+        }
+      }
+    },
+    {
+      "id": "borough_vs_community_board",
+      "section": "location",
+      "title": "borough differs from the borough named in community_board",
+      "rows": 1592,
+      "pct": 0.0494,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 1247,
+          "pct_of_agency": 0.1815
+        },
+        {
+          "agency": "NYPD",
+          "rows": 172,
+          "pct_of_agency": 0.0124
+        },
+        {
+          "agency": "DPR",
+          "rows": 49,
+          "pct_of_agency": 0.0383
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56413505,
+          "borough": "MANHATTAN",
+          "community_board": "08 BRONX",
+          "incident_zip": "10463"
+        },
+        {
+          "unique_key": 57373255,
+          "borough": "MANHATTAN",
+          "community_board": "08 BRONX",
+          "incident_zip": "10463"
+        },
+        {
+          "unique_key": 58481557,
+          "borough": "MANHATTAN",
+          "community_board": "08 BRONX",
+          "incident_zip": "10463"
+        },
+        {
+          "unique_key": 59246424,
+          "borough": "MANHATTAN",
+          "community_board": "08 BRONX",
+          "incident_zip": "10463"
+        },
+        {
+          "unique_key": 59890027,
+          "borough": "MANHATTAN",
+          "community_board": "08 BRONX",
+          "incident_zip": "10463"
+        }
+      ],
+      "note": "mostly boundary cases (Marble Hill: Manhattan, Bronx CB 8)",
+      "details": {}
+    },
+    {
+      "id": "park_borough_differs",
+      "section": "location",
+      "title": "park_borough differs from borough",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "if it never differs, park_borough is a redundant copy",
+      "details": {}
+    },
+    {
+      "id": "address_extra_spaces",
+      "section": "location",
+      "title": "incident_address padded with runs of spaces ('EAST   38 STREET')",
+      "rows": 572081,
+      "pct": 17.7405,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 239661,
+          "pct_of_agency": 17.2106
+        },
+        {
+          "agency": "HPD",
+          "rows": 149654,
+          "pct_of_agency": 21.7854
+        },
+        {
+          "agency": "DSNY",
+          "rows": 43161,
+          "pct_of_agency": 14.2903
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56418136,
+          "incident_address": "1621 EAST   51 STREET"
+        },
+        {
+          "unique_key": 57289480,
+          "incident_address": "2380 EAST   12 STREET"
+        },
+        {
+          "unique_key": 58163205,
+          "incident_address": "2074 EAST   67 STREET"
+        },
+        {
+          "unique_key": 59054063,
+          "incident_address": "215 WEST   94 STREET"
+        },
+        {
+          "unique_key": 59887573,
+          "incident_address": "25 WEST   73 STREET"
+        }
+      ],
+      "note": "addresses must be normalised before grouping or de-duplicating",
+      "details": {}
+    },
+    {
+      "id": "zip_invalid_format",
+      "section": "zip",
+      "title": "incident_zip not 5 digits",
+      "rows": 3,
+      "pct": 0.0001,
+      "top_agencies": [
+        {
+          "agency": "DCWP",
+          "rows": 3,
+          "pct_of_agency": 0.0143
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56867722,
+          "incident_zip": "N/A",
+          "city": "Hempstead",
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 57046995,
+          "incident_zip": "na",
+          "city": "na",
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 58960408,
+          "incident_zip": "NA",
+          "city": "unknown",
+          "borough": "Unspecified"
+        }
+      ],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "zip_outside_nyc",
+      "section": "zip",
+      "title": "5-digit ZIP with a non-NYC prefix",
+      "rows": 237,
+      "pct": 0.0073,
+      "top_agencies": [
+        {
+          "agency": "DCWP",
+          "rows": 181,
+          "pct_of_agency": 0.8649
+        },
+        {
+          "agency": "DSNY",
+          "rows": 26,
+          "pct_of_agency": 0.0086
+        },
+        {
+          "agency": "NYPD",
+          "rows": 20,
+          "pct_of_agency": 0.0014
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56460952,
+          "incident_zip": "07740",
+          "city": "Long Beach",
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 57106709,
+          "incident_zip": "33241",
+          "city": "Jacksonville",
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 57919158,
+          "incident_zip": "12345",
+          "city": "NEW YORK",
+          "borough": "MANHATTAN"
+        },
+        {
+          "unique_key": 59031078,
+          "incident_zip": "11580",
+          "city": "Valley Steam",
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 59874109,
+          "incident_zip": "28590",
+          "city": "WHitmore",
+          "borough": "Unspecified"
+        }
+      ],
+      "note": "'12345' is a dummy (always MANHATTAN); DCWP complaints carry out-of-state business ZIPs",
+      "details": {
+        "zips": {
+          "12345": 46,
+          "10803": 5,
+          "11735": 5,
+          "11801": 4,
+          "11590": 4
+        }
+      }
+    },
+    {
+      "id": "zip_borough_rare_pair",
+      "section": "zip",
+      "title": "(ZIP, borough) pair < 2% of the ZIP's rows",
+      "rows": 30,
+      "pct": 0.0009,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 11,
+          "pct_of_agency": 0.0008
+        },
+        {
+          "agency": "DOT",
+          "rows": 8,
+          "pct_of_agency": 0.0041
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 4,
+          "pct_of_agency": 0.0047
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56467342,
+          "incident_zip": "11370",
+          "city": "EAST ELMHURST",
+          "borough": "BRONX",
+          "incident_address": "RIKERS ISLAND"
+        },
+        {
+          "unique_key": 56996809,
+          "incident_zip": "11237",
+          "city": "QUEENS",
+          "borough": "QUEENS",
+          "incident_address": "1732 HART STREET"
+        },
+        {
+          "unique_key": 58496476,
+          "incident_zip": "11370",
+          "city": "EAST ELMHURST",
+          "borough": "BRONX",
+          "incident_address": "19-19 HAZEN STREET"
+        },
+        {
+          "unique_key": 58934313,
+          "incident_zip": "11416",
+          "city": "OZONE PARK",
+          "borough": "BROOKLYN",
+          "incident_address": "7420 95 AVENUE"
+        },
+        {
+          "unique_key": 59872206,
+          "incident_zip": "11237",
+          "city": "QUEENS",
+          "borough": "QUEENS",
+          "incident_address": "271 ST NICHOLAS AVENUE"
+        }
+      ],
+      "note": "ZIPs that straddle a borough line (Ridgewood/Bushwick, Rikers Island)",
+      "details": {
+        "pairs": {
+          "11370 BRONX": 12,
+          "11416 BROOKLYN": 7,
+          "11237 QUEENS": 4,
+          "11208 QUEENS": 4,
+          "11385 BROOKLYN": 2,
+          "11421 BROOKLYN": 1
+        }
+      }
+    },
+    {
+      "id": "borough_unspecified",
+      "section": "zip",
+      "title": "borough 'Unspecified'",
+      "rows": 5994,
+      "pct": 0.1859,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 2409,
+          "pct_of_agency": 0.173
+        },
+        {
+          "agency": "DOT",
+          "rows": 1433,
+          "pct_of_agency": 0.7389
+        },
+        {
+          "agency": "DSNY",
+          "rows": 748,
+          "pct_of_agency": 0.2477
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56414169,
+          "incident_zip": null,
+          "city": null,
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 57487769,
+          "incident_zip": null,
+          "city": null,
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 58867139,
+          "incident_zip": null,
+          "city": null,
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 58845097,
+          "incident_zip": null,
+          "city": null,
+          "borough": "Unspecified"
+        },
+        {
+          "unique_key": 59893870,
+          "incident_zip": null,
+          "city": null,
+          "borough": "Unspecified"
+        }
+      ],
+      "note": "",
+      "details": {
+        "pct_of_agency_rows": {
+          "TLC": 1.69,
+          "DCWP": 1.11,
+          "DOT": 0.74,
+          "OTI": 0.58,
+          "DSNY": 0.25,
+          "DOHMH": 0.21,
+          "DPR": 0.17,
+          "NYPD": 0.17,
+          "DHS": 0.13,
+          "DEP": 0.03,
+          "DOB": 0.02,
+          "EDC": 0.01,
+          "HPD": 0.01
+        }
+      }
+    },
+    {
+      "id": "city_spelling_variants",
+      "section": "city",
+      "title": "city spelled differently (case, punctuation) from its most common spelling",
+      "rows": 106,
+      "pct": 0.0033,
+      "top_agencies": [
+        {
+          "agency": "DCWP",
+          "rows": 39,
+          "pct_of_agency": 0.1864
+        },
+        {
+          "agency": "DSNY",
+          "rows": 27,
+          "pct_of_agency": 0.0089
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 16,
+          "pct_of_agency": 0.0188
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56452159,
+          "city": "Little Neck",
+          "borough": "Unspecified",
+          "incident_zip": "11362"
+        },
+        {
+          "unique_key": 57119601,
+          "city": "Brooklyn",
+          "borough": "Unspecified",
+          "incident_zip": "11207"
+        },
+        {
+          "unique_key": 57886904,
+          "city": "Manhattan",
+          "borough": "MANHATTAN",
+          "incident_zip": null
+        },
+        {
+          "unique_key": 58811513,
+          "city": "Queen",
+          "borough": "Unspecified",
+          "incident_zip": "11580"
+        },
+        {
+          "unique_key": 59867150,
+          "city": "Brooklyn",
+          "borough": "BROOKLYN",
+          "incident_zip": null
+        }
+      ],
+      "note": "",
+      "details": {
+        "groups": [
+          {
+            "BROOKLYN": 960745,
+            "Brooklyn": 21,
+            "brooklyn": 1
+          },
+          {
+            "NEW YORK": 618333,
+            "New York": 10,
+            "new york": 1
+          },
+          {
+            "BRONX": 605642,
+            "Bronx": 9,
+            "bronx": 3
+          },
+          {
+            "STATEN ISLAND": 122023,
+            "staten island": 4
+          },
+          {
+            "JAMAICA": 73131,
+            "Jamaica": 1
+          },
+          {
+            "ASTORIA": 55753,
+            "Astoria": 1
+          },
+          {
+            "FLUSHING": 46633,
+            "Flushing": 2
+          },
+          {
+            "QUEENS": 34399,
+            "Queens": 9,
+            "queens": 5
+          },
+          {
+            "LONG ISLAND CITY": 26658,
+            "Long Island City": 3
+          },
+          {
+            "WOODSIDE": 25076,
+            "Woodside": 1
+          },
+          {
+            "MANHATTAN": 24374,
+            "Manhattan": 8,
+            "manhattan": 1
+          },
+          {
+            "ELMHURST": 24322,
+            "Elmhurst": 1
+          },
+          {
+            "LITTLE NECK": 4562,
+            "Little Neck": 1
+          },
+          {
+            "FLORAL PARK": 933,
+            "floral park": 1
+          },
+          {
+            "NEW HYDE PARK": 590,
+            "New Hyde Park": 2,
+            "New Hyde park": 1
+          },
+          {
+            "PELHAM": 4,
+            "pelham": 1
+          },
+          {
+            "Buffalo": 4,
+            "buffalo": 1
+          },
+          {
+            "Farmingdale": 3,
+            "farmingdale": 1
+          },
+          {
+            "Farmington Hills": 2,
+            "FARMINGTON HILLS": 1
+          },
+          {
+            "Hicksville": 2,
+            "HICKSVILLE": 1
+          },
+          {
+            "Norwood": 2,
+            "NORWOOD": 1
+          },
+          {
+            "Harrisburg": 2,
+            "HarrisBurg": 1
+          },
+          {
+            "long island": 2,
+            "Long Island": 1
+          },
+          {
+            "Bellport": 1,
+            "BELLPORT": 1
+          },
+          {
+            "SPRING VALLEY": 1,
+            "Spring valley": 1
+          },
+          {
+            "UNION": 1,
+            "Union": 1
+          },
+          {
+            "reading": 1,
+            "Reading": 1
+          },
+          {
+            "HEMPSTEAD": 1,
+            "Hempstead": 1
+          },
+          {
+            "Richmond": 1,
+            "RICHMOND": 1
+          },
+          {
+            "na": 1,
+            "N/A": 1
+          },
+          {
+            "austin": 1,
+            "Austin": 1
+          },
+          {
+            "queen": 1,
+            "Queen": 1
+          },
+          {
+            "denville": 1,
+            "Denville": 1
+          },
+          {
+            "island park": 1,
+            "Island Park": 1
+          },
+          {
+            "Great neck": 1,
+            "Great Neck": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "city_likely_typo",
+      "section": "city",
+      "title": "Rare city name with difflib similarity >= 0.88 to a common one",
+      "rows": 4,
+      "pct": 0.0001,
+      "top_agencies": [
+        {
+          "agency": "DCWP",
+          "rows": 3,
+          "pct_of_agency": 0.0143
+        },
+        {
+          "agency": "DSNY",
+          "rows": 1,
+          "pct_of_agency": 0.0003
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56943759,
+          "city": "Famingdale",
+          "borough": "Unspecified",
+          "incident_zip": "11735"
+        },
+        {
+          "unique_key": 57352515,
+          "city": "queen",
+          "borough": "Unspecified",
+          "incident_zip": "11385"
+        },
+        {
+          "unique_key": 58811513,
+          "city": "Queen",
+          "borough": "Unspecified",
+          "incident_zip": "11580"
+        },
+        {
+          "unique_key": 59031078,
+          "city": "Valley Steam",
+          "borough": "Unspecified",
+          "incident_zip": "11580"
+        }
+      ],
+      "note": "",
+      "details": {
+        "typo_of": {
+          "QUEEN": "QUEENS",
+          "VALLEYSTEAM": "VALLEYSTREAM",
+          "FAMINGDALE": "FARMINGDALE"
+        }
+      }
+    },
+    {
+      "id": "city_is_borough_name",
+      "section": "city",
+      "title": "city holds 'QUEENS' or 'MANHATTAN' instead of the postal city name",
+      "rows": 58796,
+      "pct": 1.8233,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 44356,
+          "pct_of_agency": 22.8702
+        },
+        {
+          "agency": "DEP",
+          "rows": 11528,
+          "pct_of_agency": 6.7703
+        },
+        {
+          "agency": "DHS",
+          "rows": 2473,
+          "pct_of_agency": 5.1924
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56410624,
+          "city": "QUEENS",
+          "borough": "QUEENS",
+          "incident_zip": "11358"
+        },
+        {
+          "unique_key": 57071677,
+          "city": "MANHATTAN",
+          "borough": "MANHATTAN",
+          "incident_zip": "10024"
+        },
+        {
+          "unique_key": 57930331,
+          "city": "QUEENS",
+          "borough": "QUEENS",
+          "incident_zip": "11434"
+        },
+        {
+          "unique_key": 58889497,
+          "city": "QUEENS",
+          "borough": "QUEENS",
+          "incident_zip": "11005"
+        },
+        {
+          "unique_key": 59890552,
+          "city": "QUEENS",
+          "borough": "QUEENS",
+          "incident_zip": "11377"
+        }
+      ],
+      "note": "city granularity depends on which agency filed the row",
+      "details": {}
+    },
+    {
+      "id": "complaint_type_case_variants",
+      "section": "categories",
+      "title": "complaint_type spelled differently (case) from the agency's usual spelling",
+      "rows": 13612,
+      "pct": 0.4221,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 13612,
+          "pct_of_agency": 1.9815
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 59441752,
+          "agency": "HPD",
+          "complaint_type": "Plumbing",
+          "created_date": "2023-08-10T15:32:14.000"
+        },
+        {
+          "unique_key": 59460594,
+          "agency": "HPD",
+          "complaint_type": "Flooring/Stairs",
+          "created_date": "2023-09-29T19:28:42.000"
+        },
+        {
+          "unique_key": 59436380,
+          "agency": "HPD",
+          "complaint_type": "Door/Window",
+          "created_date": "2023-10-02T10:11:55.000"
+        },
+        {
+          "unique_key": 59460610,
+          "agency": "HPD",
+          "complaint_type": "Flooring/Stairs",
+          "created_date": "2023-10-04T05:10:44.000"
+        },
+        {
+          "unique_key": 59452098,
+          "agency": "HPD",
+          "complaint_type": "Paint/Plaster",
+          "created_date": "2023-10-06T09:39:34.000"
+        }
+      ],
+      "note": "one category, two dashboard rows; 100 % of these rows were back-filled",
+      "details": {
+        "groups": [
+          {
+            "HPD | HEAT/HOT WATER": 229509,
+            "HPD | Heat/Hot Water": 1814
+          },
+          {
+            "HPD | UNSANITARY CONDITION": 115439,
+            "HPD | Unsanitary Condition": 1263
+          },
+          {
+            "HPD | PLUMBING": 61344,
+            "HPD | Plumbing": 1525
+          },
+          {
+            "HPD | PAINT/PLASTER": 59207,
+            "HPD | Paint/Plaster": 2187
+          },
+          {
+            "HPD | DOOR/WINDOW": 44238,
+            "HPD | Door/Window": 1258
+          },
+          {
+            "HPD | WATER LEAK": 43134,
+            "HPD | Water Leak": 3077
+          },
+          {
+            "HPD | GENERAL": 29769,
+            "HPD | General": 635
+          },
+          {
+            "HPD | ELECTRIC": 28113,
+            "HPD | Electric": 289
+          },
+          {
+            "HPD | FLOORING/STAIRS": 25681,
+            "HPD | Flooring/Stairs": 695
+          },
+          {
+            "HPD | APPLIANCE": 21698,
+            "HPD | Appliance": 559
+          },
+          {
+            "HPD | SAFETY": 12364,
+            "HPD | Safety": 308
+          },
+          {
+            "HPD | OUTSIDE BUILDING": 1036,
+            "HPD | Outside Building": 2
+          }
+        ],
+        "entered_late_pct": 100.0,
+        "days_over_5pct_of_agency_rows": {
+          "2023-09-29": 0.465,
+          "2023-09-30": 0.463,
+          "2023-10-01": 0.451,
+          "2023-10-02": 0.443,
+          "2023-10-03": 0.444,
+          "2023-10-04": 0.444,
+          "2023-10-05": 0.445,
+          "2023-10-06": 0.136
+        }
+      }
+    },
+    {
+      "id": "descriptor_case_variants",
+      "section": "categories",
+      "title": "descriptor spelled differently (case) from the agency's usual spelling",
+      "rows": 15798,
+      "pct": 0.4899,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 15489,
+          "pct_of_agency": 2.2548
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 302,
+          "pct_of_agency": 0.3545
+        },
+        {
+          "agency": "DCWP",
+          "rows": 7,
+          "pct_of_agency": 0.0334
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56421763,
+          "agency": "HPD",
+          "descriptor": "WINDOW/FRAME",
+          "created_date": "2023-01-02T11:45:45.000"
+        },
+        {
+          "unique_key": 59436381,
+          "agency": "HPD",
+          "descriptor": "Door",
+          "created_date": "2023-09-29T13:51:49.000"
+        },
+        {
+          "unique_key": 59440070,
+          "agency": "HPD",
+          "descriptor": "Entire Building",
+          "created_date": "2023-10-01T22:59:41.000"
+        },
+        {
+          "unique_key": 59446925,
+          "agency": "HPD",
+          "descriptor": "Entire Building",
+          "created_date": "2023-10-04T01:04:41.000"
+        },
+        {
+          "unique_key": 59891881,
+          "agency": "HPD",
+          "descriptor": "DOOR/FRAME",
+          "created_date": "2023-12-31T20:22:19.000"
+        }
+      ],
+      "note": "one category, two dashboard rows; 86 % of these rows were back-filled",
+      "details": {
+        "groups": [
+          {
+            "HPD | ENTIRE BUILDING": 152172,
+            "HPD | Entire Building": 1254
+          },
+          {
+            "HPD | APARTMENT ONLY": 77337,
+            "HPD | Apartment Only": 559
+          },
+          {
+            "HPD | PESTS": 61083,
+            "HPD | Pests": 4
+          },
+          {
+            "HPD | MOLD": 32449,
+            "HPD | Mold": 1257
+          },
+          {
+            "HPD | WALL": 28587,
+            "HPD | Wall": 852
+          },
+          {
+            "HPD | CEILING": 26958,
+            "HPD | Ceiling": 1224
+          },
+          {
+            "HPD | FLOOR": 24615,
+            "HPD | Floor": 694
+          },
+          {
+            "HPD | DOOR": 22701,
+            "HPD | Door": 573
+          },
+          {
+            "HPD | HEAVY FLOW": 21080,
+            "HPD | Heavy Flow": 1786
+          },
+          {
+            "HPD | BASIN/SINK": 16729,
+            "HPD | Basin/Sink": 450
+          },
+          {
+            "HPD | WATER SUPPLY": 16617,
+            "HPD | Water Supply": 419
+          },
+          {
+            "HPD | SLOW LEAK": 16263,
+            "HPD | Slow Leak": 992
+          },
+          {
+            "HPD | WINDOW FRAME": 14642,
+            "HPD | WINDOW/FRAME": 1109,
+            "HPD | Window Frame": 482,
+            "HPD | Window/Frame": 51
+          },
+          {
+            "HPD | ELECTRIC/GAS RANGE": 12988,
+            "HPD | Electric/Gas Range": 307
+          },
+          {
+            "HPD | BATHTUB/SHOWER": 12732,
+            "HPD | Bathtub/Shower": 334
+          },
+          {
+            "HPD | TOILET": 9446,
+            "HPD | Toilet": 235
+          },
+          {
+            "HPD | CABINET": 9258,
+            "HPD | Cabinet": 253
+          },
+          {
+            "HPD | REFRIGERATOR": 8690,
+            "HPD | Refrigerator": 252
+          },
+          {
+            "HPD | BELL/BUZZER/INTERCOM": 8540,
+            "HPD | Bell/Buzzer/Intercom": 210
+          },
+          {
+            "HPD | POWER OUTAGE": 6504,
+            "HPD | Power Outage": 200
+          },
+          {
+            "HPD | DAMP SPOT": 5791,
+            "HPD | Damp Spot": 299
+          },
+          {
+            "HPD | COOKING GAS": 5521,
+            "HPD | Cooking Gas": 118
+          },
+          {
+            "HPD | RADIATOR": 4852,
+            "HPD | Radiator": 77
+          },
+          {
+            "HPD | DOOR FRAME": 3693,
+            "HPD | DOOR/FRAME": 768,
+            "HPD | Door Frame": 116,
+            "HPD | Door/Frame": 17
+          },
+          {
+            "HPD | SMOKE DETECTOR": 3691,
+            "HPD | Smoke Detector": 90
+          },
+          {
+            "HPD | SEWAGE": 3187,
+            "HPD | Sewage": 2
+          },
+          {
+            "HPD | WIRING": 3134,
+            "HPD | Wiring": 89
+          },
+          {
+            "HPD | WINDOW PANE": 3045,
+            "HPD | Window Pane": 84
+          },
+          {
+            "HPD | CARBON MONOXIDE DETECTOR": 2912,
+            "HPD | Carbon Monoxide Detector": 77
+          },
+          {
+            "HPD | FIRE ESCAPE": 2695,
+            "HPD | Fire Escape": 69
+          },
+          {
+            "HPD | WINDOW GUARD BROKEN/MISSING": 2692,
+            "HPD | Window Guard Broken/Missing": 66
+          },
+          {
+            "HPD | VENTILATION SYSTEM": 2580,
+            "HPD | Ventilation System": 78
+          },
+          {
+            "HPD | JANITOR/SUPER": 1960,
+            "HPD | Janitor/Super": 1
+          },
+          {
+            "HPD | STEAM PIPE/RISER": 1610,
+            "HPD | Steam Pipe/Riser": 29
+          },
+          {
+            "DOHMH | Other (Explain Below)": 1200,
+            "DOHMH | Other - Explain Below": 302
+          },
+          {
+            "HPD | STAIRS": 1066,
+            "HPD | Stairs": 1
+          },
+          {
+            "HPD | ROOFING": 477,
+            "HPD | Roofing": 1
+          },
+          {
+            "HPD | SPRINKLER": 354,
+            "HPD | Sprinkler": 6
+          },
+          {
+            "HPD | DOOR TO DUMBWAITER": 157,
+            "HPD | Door to Dumbwaiter": 3
+          },
+          {
+            "HPD | SKYLIGHT": 49,
+            "HPD | Skylight": 1
+          },
+          {
+            "DCWP | Pawnbroker": 15,
+            "DCWP | Pawn Broker": 7
+          }
+        ],
+        "entered_late_pct": 86.1628,
+        "days_over_5pct_of_agency_rows": {
+          "2023-09-29": 0.454,
+          "2023-09-30": 0.44,
+          "2023-10-01": 0.413,
+          "2023-10-02": 0.41,
+          "2023-10-03": 0.406,
+          "2023-10-04": 0.408,
+          "2023-10-05": 0.404,
+          "2023-10-06": 0.124
+        }
+      }
+    },
+    {
+      "id": "complaint_descriptor_rare_pair",
+      "section": "categories",
+      "title": "(complaint_type, descriptor) pair seen < 5 times",
+      "rows": 363,
+      "pct": 0.0113,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 139,
+          "pct_of_agency": 0.0717
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 65,
+          "pct_of_agency": 0.0763
+        },
+        {
+          "agency": "DEP",
+          "rows": 46,
+          "pct_of_agency": 0.027
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56423560,
+          "agency": "DEP",
+          "complaint_type": "Water Maintenance",
+          "descriptor": "Fire Hydrant Running"
+        },
+        {
+          "unique_key": 57071232,
+          "agency": "TLC",
+          "complaint_type": "Taxi Licensee Complaint",
+          "descriptor": "Driver Complaint - Non Passenger"
+        },
+        {
+          "unique_key": 58114454,
+          "agency": "DEP",
+          "complaint_type": "Industrial Waste",
+          "descriptor": "Waterway-Floatables (IHC)"
+        },
+        {
+          "unique_key": 59452905,
+          "agency": "HPD",
+          "complaint_type": "Unsanitary Condition",
+          "descriptor": "Pests"
+        },
+        {
+          "unique_key": 59878438,
+          "agency": "TLC",
+          "complaint_type": "Dispatched Taxi Complaint",
+          "descriptor": "Driver Complaint - Non Passenger"
+        }
+      ],
+      "note": "",
+      "details": {
+        "pairs": 184
+      }
+    },
+    {
+      "id": "agency_name_inconsistent",
+      "section": "categories",
+      "title": "agency with more than one agency_name, or vice versa",
+      "rows": 0,
+      "pct": 0.0,
+      "top_agencies": [],
+      "examples": [],
+      "note": "a strict 1:1 code-name mapping",
+      "details": {
+        "pairs": 14
+      }
+    },
+    {
+      "id": "test_records",
+      "section": "categories",
+      "title": "Test or fake records in production data",
+      "rows": 3,
+      "pct": 0.0001,
+      "top_agencies": [
+        {
+          "agency": "DEP",
+          "rows": 2,
+          "pct_of_agency": 0.0012
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 1,
+          "pct_of_agency": 0.0012
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56588939,
+          "complaint_type": "ZTESTINT",
+          "descriptor": "ZTESTINT",
+          "city": "NEW YORK",
+          "resolution_description": "The Department of Environmental Protection (DEP) - 311 Integration Test"
+        },
+        {
+          "unique_key": 56715334,
+          "complaint_type": "ZTESTINT",
+          "descriptor": "ZTESTINT",
+          "city": "NEW YORK",
+          "resolution_description": "The Department of Environmental Protection (DEP) - 311 Integration Test"
+        },
+        {
+          "unique_key": 57124875,
+          "complaint_type": "Food Establishment",
+          "descriptor": "Letter Grading",
+          "city": "Bronx (fake)",
+          "resolution_description": "This SR was administratively closed. The issue you reported was addressed."
+        }
+      ],
+      "note": "",
+      "details": {}
+    },
+    {
+      "id": "near_duplicate_candidate",
+      "section": "duplicates",
+      "title": "Same agency/type/descriptor/borough/address as a row <= 300 s earlier",
+      "rows": 184243,
+      "pct": 5.7135,
+      "top_agencies": [
+        {
+          "agency": "NYPD",
+          "rows": 71372,
+          "pct_of_agency": 5.1254
+        },
+        {
+          "agency": "HPD",
+          "rows": 61327,
+          "pct_of_agency": 8.9275
+        },
+        {
+          "agency": "DOT",
+          "rows": 24038,
+          "pct_of_agency": 12.3941
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56417235,
+          "created_date": "2023-01-01T00:07:26.000",
+          "complaint_type": "Noise - Residential",
+          "descriptor": "Loud Music/Party",
+          "incident_address": "2071 HARING STREET",
+          "earlier_twin": 56417105,
+          "gap_s": 0.0
+        },
+        {
+          "unique_key": 57255302,
+          "created_date": "2023-04-07T19:53:25.000",
+          "complaint_type": "Noise - Helicopter",
+          "descriptor": "Other",
+          "incident_address": "711 AMSTERDAM AVENUE",
+          "earlier_twin": 57254353,
+          "gap_s": 139.0
+        },
+        {
+          "unique_key": 58262007,
+          "created_date": "2023-07-20T14:21:15.000",
+          "complaint_type": "UNSANITARY CONDITION",
+          "descriptor": "PESTS",
+          "incident_address": "2376 BRIGHAM STREET",
+          "earlier_twin": 58259386,
+          "gap_s": 0.0
+        },
+        {
+          "unique_key": 59031739,
+          "created_date": "2023-10-05T17:10:44.000",
+          "complaint_type": "PAINT/PLASTER",
+          "descriptor": "CEILING",
+          "incident_address": "41-15 46 STREET",
+          "earlier_twin": 59434797,
+          "gap_s": 151.0
+        },
+        {
+          "unique_key": 59889383,
+          "created_date": "2023-12-31T23:59:42.000",
+          "complaint_type": "Noise - Street/Sidewalk",
+          "descriptor": "Loud Music/Party",
+          "incident_address": "63-10 108 STREET",
+          "earlier_twin": 59889382,
+          "gap_s": 29.0
+        }
+      ],
+      "note": "inflates counts; many are legitimate multi-caller reports (same party, encampment, helicopter)",
+      "details": {
+        "gap": {
+          "0 s": 40642,
+          "1-60 s": 47319,
+          "61-300 s": 96282
+        },
+        "without_address": 24464
+      }
+    },
+    {
+      "id": "near_duplicate_respelled",
+      "section": "duplicates",
+      "title": "Near-duplicate whose earlier twin spells complaint_type in another case",
+      "rows": 10746,
+      "pct": 0.3332,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 10746,
+          "pct_of_agency": 1.5643
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 58471478,
+          "created_date": "2023-08-10T15:32:50.000",
+          "complaint_type": "PLUMBING",
+          "earlier_twin": 59441752,
+          "twin_complaint_type": "Plumbing",
+          "gap_s": 36.0
+        },
+        {
+          "unique_key": 58964515,
+          "created_date": "2023-09-29T19:02:46.000",
+          "complaint_type": "WATER LEAK",
+          "earlier_twin": 59459862,
+          "twin_complaint_type": "Water Leak",
+          "gap_s": 27.0
+        },
+        {
+          "unique_key": 58989953,
+          "created_date": "2023-10-02T10:25:17.000",
+          "complaint_type": "UNSANITARY CONDITION",
+          "earlier_twin": 59442320,
+          "twin_complaint_type": "Unsanitary Condition",
+          "gap_s": 152.0
+        },
+        {
+          "unique_key": 59018652,
+          "created_date": "2023-10-04T07:50:01.000",
+          "complaint_type": "PAINT/PLASTER",
+          "earlier_twin": 59441460,
+          "twin_complaint_type": "Paint/Plaster",
+          "gap_s": 78.0
+        },
+        {
+          "unique_key": 59039312,
+          "created_date": "2023-10-06T09:41:57.000",
+          "complaint_type": "GENERAL",
+          "earlier_twin": 59457135,
+          "twin_complaint_type": "General",
+          "gap_s": 184.0
+        }
+      ],
+      "note": "one request counted twice: HPD re-entered Sep/Oct requests in Title Case (back-filled, larger key)",
+      "details": {
+        "created_days": {
+          "2023-09-29": 2915,
+          "2023-10-02": 1575,
+          "2023-10-03": 1435,
+          "2023-10-04": 1347,
+          "2023-10-05": 1167
+        },
+        "twin_entered_later_pct": 98.4925
+      }
+    },
+    {
+      "id": "resolution_contradicts_status",
+      "section": "text",
+      "title": "Resolution text >= 95% associated with the other status group",
+      "rows": 699,
+      "pct": 0.0217,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 447,
+          "pct_of_agency": 0.2305
+        },
+        {
+          "agency": "HPD",
+          "rows": 118,
+          "pct_of_agency": 0.0172
+        },
+        {
+          "agency": "DPR",
+          "rows": 64,
+          "pct_of_agency": 0.0501
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56434801,
+          "status": "Pending",
+          "resolution_description": "The Department of Transportation inspected this complaint and repaired the problem."
+        },
+        {
+          "unique_key": 57091455,
+          "status": "Pending",
+          "resolution_description": "The Department of Transportation inspected this complaint and repaired the problem."
+        },
+        {
+          "unique_key": 58185068,
+          "status": "Closed",
+          "resolution_description": "NYC Parks reviewed this request and will visit the location to investigate the condition. ..."
+        },
+        {
+          "unique_key": 59415411,
+          "status": "Pending",
+          "resolution_description": "The Department of Transportation inspected this complaint and repaired the problem."
+        },
+        {
+          "unique_key": 59892078,
+          "status": "In Progress",
+          "resolution_description": "This SR was administratively closed. The issue you reported was addressed."
+        }
+      ],
+      "note": "status and resolution text tell different stories",
+      "details": {
+        "closed_with_open_text": 89,
+        "open_with_closed_text": 610,
+        "distinct_texts": 42
+      }
+    },
+    {
+      "id": "resolution_text_rare",
+      "section": "text",
+      "title": "Resolution text seen < 5 times (too rare to judge)",
+      "rows": 312,
+      "pct": 0.0097,
+      "top_agencies": [
+        {
+          "agency": "DOHMH",
+          "rows": 82,
+          "pct_of_agency": 0.0963
+        },
+        {
+          "agency": "DEP",
+          "rows": 81,
+          "pct_of_agency": 0.0476
+        },
+        {
+          "agency": "DOT",
+          "rows": 38,
+          "pct_of_agency": 0.0196
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56417170,
+          "status": "Closed",
+          "resolution_description": "The Department of Environmental Protection investigated this complaint and issued a notice..."
+        },
+        {
+          "unique_key": 57159934,
+          "status": "In Progress",
+          "resolution_description": "The Department of Sanitation (DSNY) inspected the lot and didn't find any conditions that ..."
+        },
+        {
+          "unique_key": 57882942,
+          "status": "Closed",
+          "resolution_description": "The Department of Buildings has performed an inspection of this property and verified corr..."
+        },
+        {
+          "unique_key": 58731832,
+          "status": "Closed",
+          "resolution_description": "NYC Parks has determined that this issue is not within its jurisdiction. Please contact th..."
+        },
+        {
+          "unique_key": 59890227,
+          "status": "Closed",
+          "resolution_description": "The Department of Transportation inspected the condition and temporary repairs were made t..."
+        }
+      ],
+      "note": "",
+      "details": {
+        "distinct_texts": 164
+      }
+    },
+    {
+      "id": "contact_in_template_text",
+      "section": "text",
+      "title": "E-mail/phone in a template text (>= 20 rows)",
+      "rows": 109273,
+      "pct": 3.3886,
+      "top_agencies": [
+        {
+          "agency": "DEP",
+          "rows": 56615,
+          "pct_of_agency": 33.2494
+        },
+        {
+          "agency": "DOB",
+          "rows": 30038,
+          "pct_of_agency": 29.753
+        },
+        {
+          "agency": "DSNY",
+          "rows": 6779,
+          "pct_of_agency": 2.2445
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56415422,
+          "column": "resolution_description",
+          "fragment": "tion persists, please call 311 (or 212-639-9675 if calling from a non-New York Cit"
+        },
+        {
+          "unique_key": 57368990,
+          "column": "resolution_description",
+          "fragment": "k City, please call (212) NEW-YORK (212-639-9675)."
+        },
+        {
+          "unique_key": 58213873,
+          "column": "resolution_description",
+          "fragment": "tion persists, please call 311 (or 212-639-9675 if calling from a non-New York Cit"
+        },
+        {
+          "unique_key": 58996776,
+          "column": "resolution_description",
+          "fragment": "k City, please call (212) NEW-YORK (212-639-9675)."
+        },
+        {
+          "unique_key": 59891270,
+          "column": "resolution_description",
+          "fragment": "tion persists, please call 311 (or 212-639-9675 if calling from a non-New York Cit"
+        }
+      ],
+      "note": "public office numbers: kept by the sanitiser",
+      "details": {
+        "distinct_texts": {
+          "descriptor": 0,
+          "descriptor_2": 0,
+          "resolution_description": 55
+        }
+      }
+    },
+    {
+      "id": "pii_like_free_text",
+      "section": "text",
+      "title": "E-mail/phone in a rare text (< 20 rows)",
+      "rows": 289,
+      "pct": 0.009,
+      "top_agencies": [
+        {
+          "agency": "DCWP",
+          "rows": 149,
+          "pct_of_agency": 0.712
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 81,
+          "pct_of_agency": 0.0951
+        },
+        {
+          "agency": "DEP",
+          "rows": 38,
+          "pct_of_agency": 0.0223
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56431000,
+          "column": "resolution_description",
+          "fragment": " You can get the status by calling (646) 632-6023 on weekdays between 9 AM and 5 PM."
+        },
+        {
+          "unique_key": 57307048,
+          "column": "resolution_description",
+          "fragment": "e Lottery Department. You can call (518) 388-3300."
+        },
+        {
+          "unique_key": 58275303,
+          "column": "resolution_description",
+          "fragment": "k City, please call (212) NEW-YORK (212-639-9675)."
+        },
+        {
+          "unique_key": 59144380,
+          "column": "resolution_description",
+          "fragment": "ore, contact the Port Authority at (212) 435-7000 or panynj.gov."
+        },
+        {
+          "unique_key": 59878433,
+          "column": "resolution_description",
+          "fragment": "al Communications Commission. Call (888) 225-5322 or visit fcc.gov."
+        }
+      ],
+      "note": "agency referrals to office numbers (IRS, FTC, NYS agencies); a pattern cannot tell them from personal data",
+      "details": {
+        "distinct_texts": {
+          "descriptor": 0,
+          "descriptor_2": 0,
+          "resolution_description": 47
+        },
+        "matched_rows": {
+          "(212-639-9675": 39,
+          "(888) 225-5322": 26,
+          "(646) 632-6104": 23,
+          "718 816 - 2340": 19,
+          "(212) 487-4110": 19
+        }
+      }
+    },
+    {
+      "id": "name_cue_in_free_text",
+      "section": "text",
+      "title": "Name-cue pattern ('Mr. X', 'tenant First Last', 'contact First Last')",
+      "rows": 4,
+      "pct": 0.0001,
+      "top_agencies": [
+        {
+          "agency": "DOHMH",
+          "rows": 4,
+          "pct_of_agency": 0.0047
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 58581230,
+          "column": "resolution_description",
+          "fragment": "t to National Grid. To learn more, contact National Grid at (718) 643-4050 or nationalgridu"
+        },
+        {
+          "unique_key": 58966394,
+          "column": "resolution_description",
+          "fragment": "t to National Grid. To learn more, contact National Grid at (718) 643-4050 or nationalgridu"
+        },
+        {
+          "unique_key": 59724941,
+          "column": "resolution_description",
+          "fragment": "t to National Grid. To learn more, contact National Grid at (718) 643-4050 or nationalgridu"
+        },
+        {
+          "unique_key": 59789919,
+          "column": "resolution_description",
+          "fragment": "aint to Con Edison. To learn more, contact Con Ed at (888) 752-6633 or coned.com/con"
+        }
+      ],
+      "note": "matches name organisations ('contact National Grid'), not people",
+      "details": {}
+    },
+    {
+      "id": "mojibake",
+      "section": "text",
+      "title": "Encoding damage (mojibake): UTF-8 read as Latin-1, e.g. '\\xe2\\x80\\x99' for an apostrophe",
+      "rows": 136153,
+      "pct": 4.2222,
+      "top_agencies": [
+        {
+          "agency": "DOT",
+          "rows": 65113,
+          "pct_of_agency": 33.5726
+        },
+        {
+          "agency": "EDC",
+          "rows": 44193,
+          "pct_of_agency": 74.7425
+        },
+        {
+          "agency": "DSNY",
+          "rows": 12294,
+          "pct_of_agency": 4.0705
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56416396,
+          "column": "resolution_description",
+          "fragment": "The Health Department\\xe2\\x80\\x99s Office of Environmental Investig"
+        },
+        {
+          "unique_key": 57161084,
+          "column": "resolution_description",
+          "fragment": "pany departing from a NYC heliport.\\xc2\\xa0 Instead, it was most likely a law"
+        },
+        {
+          "unique_key": 57827192,
+          "column": "resolution_description",
+          "fragment": "Under NYC Parks\\xe2\\x80\\x99 Tree Risk Management Program, wor"
+        },
+        {
+          "unique_key": 58793239,
+          "column": "resolution_description",
+          "fragment": "n the Department of Transportation\\xe2\\x80\\x99s website. Please click the \\xe2\\x80\\x9cLea"
+        },
+        {
+          "unique_key": 59887573,
+          "column": "resolution_description",
+          "fragment": "pany departing from a NYC heliport.\\xc2\\xa0 Instead, it was most likely a law"
+        }
+      ],
+      "note": "garbled text on screen; one template can arrive both ways and count as two texts",
+      "details": {
+        "distinct_texts": {
+          "resolution_description": 15
+        },
+        "texts_also_delivered_correctly": 2,
+        "rows_of_correct_copies": 8030
+      }
+    },
+    {
+      "id": "truncated_text",
+      "section": "text",
+      "title": "Resolution text cut mid-sentence at a field-length limit (255 or 500 chars)",
+      "rows": 28,
+      "pct": 0.0009,
+      "top_agencies": [
+        {
+          "agency": "HPD",
+          "rows": 24,
+          "pct_of_agency": 0.0035
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 4,
+          "pct_of_agency": 0.0047
+        }
+      ],
+      "examples": [
+        {
+          "unique_key": 56625899,
+          "length": 500,
+          "ending": "tart a housing court case, visit HPD's w"
+        },
+        {
+          "unique_key": 57446946,
+          "length": 255,
+          "ending": "12) 676-1520 between the hours of 9:00 A"
+        },
+        {
+          "unique_key": 59306691,
+          "length": 500,
+          "ending": "tart a housing court case, visit HPD's w"
+        },
+        {
+          "unique_key": 59752723,
+          "length": 500,
+          "ending": "tart a housing court case, visit HPD's w"
+        },
+        {
+          "unique_key": 59786732,
+          "length": 500,
+          "ending": "tart a housing court case, visit HPD's w"
+        }
+      ],
+      "note": "",
+      "details": {
+        "distinct_texts": 3
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": "rows_per_month",
+      "section": "volume",
+      "title": "Rows per created month vs the download manifest (median day: 8,869 rows)",
+      "rows": [
+        {
+          "month": "2023-01",
+          "rows": 242173,
+          "manifest_rows": 242173,
+          "difference": 0,
+          "busiest_day": "2023-01-17",
+          "busiest_day_rows": 9287
+        },
+        {
+          "month": "2023-02",
+          "rows": 225002,
+          "manifest_rows": 225002,
+          "difference": 0,
+          "busiest_day": "2023-02-04",
+          "busiest_day_rows": 10925
+        },
+        {
+          "month": "2023-03",
+          "rows": 251716,
+          "manifest_rows": 251716,
+          "difference": 0,
+          "busiest_day": "2023-03-22",
+          "busiest_day_rows": 10070
+        },
+        {
+          "month": "2023-04",
+          "rows": 247496,
+          "manifest_rows": 247496,
+          "difference": 0,
+          "busiest_day": "2023-04-25",
+          "busiest_day_rows": 9567
+        },
+        {
+          "month": "2023-05",
+          "rows": 280932,
+          "manifest_rows": 280932,
+          "difference": 0,
+          "busiest_day": "2023-05-01",
+          "busiest_day_rows": 10959
+        },
+        {
+          "month": "2023-06",
+          "rows": 267168,
+          "manifest_rows": 267168,
+          "difference": 0,
+          "busiest_day": "2023-06-02",
+          "busiest_day_rows": 10044
+        },
+        {
+          "month": "2023-07",
+          "rows": 289330,
+          "manifest_rows": 289330,
+          "difference": 0,
+          "busiest_day": "2023-07-05",
+          "busiest_day_rows": 11643
+        },
+        {
+          "month": "2023-08",
+          "rows": 282757,
+          "manifest_rows": 282757,
+          "difference": 0,
+          "busiest_day": "2023-08-18",
+          "busiest_day_rows": 9991
+        },
+        {
+          "month": "2023-09",
+          "rows": 283517,
+          "manifest_rows": 283517,
+          "difference": 0,
+          "busiest_day": "2023-09-29",
+          "busiest_day_rows": 17962
+        },
+        {
+          "month": "2023-10",
+          "rows": 302769,
+          "manifest_rows": 302769,
+          "difference": 0,
+          "busiest_day": "2023-10-02",
+          "busiest_day_rows": 13403
+        },
+        {
+          "month": "2023-11",
+          "rows": 280046,
+          "manifest_rows": 280046,
+          "difference": 0,
+          "busiest_day": "2023-11-29",
+          "busiest_day_rows": 11502
+        },
+        {
+          "month": "2023-12",
+          "rows": 271817,
+          "manifest_rows": 271817,
+          "difference": 0,
+          "busiest_day": "2023-12-18",
+          "busiest_day_rows": 11259
+        }
+      ]
+    },
+    {
+      "id": "nulls_and_placeholders",
+      "section": "completeness",
+      "title": "Nulls and placeholder values per column (numeric columns: raw values that are not numbers)",
+      "rows": [
+        {
+          "column": "unique_key",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "not_numeric_rows": 0
+        },
+        {
+          "column": "created_date",
+          "null_rows": 0,
+          "null_pct": 0.0
+        },
+        {
+          "column": "closed_date",
+          "null_rows": 61862,
+          "null_pct": 1.9184
+        },
+        {
+          "column": "agency",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 0,
+          "placeholder_pct": 0.0,
+          "placeholder_values": {}
+        },
+        {
+          "column": "agency_name",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 0,
+          "placeholder_pct": 0.0,
+          "placeholder_values": {}
+        },
+        {
+          "column": "complaint_type",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 0,
+          "placeholder_pct": 0.0,
+          "placeholder_values": {}
+        },
+        {
+          "column": "descriptor",
+          "null_rows": 39318,
+          "null_pct": 1.2193,
+          "placeholder_rows": 58550,
+          "placeholder_pct": 1.8157,
+          "placeholder_values": {
+            "N/A": 58550
+          }
+        },
+        {
+          "column": "descriptor_2",
+          "null_rows": 1701574,
+          "null_pct": 52.7665,
+          "placeholder_rows": 253032,
+          "placeholder_pct": 7.8466,
+          "placeholder_values": {
+            "N/A": 253032
+          }
+        },
+        {
+          "column": "location_type",
+          "null_rows": 383529,
+          "null_pct": 11.8934,
+          "placeholder_rows": 508,
+          "placeholder_pct": 0.0158,
+          "placeholder_values": {
+            "N/A": 508
+          }
+        },
+        {
+          "column": "incident_zip",
+          "null_rows": 38520,
+          "null_pct": 1.1945,
+          "placeholder_rows": 4,
+          "placeholder_pct": 0.0001,
+          "placeholder_values": {
+            "00000": 1,
+            "N/A": 1,
+            "na": 1,
+            "NA": 1
+          }
+        },
+        {
+          "column": "incident_address",
+          "null_rows": 123349,
+          "null_pct": 3.8251,
+          "placeholder_rows": 7,
+          "placeholder_pct": 0.0002,
+          "placeholder_values": {
+            "N/A N/A": 2,
+            "00": 1,
+            "NONE NONE": 1,
+            "na na": 1
+          }
+        },
+        {
+          "column": "street_name",
+          "null_rows": 123425,
+          "null_pct": 3.8275,
+          "placeholder_rows": 9,
+          "placeholder_pct": 0.0003,
+          "placeholder_values": {
+            "N/A": 3,
+            "n/a": 2,
+            "00": 1,
+            "NONE": 1
+          }
+        },
+        {
+          "column": "city",
+          "null_rows": 163864,
+          "null_pct": 5.0815,
+          "placeholder_rows": 3,
+          "placeholder_pct": 0.0001,
+          "placeholder_values": {
+            "na": 1,
+            "unknown": 1,
+            "N/A": 1
+          }
+        },
+        {
+          "column": "status",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 1414,
+          "placeholder_pct": 0.0438,
+          "placeholder_values": {
+            "Unspecified": 1414
+          }
+        },
+        {
+          "column": "due_date",
+          "null_rows": 3212246,
+          "null_pct": 99.6131
+        },
+        {
+          "column": "resolution_description",
+          "null_rows": 46058,
+          "null_pct": 1.4283,
+          "placeholder_rows": 13059,
+          "placeholder_pct": 0.405,
+          "placeholder_values": {
+            "N/A": 13059
+          }
+        },
+        {
+          "column": "resolution_action_updated_date",
+          "null_rows": 22674,
+          "null_pct": 0.7031
+        },
+        {
+          "column": "community_board",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 48937,
+          "placeholder_pct": 1.5176,
+          "placeholder_values": {
+            "Unspecified MANHATTAN": 16360,
+            "Unspecified QUEENS": 11226,
+            "Unspecified BROOKLYN": 9828,
+            "0 Unspecified": 5994
+          }
+        },
+        {
+          "column": "borough",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 5994,
+          "placeholder_pct": 0.1859,
+          "placeholder_values": {
+            "Unspecified": 5994
+          }
+        },
+        {
+          "column": "x_coordinate_state_plane",
+          "null_rows": 48493,
+          "null_pct": 1.5038,
+          "not_numeric_rows": 0
+        },
+        {
+          "column": "y_coordinate_state_plane",
+          "null_rows": 47839,
+          "null_pct": 1.4835,
+          "not_numeric_rows": 0
+        },
+        {
+          "column": "open_data_channel_type",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 253317,
+          "placeholder_pct": 7.8555,
+          "placeholder_values": {
+            "UNKNOWN": 253317
+          }
+        },
+        {
+          "column": "park_borough",
+          "null_rows": 0,
+          "null_pct": 0.0,
+          "placeholder_rows": 5994,
+          "placeholder_pct": 0.1859,
+          "placeholder_values": {
+            "Unspecified": 5994
+          }
+        },
+        {
+          "column": "latitude",
+          "null_rows": 48579,
+          "null_pct": 1.5065,
+          "not_numeric_rows": 0
+        },
+        {
+          "column": "longitude",
+          "null_rows": 48579,
+          "null_pct": 1.5065,
+          "not_numeric_rows": 0
+        }
+      ]
+    },
+    {
+      "id": "timestamp_precision",
+      "section": "dates",
+      "title": "Timestamp precision by agency, % of non-null values (uniform times: midnight 0.001 %, whole minute 1.7 %)",
+      "rows": [
+        {
+          "agency": "NYPD",
+          "rows": 1392519,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.65,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "HPD",
+          "rows": 686947,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.65,
+          "closed_midnight_pct": 1.56,
+          "updated_midnight_pct": 100.0
+        },
+        {
+          "agency": "DSNY",
+          "rows": 302029,
+          "created_midnight_pct": 0.01,
+          "created_whole_minute_pct": 21.14,
+          "closed_midnight_pct": 2.94,
+          "updated_midnight_pct": 0.03
+        },
+        {
+          "agency": "DOT",
+          "rows": 193947,
+          "created_midnight_pct": 0.01,
+          "created_whole_minute_pct": 39.41,
+          "closed_midnight_pct": 0.9,
+          "updated_midnight_pct": 1.01
+        },
+        {
+          "agency": "DEP",
+          "rows": 170274,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 98.13,
+          "closed_midnight_pct": 0.69,
+          "updated_midnight_pct": 0.72
+        },
+        {
+          "agency": "DPR",
+          "rows": 127794,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.72,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "DOB",
+          "rows": 100958,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.67,
+          "closed_midnight_pct": 87.46,
+          "updated_midnight_pct": 100.0
+        },
+        {
+          "agency": "DOHMH",
+          "rows": 85189,
+          "created_midnight_pct": 2.77,
+          "created_whole_minute_pct": 4.31,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "EDC",
+          "rows": 59127,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.64,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "DHS",
+          "rows": 47627,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.7,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "TLC",
+          "rows": 35814,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.82,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "DCWP",
+          "rows": 20927,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.63,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.02
+        },
+        {
+          "agency": "DOE",
+          "rows": 1399,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.57,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        },
+        {
+          "agency": "OTI",
+          "rows": 172,
+          "created_midnight_pct": 0.0,
+          "created_whole_minute_pct": 1.16,
+          "closed_midnight_pct": 0.0,
+          "updated_midnight_pct": 0.0
+        }
+      ]
+    },
+    {
+      "id": "status_vs_closed_date",
+      "section": "status",
+      "title": "Status vs presence of closed_date",
+      "rows": [
+        {
+          "status": "Assigned",
+          "without_closed_date": 542,
+          "with_closed_date": 905
+        },
+        {
+          "status": "Closed",
+          "without_closed_date": 20251,
+          "with_closed_date": 3155987
+        },
+        {
+          "status": "In Progress",
+          "without_closed_date": 38297,
+          "with_closed_date": 8
+        },
+        {
+          "status": "Open",
+          "without_closed_date": 1330,
+          "with_closed_date": 738
+        },
+        {
+          "status": "Pending",
+          "without_closed_date": 977,
+          "with_closed_date": 3826
+        },
+        {
+          "status": "Started",
+          "without_closed_date": 432,
+          "with_closed_date": 16
+        },
+        {
+          "status": "Unspecified",
+          "without_closed_date": 33,
+          "with_closed_date": 1381
+        }
+      ]
+    },
+    {
+      "id": "complaint_type_case_style",
+      "section": "categories",
+      "title": "complaint_type case style by agency (distinct types)",
+      "rows": [
+        {
+          "agency": "DCWP",
+          "types": 1,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DEP",
+          "types": 16,
+          "upper_case_types": 2,
+          "upper_case_rows": 3
+        },
+        {
+          "agency": "DHS",
+          "types": 2,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DOB",
+          "types": 27,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DOE",
+          "types": 1,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DOHMH",
+          "types": 42,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DOT",
+          "types": 28,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DPR",
+          "types": 11,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "DSNY",
+          "types": 29,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "EDC",
+          "types": 1,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "HPD",
+          "types": 25,
+          "upper_case_types": 13,
+          "upper_case_rows": 673335
+        },
+        {
+          "agency": "NYPD",
+          "types": 23,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "OTI",
+          "types": 2,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        },
+        {
+          "agency": "TLC",
+          "types": 13,
+          "upper_case_types": 0,
+          "upper_case_rows": 0
+        }
+      ]
+    },
+    {
+      "id": "case_differs_across_agencies",
+      "section": "categories",
+      "title": "Same name, different case in different agencies (rows)",
+      "rows": [
+        {
+          "column": "complaint_type",
+          "spellings": {
+            "HPD PLUMBING": 61344,
+            "DOB Plumbing": 3274,
+            "HPD Plumbing": 1525
+          }
+        },
+        {
+          "column": "complaint_type",
+          "spellings": {
+            "DOB Elevator": 18406,
+            "HPD ELEVATOR": 1803
+          }
+        },
+        {
+          "column": "descriptor",
+          "spellings": {
+            "HPD DOOR": 22701,
+            "HPD Door": 573,
+            "DOT Door": 19
+          }
+        },
+        {
+          "column": "descriptor",
+          "spellings": {
+            "HPD LIGHTING": 4271,
+            "DOT Lighting": 183,
+            "DOHMH Lighting": 5
+          }
+        },
+        {
+          "column": "descriptor",
+          "spellings": {
+            "HPD SEWAGE": 3187,
+            "DOHMH Sewage": 30,
+            "HPD Sewage": 2
+          }
+        },
+        {
+          "column": "location_type",
+          "spellings": {
+            "HPD RESIDENTIAL BUILDING": 673335,
+            "DOHMH Residential Building": 3602,
+            "NYPD Residential Building": 355
+          }
+        }
+      ]
+    },
+    {
+      "id": "near_duplicates_by_complaint_type",
+      "section": "duplicates",
+      "title": "Near-duplicate candidates by complaint type (top 10)",
+      "rows": [
+        {
+          "complaint_type": "Illegal Parking",
+          "candidate_rows": 18841,
+          "rows": 476809,
+          "candidate_pct": 3.95
+        },
+        {
+          "complaint_type": "UNSANITARY CONDITION",
+          "candidate_rows": 18008,
+          "rows": 115439,
+          "candidate_pct": 15.6
+        },
+        {
+          "complaint_type": "Noise - Residential",
+          "candidate_rows": 16220,
+          "rows": 298453,
+          "candidate_pct": 5.43
+        },
+        {
+          "complaint_type": "HEAT/HOT WATER",
+          "candidate_rows": 13514,
+          "rows": 229509,
+          "candidate_pct": 5.89
+        },
+        {
+          "complaint_type": "Noise - Helicopter",
+          "candidate_rows": 9606,
+          "rows": 59127,
+          "candidate_pct": 16.25
+        },
+        {
+          "complaint_type": "Street Light Condition",
+          "candidate_rows": 9410,
+          "rows": 34543,
+          "candidate_pct": 27.24
+        },
+        {
+          "complaint_type": "Noise - Street/Sidewalk",
+          "candidate_rows": 8851,
+          "rows": 147449,
+          "candidate_pct": 6.0
+        },
+        {
+          "complaint_type": "PAINT/PLASTER",
+          "candidate_rows": 8659,
+          "rows": 59207,
+          "candidate_pct": 14.62
+        },
+        {
+          "complaint_type": "Street Condition",
+          "candidate_rows": 8580,
+          "rows": 64093,
+          "candidate_pct": 13.39
+        },
+        {
+          "complaint_type": "Drug Activity",
+          "candidate_rows": 7203,
+          "rows": 19192,
+          "candidate_pct": 37.53
+        }
+      ]
+    }
+  ],
+  "sanitizer": {
+    "definitions": {
+      "dup_unique_key": "unique_key already seen earlier (all but the first occurrence)",
+      "exact_duplicate_row": "identical to an earlier row in every column (all but the first)",
+      "bad_datetime_format": "a non-null date column value does not match the source ISO format or does not parse",
+      "closed_before_created": "parsed closed_date is earlier than parsed created_date",
+      "latlon_outside_nyc": "non-null latitude or longitude outside the config NYC box (includes swapped pairs)",
+      "latlon_half_missing": "exactly one of latitude / longitude is null",
+      "zip_invalid_format": "non-null incident_zip that is not exactly 5 digits",
+      "zip_borough_rare_pair": "5-digit ZIP and a borough in config.BOROUGHS whose pair is < 2% of that ZIP's rows (full year)",
+      "complaint_descriptor_rare_pair": "(complaint_type, descriptor) pair seen < 5 times in the full year (a null descriptor counts as a value)",
+      "resolution_status_conflict": "status is open or closed and its resolution text is seen >= 20 times with >= 95% of its rows in the other status group, or seen < 5 times",
+      "pii_like_free_text": "a free-text column holds an e-mail or phone-like number and that exact text occurs < 20 times (frequent templates with public office numbers are kept)",
+      "near_duplicate_candidate": "same agency, complaint_type and descriptor (any case), borough and normalised incident_address as an earlier row created <= 300 s before (all but the first)"
+    },
+    "removed_by_issue": {
+      "dup_unique_key": 0,
+      "exact_duplicate_row": 0,
+      "bad_datetime_format": 0,
+      "closed_before_created": 4313,
+      "latlon_outside_nyc": 0,
+      "latlon_half_missing": 0,
+      "zip_invalid_format": 3,
+      "zip_borough_rare_pair": 30,
+      "complaint_descriptor_rare_pair": 363,
+      "resolution_status_conflict": 1011,
+      "pii_like_free_text": 289,
+      "near_duplicate_candidate": 184243
+    },
+    "rows_removed": 187947,
+    "rows_removed_pct": 5.8283,
+    "clean_rows": 3036776,
+    "reference_clean_rows": 1972912,
+    "evaluation_clean_rows": 1063864
+  }
+}

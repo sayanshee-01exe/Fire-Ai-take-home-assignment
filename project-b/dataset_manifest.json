@@ -1,0 +1,278 @@
+{
+  "description": "The NYC 311 snapshot every number in this repository was computed from. Verified by project_b/data/snapshot.py before any step reads it.",
+  "dataset": "erm2-nwe9",
+  "dataset_name": "311 Service Requests from 2020 to Present",
+  "publisher": "NYC Open Data (City of New York)",
+  "landing_page": "https://data.cityofnewyork.us/d/erm2-nwe9",
+  "source": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv",
+  "api": {
+    "rows_endpoint": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv",
+    "count_endpoint": "https://data.cityofnewyork.us/resource/erm2-nwe9.json",
+    "metadata_endpoint": "https://data.cityofnewyork.us/api/views/erm2-nwe9.json",
+    "request": "one query per created month, paged until a page is shorter than $limit",
+    "parameters": {
+      "$select": "unique_key,created_date,closed_date,agency,agency_name,complaint_type,descriptor,descriptor_2,location_type,incident_zip,incident_address,street_name,city,status,due_date,resolution_description,resolution_action_updated_date,community_board,borough,x_coordinate_state_plane,y_coordinate_state_plane,open_data_channel_type,park_borough,latitude,longitude",
+      "$where": "created_date >= '<month start>' AND created_date < '<next month start>'",
+      "$order": "unique_key",
+      "$limit": 50000,
+      "$offset": "0, 50000, 100000, ..."
+    },
+    "parsing": "CSV read with every value as a string; only empty fields become null (keep_default_na=False)"
+  },
+  "filter": "created_date >= '2023-01-01T00:00:00' AND created_date < '2024-01-01T00:00:00'",
+  "date_filter": {
+    "column": "created_date",
+    "from_inclusive": "2023-01-01T00:00:00",
+    "to_exclusive": "2024-01-01T00:00:00"
+  },
+  "downloaded_at_utc": "2026-11-20T15:10:13+00:00",
+  "source_rows_updated_at_utc": "2026-11-20T02:53:20+00:00",
+  "months": [
+    {
+      "month": 1,
+      "expected": 242173,
+      "downloaded": 242173,
+      "cached": false
+    },
+    {
+      "month": 2,
+      "expected": 225002,
+      "downloaded": 225002,
+      "cached": false
+    },
+    {
+      "month": 3,
+      "expected": 251716,
+      "downloaded": 251716,
+      "cached": false
+    },
+    {
+      "month": 4,
+      "expected": 247496,
+      "downloaded": 247496,
+      "cached": false
+    },
+    {
+      "month": 5,
+      "expected": 280932,
+      "downloaded": 280932,
+      "cached": false
+    },
+    {
+      "month": 6,
+      "expected": 267168,
+      "downloaded": 267168,
+      "cached": false
+    },
+    {
+      "month": 7,
+      "expected": 289330,
+      "downloaded": 289330,
+      "cached": false
+    },
+    {
+      "month": 8,
+      "expected": 282757,
+      "downloaded": 282757,
+      "cached": false
+    },
+    {
+      "month": 9,
+      "expected": 283517,
+      "downloaded": 283517,
+      "cached": false
+    },
+    {
+      "month": 10,
+      "expected": 302769,
+      "downloaded": 302769,
+      "cached": false
+    },
+    {
+      "month": 11,
+      "expected": 280046,
+      "downloaded": 280046,
+      "cached": false
+    },
+    {
+      "month": 12,
+      "expected": 271817,
+      "downloaded": 271817,
+      "cached": false
+    }
+  ],
+  "total_rows": 3224723,
+  "columns": [
+    "unique_key",
+    "created_date",
+    "closed_date",
+    "agency",
+    "agency_name",
+    "complaint_type",
+    "descriptor",
+    "descriptor_2",
+    "location_type",
+    "incident_zip",
+    "incident_address",
+    "street_name",
+    "city",
+    "status",
+    "due_date",
+    "resolution_description",
+    "resolution_action_updated_date",
+    "community_board",
+    "borough",
+    "x_coordinate_state_plane",
+    "y_coordinate_state_plane",
+    "open_data_channel_type",
+    "park_borough",
+    "latitude",
+    "longitude"
+  ],
+  "sha256": "8778dcb46887f41090756fd7a603b5e8217d0e657858b842b01e0e8c8251ce28",
+  "file": {
+    "path": "data/raw/nyc311_2023.parquet",
+    "filename": "nyc311_2023.parquet",
+    "size_bytes": 150018904,
+    "sha256": "8778dcb46887f41090756fd7a603b5e8217d0e657858b842b01e0e8c8251ce28",
+    "row_count": 3224723,
+    "row_groups": 4,
+    "format": "Apache Parquet, zstd compression",
+    "written_by": "parquet-cpp-arrow version 24.0.0; pandas 3.0.1",
+    "row_order": "created_date, then unique_key"
+  },
+  "schema": [
+    {
+      "name": "unique_key",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "created_date",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "closed_date",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "agency",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "agency_name",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "complaint_type",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "descriptor",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "descriptor_2",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "location_type",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "incident_zip",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "incident_address",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "street_name",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "city",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "status",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "due_date",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "resolution_description",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "resolution_action_updated_date",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "community_board",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "borough",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "x_coordinate_state_plane",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "y_coordinate_state_plane",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "open_data_channel_type",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "park_borough",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "latitude",
+      "type": "large_string",
+      "nullable": true
+    },
+    {
+      "name": "longitude",
+      "type": "large_string",
+      "nullable": true
+    }
+  ],
+  "how_to_obtain": [
+    "Get the exact file from the repository's release asset (README.md, section 'Dataset snapshot'), e.g.",
+    "`gh release download data-snapshot-2023 --pattern nyc311_2023.parquet --dir data/raw`, then run again.",
+    "`python -m project_b --download-fresh` downloads the live dataset from NYC Open Data instead;",
+    "it is checked against this manifest too and will most likely differ, because the source is updated daily."
+  ],
+  "note": "The source is live; rows from 2023 can still be updated, so a later re-download may differ slightly."
+}

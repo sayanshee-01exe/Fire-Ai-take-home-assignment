@@ -1,0 +1,5655 @@
+{
+  "settings": {
+    "seed": 2023,
+    "injection_rate": 0.02,
+    "budget": {
+      "n_corrupted": 20,
+      "n_clean": 20,
+      "llm_n_batches": 8,
+      "llm_rows_injected": 100,
+      "llm_rows_clean": 100,
+      "llm_windows_per_batch": 3,
+      "llm_repeats": 3,
+      "sweep_n_batches": 5,
+      "batch_size": 5000
+    },
+    "n_eval_batches": 212,
+    "llm_model": "gemini-3.5-flash-lite",
+    "llm_prices_as_of": "2026-11-20, Gemini Developer API pricing page (Standard tier, text)",
+    "free_tier_requests_per_day": 500,
+    "sanitize": {
+      "rows_in": 3224723,
+      "rows_kept": 3036776,
+      "flagged_per_issue": {
+        "dup_unique_key": 0,
+        "exact_duplicate_row": 0,
+        "bad_datetime_format": 0,
+        "closed_before_created": 4313,
+        "latlon_outside_nyc": 0,
+        "latlon_half_missing": 0,
+        "zip_invalid_format": 3,
+        "zip_borough_rare_pair": 30,
+        "complaint_descriptor_rare_pair": 363,
+        "resolution_status_conflict": 1011,
+        "pii_like_free_text": 289,
+        "near_duplicate_candidate": 184243
+      }
+    }
+  },
+  "detectors": [
+    {
+      "problem": "a",
+      "level": "batch",
+      "family": "rule",
+      "detector": "rule_schema_columns",
+      "description": "Compares the header with config.COLUMNS: reports missing and unexpected columns and pairs a missing with an unexpected column as a likely rename when their names are similar (difflib >= 0.6).",
+      "fit_s": 0.0019177000503987074,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 27701140.580690153,
+      "cost_per_million_rows": {
+        "usd": 5.650486046862271e-07,
+        "compute_usd": 5.650486046862271e-07,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "a",
+      "level": "batch",
+      "family": "stat",
+      "detector": "stat_column_profile_match",
+      "description": "Recognises columns by a content profile learned on reference batches (dtype kind, null rate, distinct ratio, mean length, numeric share, top values): pairs each missing column with the unexpected column carrying its profile and flags a present column whose profile no longer matches.",
+      "fit_s": 11.4108203999931,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 49805.86040313676,
+      "cost_per_million_rows": {
+        "usd": 0.0003044449236121081,
+        "compute_usd": 0.0003044449236121081,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "a",
+      "level": "batch",
+      "family": "llm",
+      "detector": "llm_schema_review",
+      "description": "Shows the model the contract (names + dtypes), the received header + dtypes and 3 sample rows; asks whether a column was renamed or dropped.",
+      "fit_s": 0.0006025999318808317,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 0.75,
+        "ci": [
+          0.40927543031016883,
+          0.9285207872478909
+        ],
+        "k": 6,
+        "n": 8
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.32440756488388023
+        ],
+        "k": 0,
+        "n": 8
+      },
+      "detection": {
+        "value": 0.75,
+        "ci": [
+          0.40927543031016883,
+          0.9285207872478909
+        ],
+        "k": 6,
+        "n": 8
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.6096657120978346,
+          1.0
+        ],
+        "k": 6,
+        "n": 6
+      },
+      "rows_per_s": 2827.8336539743245,
+      "llm_throughput": {
+        "rows_per_call": 5000.0,
+        "median_latency_s": 1.7681379500427283,
+        "rows_per_s": 2827.8336539743245,
+        "free_tier_rows_per_day": 2500000.0
+      },
+      "llm_usage": {
+        "llm_calls": 16,
+        "llm_cached_calls": 0,
+        "input_tokens": 23169,
+        "output_tokens": 836,
+        "llm_latency_s": 29.59232140018139
+      },
+      "cost_per_million_rows": {
+        "usd": 0.11300875,
+        "compute_usd": 0.0,
+        "llm_usd": 0.11300875,
+        "note": null
+      },
+      "clarity": {
+        "mean": 4.0,
+        "n": 6
+      },
+      "grounding": {
+        "value": null,
+        "ci": null,
+        "k": 0,
+        "n": 0
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.20654931437723745,
+          1.0
+        ],
+        "k": 1,
+        "n": 1
+      }
+    },
+    {
+      "problem": "b",
+      "level": "batch",
+      "family": "rule",
+      "detector": "rule_dtype_contract",
+      "description": "Compares each present column's dtype kind (integer / float / string) with config.FEED_DTYPES and reports observed vs expected dtype with example values and their Python types.",
+      "fit_s": 0.0005029999883845448,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 1753096.7995930181,
+      "cost_per_million_rows": {
+        "usd": 7.450673632168522e-06,
+        "compute_usd": 7.450673632168522e-06,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "b",
+      "level": "batch",
+      "family": "stat",
+      "detector": "stat_value_type_profile",
+      "description": "Learns per column the share of non-null values that are numbers, integer-like text, decimal-like text, other text or other objects; flags a column whose mix moves further from the reference than reference batches do (catches partial and value-level type drift).",
+      "fit_s": 3.026086200028658,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 233572.88543881365,
+      "cost_per_million_rows": {
+        "usd": 5.951050693208042e-05,
+        "compute_usd": 5.951050693208042e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "b",
+      "level": "batch",
+      "family": "llm",
+      "detector": "llm_type_review",
+      "description": "Shows the model contract dtypes vs received dtypes with 3 sample rows in Python repr; asks whether a column's type changed.",
+      "fit_s": 0.0014089999021962285,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.6755924351161198,
+          1.0
+        ],
+        "k": 8,
+        "n": 8
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.32440756488388023
+        ],
+        "k": 0,
+        "n": 8
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.6755924351161198,
+          1.0
+        ],
+        "k": 8,
+        "n": 8
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.6755924351161198,
+          1.0
+        ],
+        "k": 8,
+        "n": 8
+      },
+      "rows_per_s": 2731.2741928597197,
+      "llm_throughput": {
+        "rows_per_call": 5000.0,
+        "median_latency_s": 1.8306474000564776,
+        "rows_per_s": 2731.2741928597197,
+        "free_tier_rows_per_day": 2500000.0
+      },
+      "llm_usage": {
+        "llm_calls": 16,
+        "llm_cached_calls": 0,
+        "input_tokens": 23260,
+        "output_tokens": 1002,
+        "llm_latency_s": 29.561554100131616
+      },
+      "cost_per_million_rows": {
+        "usd": 0.1185375,
+        "compute_usd": 0.0,
+        "llm_usd": 0.1185375,
+        "note": null
+      },
+      "clarity": {
+        "mean": 4.0,
+        "n": 8
+      },
+      "grounding": {
+        "value": null,
+        "ci": null,
+        "k": 0,
+        "n": 0
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.20654931437723745,
+          1.0
+        ],
+        "k": 1,
+        "n": 1
+      }
+    },
+    {
+      "problem": "c",
+      "level": "batch",
+      "family": "rule",
+      "detector": "rule_datetime_format",
+      "description": "Every non-null value of each date column must match SOURCE_DATETIME_REGEX and parse with SOURCE_DATETIME_FORMAT; flags non-conforming rows and reports first position, count, example and a guessed format.",
+      "fit_s": 0.0010785000631585717,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 141835.54028085683,
+      "cost_per_million_rows": {
+        "usd": 0.0001359573750071124,
+        "compute_usd": 0.0001359573750071124,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "c",
+      "level": "batch",
+      "family": "stat",
+      "detector": "stat_datetime_shape_shift",
+      "description": "Flags date values whose character shape (digit->9, letter->A) is rare in the reference or whose usual shape hides an impossible date, and created_dates more than 2 days off the batch's arrival-order timeline (day/month swaps keep the ISO shape); the batch alerts when the flagged share exceeds a calibrated threshold.",
+      "fit_s": 2.3616585000418127,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 91147.78565912868,
+      "cost_per_million_rows": {
+        "usd": 0.00017578483331211225,
+        "compute_usd": 0.00017578483331211225,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "c",
+      "level": "batch",
+      "family": "llm",
+      "detector": "llm_datetime_review",
+      "description": "Shows the model 40 evenly spaced rows in arrival order (position, created_date, closed_date); asks whether and where the date format changes.",
+      "fit_s": 0.0005816000048071146,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.6755924351161198,
+          1.0
+        ],
+        "k": 8,
+        "n": 8
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.32440756488388023
+        ],
+        "k": 0,
+        "n": 8
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.6755924351161198,
+          1.0
+        ],
+        "k": 8,
+        "n": 8
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.6755924351161198,
+          1.0
+        ],
+        "k": 8,
+        "n": 8
+      },
+      "rows_per_s": 1889.0469055352944,
+      "llm_throughput": {
+        "rows_per_call": 5000.0,
+        "median_latency_s": 2.646837400039658,
+        "rows_per_s": 1889.0469055352944,
+        "free_tier_rows_per_day": 2500000.0
+      },
+      "llm_usage": {
+        "llm_calls": 16,
+        "llm_cached_calls": 0,
+        "input_tokens": 39721,
+        "output_tokens": 9331,
+        "llm_latency_s": 44.433763100067154
+      },
+      "cost_per_million_rows": {
+        "usd": 0.44054750000000004,
+        "compute_usd": 0.0,
+        "llm_usd": 0.44054750000000004,
+        "note": null
+      },
+      "clarity": {
+        "mean": 3.75,
+        "n": 8
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9762640620723142,
+          1.0
+        ],
+        "k": 158,
+        "n": 158
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.20654931437723745,
+          1.0
+        ],
+        "k": 1,
+        "n": 1
+      }
+    },
+    {
+      "problem": "d",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_nyc_bbox",
+      "description": "Flags rows whose latitude/longitude lie outside the NYC bounding box; says 'swapped' when the reversed pair is inside.",
+      "fit_s": 0.0004045000532642007,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          3.841311258303963e-05
+        ],
+        "k": 0,
+        "n": 100000
+      },
+      "precision_at_rate": 1.0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "rows_per_s": 5585090.206349072,
+      "cost_per_million_rows": {
+        "usd": 2.74437501502689e-06,
+        "compute_usd": 2.74437501502689e-06,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "d",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_coordinate_outlier",
+      "description": "Distance between lat/lon and the point implied by the state-plane x/y (affine map fitted on reference), or a robust median/MAD z-score of lat/lon when x/y are missing; thresholds calibrated to TARGET_ROW_FPR.",
+      "fit_s": 1.2223041000543162,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00068,
+        "ci": [
+          0.0005364811931075771,
+          0.0008618796776423499
+        ],
+        "k": 68,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9610764055742431,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.9,
+        "ci": [
+          0.6989663547715128,
+          0.9721335187862319
+        ],
+        "k": 18,
+        "n": 20
+      },
+      "rows_per_s": 1334116.1240182982,
+      "cost_per_million_rows": {
+        "usd": 1.0369805556062299e-05,
+        "compute_usd": 1.0369805556062299e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 38
+      }
+    },
+    {
+      "problem": "d",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_coordinate_review",
+      "description": "Gemini reviews borough, ZIP, latitude and longitude of each row and flags swapped coordinates.",
+      "fit_s": 0.0009012999944388866,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9630065017930143,
+          1.0
+        ],
+        "k": 100,
+        "n": 100
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          3.469446951953614e-18,
+          0.03699349820698568
+        ],
+        "k": 0,
+        "n": 100
+      },
+      "precision_at_rate": 1.0,
+      "rows_per_s": 5.440207392411319,
+      "llm_throughput": {
+        "rows_per_call": 15.0,
+        "median_latency_s": 2.757247824949445,
+        "rows_per_s": 5.440207392411319,
+        "free_tier_rows_per_day": 7500.0
+      },
+      "llm_usage": {
+        "llm_calls": 20,
+        "llm_cached_calls": 0,
+        "input_tokens": 28033,
+        "output_tokens": 20012,
+        "llm_latency_s": 66.23461399995722
+      },
+      "cost_per_million_rows": {
+        "usd": 194.79966666666667,
+        "compute_usd": 0.0,
+        "llm_usd": 194.79966666666667,
+        "note": null
+      },
+      "clarity": {
+        "mean": 3.0,
+        "n": 8
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9630065017930143,
+          1.0
+        ],
+        "k": 100,
+        "n": 100
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.8712710781407846,
+          1.0
+        ],
+        "k": 26,
+        "n": 26
+      }
+    },
+    {
+      "problem": "e",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_exact_duplicate_rows",
+      "description": "Flags rows identical in every column to an earlier row (R-e1) and rows re-using an earlier unique_key with other values (R-e2).",
+      "fit_s": 0.0004304000176489353,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          3.841311258303963e-05
+        ],
+        "k": 0,
+        "n": 100000
+      },
+      "precision_at_rate": 1.0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "rows_per_s": 192385.0892900296,
+      "cost_per_million_rows": {
+        "usd": 7.311470709233704e-05,
+        "compute_usd": 7.311470709233704e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "e",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_bloom_duplicate",
+      "description": "Streaming dedup: a Bloom filter (blake2b row fingerprints, 1e-4 false-positive probability) flags rows whose fingerprint was probably seen before.",
+      "fit_s": 2.8270500999642536,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 1e-05,
+        "ci": [
+          1.7652477303783126e-06,
+          5.664709659040966e-05
+        ],
+        "k": 1,
+        "n": 100000
+      },
+      "precision_at_rate": 1.0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.05,
+        "ci": [
+          0.008881448800795402,
+          0.23613119344674205
+        ],
+        "k": 1,
+        "n": 20
+      },
+      "rows_per_s": 36219.16571086367,
+      "cost_per_million_rows": {
+        "usd": 0.0003820346947058208,
+        "compute_usd": 0.0003820346947058208,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 21
+      }
+    },
+    {
+      "problem": "e",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_duplicate_review",
+      "description": "LLM window review: which rows of a run of consecutive rows repeat an earlier row of the run exactly.",
+      "fit_s": 0.0009664000244811177,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.8846153846153846,
+        "ci": [
+          0.7102409678828635,
+          0.9599675537638938
+        ],
+        "k": 23,
+        "n": 26
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.003985571263342763
+        ],
+        "k": 0,
+        "n": 960
+      },
+      "precision_at_rate": 1.0,
+      "window_reach": {
+        "value": 0.0625,
+        "ci": [
+          0.047727082936544686,
+          0.08145443374342187
+        ],
+        "k": 50,
+        "n": 800
+      },
+      "rows_per_s": 4.938073634933457,
+      "llm_throughput": {
+        "rows_per_call": 40.0,
+        "median_latency_s": 8.100324733318606,
+        "rows_per_s": 4.938073634933457,
+        "free_tier_rows_per_day": 20000.0
+      },
+      "llm_usage": {
+        "llm_calls": 48,
+        "llm_cached_calls": 0,
+        "input_tokens": 208101,
+        "output_tokens": 53721,
+        "llm_latency_s": 370.6097624003887
+      },
+      "cost_per_million_rows": {
+        "usd": 102.46499999999999,
+        "compute_usd": 0.0,
+        "llm_usd": 102.46499999999999,
+        "note": null
+      },
+      "clarity": {
+        "mean": 3.875,
+        "n": 8
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.8568833815495731,
+          1.0
+        ],
+        "k": 23,
+        "n": 23
+      },
+      "determinism": {
+        "value": 0.9916666666666667,
+        "ci": [
+          0.9543037087549505,
+          0.998527444266658
+        ],
+        "k": 119,
+        "n": 120
+      }
+    },
+    {
+      "problem": "f",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_near_duplicate_key",
+      "description": "Flags a row whose (agency, complaint type, descriptor, normalised location, borough) matches an earlier row created <= 300 s before under another unique_key (R-f1).",
+      "fit_s": 0.000741099938750267,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.853,
+        "ci": [
+          0.8368043125476514,
+          0.8678422520717839
+        ],
+        "k": 1706,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          3.841311258303963e-05
+        ],
+        "k": 0,
+        "n": 100000
+      },
+      "precision_at_rate": 1.0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "rows_per_s": 179600.41052431503,
+      "cost_per_million_rows": {
+        "usd": 8.197298545079927e-05,
+        "compute_usd": 8.197298545079927e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "f",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_near_duplicate_similarity",
+      "description": "Fuzzy similarity (address 3-gram Jaccard, house number, descriptor, location type, distance, time gap) to earlier rows of the same agency, complaint type and borough within 600 s; threshold calibrated on reference batches.",
+      "fit_s": 4.363107100012712,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.8775,
+        "ci": [
+          0.8624029252920606,
+          0.8911497040105931
+        ],
+        "k": 1755,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00048,
+        "ci": [
+          0.0003620836777666651,
+          0.0006362925582282949
+        ],
+        "k": 48,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9546863950388946,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.85,
+        "ci": [
+          0.6395811352592431,
+          0.9476312541037835
+        ],
+        "k": 17,
+        "n": 20
+      },
+      "rows_per_s": 93559.6737293461,
+      "cost_per_million_rows": {
+        "usd": 0.00016439473322104475,
+        "compute_usd": 0.00016439473322104475,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 37
+      }
+    },
+    {
+      "problem": "f",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_near_duplicate_review",
+      "description": "LLM window review: which rows of a run of consecutive rows re-enter the same real-world request as an earlier row.",
+      "fit_s": 0.0006765000289306045,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.6666666666666666,
+        "ci": [
+          0.5033399787115652,
+          0.7978538117569468
+        ],
+        "k": 24,
+        "n": 36
+      },
+      "row_fpr": {
+        "value": 0.013541666666666667,
+        "ci": [
+          0.007930685157714439,
+          0.023030276883912792
+        ],
+        "k": 13,
+        "n": 960
+      },
+      "precision_at_rate": 0.5317115551694179,
+      "window_reach": {
+        "value": 0.905,
+        "ci": [
+          0.8827025849814862,
+          0.9234265252919163
+        ],
+        "k": 724,
+        "n": 800
+      },
+      "rows_per_s": 8.811413944362574,
+      "llm_throughput": {
+        "rows_per_call": 40.0,
+        "median_latency_s": 4.53956654999638,
+        "rows_per_s": 8.811413944362574,
+        "free_tier_rows_per_day": 20000.0
+      },
+      "llm_usage": {
+        "llm_calls": 48,
+        "llm_cached_calls": 0,
+        "input_tokens": 318935,
+        "output_tokens": 67008,
+        "llm_latency_s": 265.3788919998333
+      },
+      "cost_per_million_rows": {
+        "usd": 137.08359375,
+        "compute_usd": 0.0,
+        "llm_usd": 137.08359375,
+        "note": null
+      },
+      "clarity": {
+        "mean": 3.923076923076923,
+        "n": 13
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9258998703338824,
+          0.9999999999999999
+        ],
+        "k": 48,
+        "n": 48
+      },
+      "determinism": {
+        "value": 0.9833333333333333,
+        "ci": [
+          0.941264037027841,
+          0.9954174354340789
+        ],
+        "k": 118,
+        "n": 120
+      }
+    },
+    {
+      "problem": "g",
+      "level": "batch",
+      "family": "rule",
+      "detector": "rule_null_rate_thresholds",
+      "description": "Flags an agency (>= 50 rows in the batch) whose share of nulls in a column exceeds that column's hand-set maximum, one number per column for every agency.",
+      "fit_s": 0.00046469992958009243,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 0.5,
+        "ci": [
+          0.2992980081982123,
+          0.7007019918017877
+        ],
+        "k": 10,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 0.5,
+        "ci": [
+          0.2992980081982123,
+          0.7007019918017877
+        ],
+        "k": 10,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.7224672001371107,
+          0.9999999999999999
+        ],
+        "k": 10,
+        "n": 10
+      },
+      "rows_per_s": 528968.9693271494,
+      "cost_per_million_rows": {
+        "usd": 3.116871529426943e-05,
+        "compute_usd": 3.116871529426943e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 10
+      }
+    },
+    {
+      "problem": "g",
+      "level": "batch",
+      "family": "stat",
+      "detector": "stat_null_spike_binomial",
+      "description": "Per (agency, column) reference null rate and batch-to-batch spread; flags a batch rate above the reference range whose beta-binomial p-value, Bonferroni-adjusted over cells, is below a calibrated cut-off.",
+      "fit_s": 1.6971534000476822,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 399590.6259239344,
+      "cost_per_million_rows": {
+        "usd": 4.22008541661651e-05,
+        "compute_usd": 4.22008541661651e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "g",
+      "level": "batch",
+      "family": "llm",
+      "detector": "llm_null_spike_review",
+      "description": "Gemini sees per-agency row counts and a stratified sample of rows (nulls visible) and says whether one agency shows a spike of missing values.",
+      "fit_s": 0.0007226000307127833,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "batch_detection": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.32440756488388023
+        ],
+        "k": 0,
+        "n": 8
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.32440756488388023
+        ],
+        "k": 0,
+        "n": 8
+      },
+      "detection": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.32440756488388023
+        ],
+        "k": 0,
+        "n": 8
+      },
+      "localisation": {
+        "value": null,
+        "ci": null,
+        "k": 0,
+        "n": 0
+      },
+      "rows_per_s": 2700.0319332788004,
+      "llm_throughput": {
+        "rows_per_call": 5000.0,
+        "median_latency_s": 1.8518299499992281,
+        "rows_per_s": 2700.0319332788004,
+        "free_tier_rows_per_day": 2500000.0
+      },
+      "llm_usage": {
+        "llm_calls": 16,
+        "llm_cached_calls": 0,
+        "input_tokens": 96591,
+        "output_tokens": 619,
+        "llm_latency_s": 33.28826140007004
+      },
+      "cost_per_million_rows": {
+        "usd": 0.38156,
+        "compute_usd": 0.0,
+        "llm_usd": 0.38156,
+        "note": null
+      },
+      "clarity": {
+        "mean": null,
+        "n": 0
+      },
+      "grounding": {
+        "value": null,
+        "ci": null,
+        "k": 0,
+        "n": 0
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.20654931437723745,
+          1.0
+        ],
+        "k": 1,
+        "n": 1
+      }
+    },
+    {
+      "problem": "h",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_closed_after_created",
+      "description": "Parses created_date and closed_date in the source format and flags rows whose closed_date is earlier than created_date.",
+      "fit_s": 0.00037560006603598595,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          3.841311258303963e-05
+        ],
+        "k": 0,
+        "n": 100000
+      },
+      "precision_at_rate": 1.0,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "rows_per_s": 874859.5945718875,
+      "cost_per_million_rows": {
+        "usd": 1.7402951400274308e-05,
+        "compute_usd": 1.7402951400274308e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 20
+      }
+    },
+    {
+      "problem": "h",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_duration_outlier",
+      "description": "Per complaint_type lower-tail bound (TARGET_ROW_FPR quantile) of closed - created learned from reference; flags rows below it.",
+      "fit_s": 4.6497468999587,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00633,
+        "ci": [
+          0.005857053407415697,
+          0.006840873395162042
+        ],
+        "k": 633,
+        "n": 100000
+      },
+      "precision_at_rate": 0.7412898443291327,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "rows_per_s": 669854.1872610525,
+      "cost_per_million_rows": {
+        "usd": 2.2490125015287452e-05,
+        "compute_usd": 2.2490125015287452e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 40
+      }
+    },
+    {
+      "problem": "h",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_date_order_review",
+      "description": "Gemini reviews created_date, closed_date and status of each row and flags requests closed before they were created.",
+      "fit_s": 0.0006485000485554338,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.87,
+        "ci": [
+          0.7901964855992357,
+          0.9224283257275948
+        ],
+        "k": 87,
+        "n": 100
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          3.469446951953614e-18,
+          0.03699349820698568
+        ],
+        "k": 0,
+        "n": 100
+      },
+      "precision_at_rate": 1.0,
+      "rows_per_s": 5.877418502564675,
+      "llm_throughput": {
+        "rows_per_call": 15.0,
+        "median_latency_s": 2.5521408750209957,
+        "rows_per_s": 5.877418502564675,
+        "free_tier_rows_per_day": 7500.0
+      },
+      "llm_usage": {
+        "llm_calls": 20,
+        "llm_cached_calls": 0,
+        "input_tokens": 29418,
+        "output_tokens": 19857,
+        "llm_latency_s": 70.1585313999094
+      },
+      "cost_per_million_rows": {
+        "usd": 194.893,
+        "compute_usd": 0.0,
+        "llm_usd": 194.893,
+        "note": null
+      },
+      "clarity": {
+        "mean": 4.0,
+        "n": 7
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9577124930558795,
+          0.9999999999999999
+        ],
+        "k": 87,
+        "n": 87
+      },
+      "determinism": {
+        "value": 0.5,
+        "ci": [
+          0.3206059352575905,
+          0.6793940647424095
+        ],
+        "k": 13,
+        "n": 26
+      }
+    },
+    {
+      "problem": "i",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_zip_prefix_borough",
+      "description": "Hand-coded USPS 3-digit ZIP prefixes per borough; flags rows whose ZIP prefix belongs to another borough or to none.",
+      "fit_s": 0.000381799996830523,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00063,
+        "ci": [
+          0.0004924884584282444,
+          0.0008058762536329408
+        ],
+        "k": 63,
+        "n": 100000
+      },
+      "precision_at_rate": 0.975609756097561,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.9,
+        "ci": [
+          0.6989663547715128,
+          0.9721335187862319
+        ],
+        "k": 18,
+        "n": 20
+      },
+      "rows_per_s": 1256582.303875905,
+      "cost_per_million_rows": {
+        "usd": 1.4096236142601508e-05,
+        "compute_usd": 1.4096236142601508e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 38
+      }
+    },
+    {
+      "problem": "i",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_zip_borough_frequency",
+      "description": "P(borough | ZIP) from add-one smoothed reference counts, relative to the ZIP's most common borough; flags rows below a threshold calibrated to TARGET_ROW_FPR, for ZIPs with >= MIN_ZIP_ROWS reference rows.",
+      "fit_s": 0.9329182000365108,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00059,
+        "ci": [
+          0.0004574657771137661,
+          0.0007609020079964257
+        ],
+        "k": 59,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9770395701025891,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.85,
+        "ci": [
+          0.6395811352592431,
+          0.9476312541037835
+        ],
+        "k": 17,
+        "n": 20
+      },
+      "rows_per_s": 723736.184901753,
+      "cost_per_million_rows": {
+        "usd": 2.3704972271742817e-05,
+        "compute_usd": 2.3704972271742817e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 37
+      }
+    },
+    {
+      "problem": "i",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_zip_borough_review",
+      "description": "Gemini reviews ZIP, borough, city and address of each row and flags ZIPs that belong to another borough.",
+      "fit_s": 0.0009172999998554587,
+      "status": "partial",
+      "note": "llm_no_verdicts: unparseable reply for ids 35..4933",
+      "n_errors": 1,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 1,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.63,
+        "ci": [
+          0.5322052958094291,
+          0.7181763946567546
+        ],
+        "k": 63,
+        "n": 100
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          3.469446951953614e-18,
+          0.03699349820698568
+        ],
+        "k": 0,
+        "n": 100
+      },
+      "precision_at_rate": 1.0,
+      "rows_per_s": 4.614440020956192,
+      "llm_throughput": {
+        "rows_per_call": 14.526315789473685,
+        "median_latency_s": 3.1480127000249922,
+        "rows_per_s": 4.614440020956192,
+        "free_tier_rows_per_day": 7263.1578947368425
+      },
+      "llm_usage": {
+        "llm_calls": 19,
+        "llm_cached_calls": 0,
+        "input_tokens": 20203,
+        "output_tokens": 17880,
+        "llm_latency_s": 75.9746358001139
+      },
+      "cost_per_million_rows": {
+        "usd": 183.9163043478261,
+        "compute_usd": 0.0,
+        "llm_usd": 183.9163043478261,
+        "note": null
+      },
+      "clarity": {
+        "mean": 3.8333333333333335,
+        "n": 6
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9425288004111484,
+          1.0
+        ],
+        "k": 63,
+        "n": 63
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.8712710781407846,
+          1.0
+        ],
+        "k": 26,
+        "n": 26
+      }
+    },
+    {
+      "problem": "j",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_complaint_descriptor_allowlist",
+      "description": "Flags (complaint_type, descriptor) pairs missing from a frozen allow-list of pairs seen at least twice in the reference period.",
+      "fit_s": 0.45086650003213435,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00042,
+        "ci": [
+          0.00031075754717033817,
+          0.0005676232983981318
+        ],
+        "k": 42,
+        "n": 100000
+      },
+      "precision_at_rate": 0.87070091423596,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.75,
+        "ci": [
+          0.531299122381256,
+          0.8881382985923343
+        ],
+        "k": 15,
+        "n": 20
+      },
+      "rows_per_s": 86909.00977106419,
+      "cost_per_million_rows": {
+        "usd": 0.00016313716668971918,
+        "compute_usd": 0.00016313716668971918,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 35
+      }
+    },
+    {
+      "problem": "j",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_descriptor_classifier",
+      "description": "Naive Bayes on descriptor character n-grams predicts the complaint type; flags rows whose P(observed type | descriptor) is below a threshold calibrated to the target reference FPR.",
+      "fit_s": 0.5678438000613824,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.9975,
+        "ci": [
+          0.9941608466835673,
+          0.9989316912715861
+        ],
+        "k": 1995,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00063,
+        "ci": [
+          0.0004924884584282444,
+          0.0008058762536329408
+        ],
+        "k": 63,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9244670991658944,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.9,
+        "ci": [
+          0.6989663547715128,
+          0.9721335187862319
+        ],
+        "k": 18,
+        "n": 20
+      },
+      "rows_per_s": 26167.253503264124,
+      "cost_per_million_rows": {
+        "usd": 0.0005534755763963202,
+        "compute_usd": 0.0005534755763963202,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 38
+      }
+    },
+    {
+      "problem": "j",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_complaint_descriptor_review",
+      "description": "The LLM reads agency, complaint_type and descriptor of each reviewed row and flags descriptors that do not fit the complaint type.",
+      "fit_s": 0.0010310000507161021,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.74,
+        "ci": [
+          0.6462901055081282,
+          0.8159530153525186
+        ],
+        "k": 74,
+        "n": 100
+      },
+      "row_fpr": {
+        "value": 0.01,
+        "ci": [
+          0.0017674320641406505,
+          0.054486196178705315
+        ],
+        "k": 1,
+        "n": 100
+      },
+      "precision_at_rate": 1.0,
+      "rows_per_s": 4.164751517239488,
+      "llm_throughput": {
+        "rows_per_call": 15.0,
+        "median_latency_s": 3.6016554500092752,
+        "rows_per_s": 4.164751517239488,
+        "free_tier_rows_per_day": 7500.0
+      },
+      "llm_usage": {
+        "llm_calls": 20,
+        "llm_cached_calls": 0,
+        "input_tokens": 16906,
+        "output_tokens": 12119,
+        "llm_latency_s": 77.9417616998544
+      },
+      "cost_per_million_rows": {
+        "usd": 117.89766666666668,
+        "compute_usd": 0.0,
+        "llm_usd": 117.89766666666668,
+        "note": null
+      },
+      "clarity": {
+        "mean": 3.888888888888889,
+        "n": 9
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9512761575171942,
+          1.0
+        ],
+        "k": 75,
+        "n": 75
+      },
+      "determinism": {
+        "value": 0.9230769230769231,
+        "ci": [
+          0.7585844622837095,
+          0.9786449115277238
+        ],
+        "k": 24,
+        "n": 26
+      }
+    },
+    {
+      "problem": "k",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_resolution_status_keywords",
+      "description": "Hand-written phrase lists: flags Closed rows whose text only says the request is still being processed, and open-status rows whose text only reports a finished outcome.",
+      "fit_s": 0.0007976999040693045,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.976,
+        "ci": [
+          0.9683245276915415,
+          0.9818504432967055
+        ],
+        "k": 1952,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00033,
+        "ci": [
+          0.00023499865680451132,
+          0.0004633891031242235
+        ],
+        "k": 33,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9843671205244579,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.7,
+        "ci": [
+          0.4810271816464765,
+          0.8545227551323956
+        ],
+        "k": 14,
+        "n": 20
+      },
+      "rows_per_s": 32079.829551348666,
+      "cost_per_million_rows": {
+        "usd": 0.0004376031736157732,
+        "compute_usd": 0.0004376031736157732,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 34
+      }
+    },
+    {
+      "problem": "k",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_resolution_status_classifier",
+      "description": "TF-IDF + logistic regression predicts the status group (closed / open) from the resolution text; flags rows whose P(observed group | text) is below a threshold calibrated to the target reference FPR.",
+      "fit_s": 1.408331099897623,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.0006,
+        "ci": [
+          0.0004662062361749644,
+          0.0007721607806729757
+        ],
+        "k": 60,
+        "n": 100000
+      },
+      "precision_at_rate": 0.968054211035818,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.95,
+        "ci": [
+          0.763868806553258,
+          0.9911185511992047
+        ],
+        "k": 19,
+        "n": 20
+      },
+      "rows_per_s": 48532.69643949832,
+      "cost_per_million_rows": {
+        "usd": 0.0002932808472137873,
+        "compute_usd": 0.0002932808472137873,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 39
+      }
+    },
+    {
+      "problem": "k",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_resolution_status_review",
+      "description": "The LLM reads status, resolution_description and whether closed_date is set, and flags texts that contradict the status.",
+      "fit_s": 0.0005929999751970172,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.73,
+        "ci": [
+          0.6356788323205499,
+          0.8073041585042365
+        ],
+        "k": 73,
+        "n": 100
+      },
+      "row_fpr": {
+        "value": 0.01,
+        "ci": [
+          0.0017674320641406505,
+          0.054486196178705315
+        ],
+        "k": 1,
+        "n": 100
+      },
+      "precision_at_rate": 0.5983606557377049,
+      "rows_per_s": 4.070163348036945,
+      "llm_throughput": {
+        "rows_per_call": 15.0,
+        "median_latency_s": 3.6853557750291657,
+        "rows_per_s": 4.070163348036945,
+        "free_tier_rows_per_day": 7500.0
+      },
+      "llm_usage": {
+        "llm_calls": 20,
+        "llm_cached_calls": 0,
+        "input_tokens": 25318,
+        "output_tokens": 13965,
+        "llm_latency_s": 78.50091970013455
+      },
+      "cost_per_million_rows": {
+        "usd": 141.693,
+        "compute_usd": 0.0,
+        "llm_usd": 141.693,
+        "note": null
+      },
+      "clarity": {
+        "mean": 4.0,
+        "n": 9
+      },
+      "grounding": {
+        "value": 1.0,
+        "ci": [
+          0.9512761575171942,
+          1.0
+        ],
+        "k": 75,
+        "n": 75
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.8712710781407846,
+          1.0
+        ],
+        "k": 26,
+        "n": 26
+      }
+    },
+    {
+      "problem": "l",
+      "level": "row",
+      "family": "rule",
+      "detector": "rule_pii_regex",
+      "description": "E-mail (R-l1), NANP phone (R-l2) and cue + name (R-l3) regexes over the free-text fields, minus a hand-written allow-list of public office numbers and .gov mailboxes.",
+      "fit_s": 0.0004059999482706189,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.8035,
+        "ci": [
+          0.7855107983788351,
+          0.8203255539214444
+        ],
+        "k": 1607,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 4e-05,
+        "ci": [
+          1.5555325305394583e-05,
+          0.0001028547142286384
+        ],
+        "k": 4,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9987569919204475,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.2,
+        "ci": [
+          0.08065766257979806,
+          0.41601743225189364
+        ],
+        "k": 4,
+        "n": 20
+      },
+      "rows_per_s": 393651.16056710144,
+      "cost_per_million_rows": {
+        "usd": 4.3444520884400445e-05,
+        "compute_usd": 4.3444520884400445e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 24
+      }
+    },
+    {
+      "problem": "l",
+      "level": "row",
+      "family": "stat",
+      "detector": "stat_pii_template_novelty",
+      "description": "Scores capitalised words, long digit runs and @-tokens never seen in the (templated) reference free text, weighted by how rarely template drift produces each shape; threshold calibrated to the target FPR.",
+      "fit_s": 1.2426905001047999,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 20,
+        "clean": 20
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9980829527187469,
+          0.9999999999999998
+        ],
+        "k": 2000,
+        "n": 2000
+      },
+      "row_fpr": {
+        "value": 0.00042,
+        "ci": [
+          0.00031075754717033817,
+          0.0005676232983981318
+        ],
+        "k": 42,
+        "n": 100000
+      },
+      "precision_at_rate": 0.9775171065493646,
+      "batch_detection": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "batch_far": {
+        "value": 0.75,
+        "ci": [
+          0.531299122381256,
+          0.8881382985923343
+        ],
+        "k": 15,
+        "n": 20
+      },
+      "rows_per_s": 345910.7228643558,
+      "cost_per_million_rows": {
+        "usd": 4.220222916855063e-05,
+        "compute_usd": 4.220222916855063e-05,
+        "llm_usd": 0.0,
+        "note": null
+      },
+      "clarity": {
+        "mean": 5.0,
+        "n": 35
+      }
+    },
+    {
+      "problem": "l",
+      "level": "row",
+      "family": "llm",
+      "detector": "llm_pii_review",
+      "description": "Gemini reads only the free-text fields of each reviewed row and flags names, phone numbers or e-mails of private individuals.",
+      "fit_s": 0.0011271999683231115,
+      "status": "ok",
+      "note": null,
+      "n_errors": 0,
+      "n_batches": {
+        "corrupted": 8,
+        "clean": 8
+      },
+      "n_corrupted_errors": 0,
+      "n_clean_errors": 0,
+      "detection": {
+        "value": 0.7,
+        "ci": [
+          0.6041514536665332,
+          0.7810511470506724
+        ],
+        "k": 70,
+        "n": 100
+      },
+      "row_fpr": {
+        "value": 0.0,
+        "ci": [
+          3.469446951953614e-18,
+          0.03699349820698568
+        ],
+        "k": 0,
+        "n": 100
+      },
+      "precision_at_rate": 1.0,
+      "rows_per_s": 4.257944216835347,
+      "llm_throughput": {
+        "rows_per_call": 15.0,
+        "median_latency_s": 3.5228268000064418,
+        "rows_per_s": 4.257944216835347,
+        "free_tier_rows_per_day": 7500.0
+      },
+      "llm_usage": {
+        "llm_calls": 20,
+        "llm_cached_calls": 0,
+        "input_tokens": 26136,
+        "output_tokens": 20130,
+        "llm_latency_s": 80.24716640019324
+      },
+      "cost_per_million_rows": {
+        "usd": 193.886,
+        "compute_usd": 0.0,
+        "llm_usd": 193.886,
+        "note": null
+      },
+      "clarity": {
+        "mean": 4.0,
+        "n": 7
+      },
+      "grounding": {
+        "value": 0.9571428571428572,
+        "ci": [
+          0.8814033125147246,
+          0.9853184589958887
+        ],
+        "k": 67,
+        "n": 70
+      },
+      "determinism": {
+        "value": 1.0,
+        "ci": [
+          0.8712710781407846,
+          1.0
+        ],
+        "k": 26,
+        "n": 26
+      }
+    }
+  ],
+  "same_rows": {
+    "a": [
+      {
+        "detector": "rule_schema_columns",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "stat_column_profile_match",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "llm_schema_review",
+        "batch_detection": {
+          "value": 0.75,
+          "ci": [
+            0.40927543031016883,
+            0.9285207872478909
+          ],
+          "k": 6,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      }
+    ],
+    "b": [
+      {
+        "detector": "rule_dtype_contract",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "stat_value_type_profile",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "llm_type_review",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      }
+    ],
+    "c": [
+      {
+        "detector": "rule_datetime_format",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "stat_datetime_shape_shift",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "llm_datetime_review",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      }
+    ],
+    "d": [
+      {
+        "detector": "rule_nyc_bbox",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_coordinate_outlier",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_coordinate_review",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      }
+    ],
+    "e": [
+      {
+        "detector": "rule_exact_duplicate_rows",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.8712710781407846,
+            1.0
+          ],
+          "k": 26,
+          "n": 26
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.003985571263342763
+          ],
+          "k": 0,
+          "n": 960
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_bloom_duplicate",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.8712710781407846,
+            1.0
+          ],
+          "k": 26,
+          "n": 26
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.003985571263342763
+          ],
+          "k": 0,
+          "n": 960
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_duplicate_review",
+        "detection": {
+          "value": 0.8846153846153846,
+          "ci": [
+            0.7102409678828635,
+            0.9599675537638938
+          ],
+          "k": 23,
+          "n": 26
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.003985571263342763
+          ],
+          "k": 0,
+          "n": 960
+        },
+        "precision_at_rate": 1.0
+      }
+    ],
+    "f": [
+      {
+        "detector": "rule_near_duplicate_key",
+        "detection": {
+          "value": 0.9166666666666666,
+          "ci": [
+            0.7817330875072737,
+            0.9712513886640066
+          ],
+          "k": 33,
+          "n": 36
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.003985571263342763
+          ],
+          "k": 0,
+          "n": 960
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_near_duplicate_similarity",
+        "detection": {
+          "value": 0.9166666666666666,
+          "ci": [
+            0.7817330875072737,
+            0.9712513886640066
+          ],
+          "k": 33,
+          "n": 36
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.003985571263342763
+          ],
+          "k": 0,
+          "n": 960
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_near_duplicate_review",
+        "detection": {
+          "value": 0.6666666666666666,
+          "ci": [
+            0.5033399787115652,
+            0.7978538117569468
+          ],
+          "k": 24,
+          "n": 36
+        },
+        "row_fpr": {
+          "value": 0.013541666666666667,
+          "ci": [
+            0.007930685157714439,
+            0.023030276883912792
+          ],
+          "k": 13,
+          "n": 960
+        },
+        "precision_at_rate": 0.5317115551694179
+      }
+    ],
+    "g": [
+      {
+        "detector": "rule_null_rate_thresholds",
+        "batch_detection": {
+          "value": 0.5,
+          "ci": [
+            0.21521606221387757,
+            0.7847839377861224
+          ],
+          "k": 4,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "stat_null_spike_binomial",
+        "batch_detection": {
+          "value": 1.0,
+          "ci": [
+            0.6755924351161198,
+            1.0
+          ],
+          "k": 8,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      },
+      {
+        "detector": "llm_null_spike_review",
+        "batch_detection": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        },
+        "batch_far": {
+          "value": 0.0,
+          "ci": [
+            0.0,
+            0.32440756488388023
+          ],
+          "k": 0,
+          "n": 8
+        }
+      }
+    ],
+    "h": [
+      {
+        "detector": "rule_closed_after_created",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_duration_outlier",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.01,
+          "ci": [
+            0.0017674320641406505,
+            0.054486196178705315
+          ],
+          "k": 1,
+          "n": 100
+        },
+        "precision_at_rate": 0.6711409395973155
+      },
+      {
+        "detector": "llm_date_order_review",
+        "detection": {
+          "value": 0.87,
+          "ci": [
+            0.7901964855992357,
+            0.9224283257275948
+          ],
+          "k": 87,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      }
+    ],
+    "i": [
+      {
+        "detector": "rule_zip_prefix_borough",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_zip_borough_frequency",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_zip_borough_review",
+        "detection": {
+          "value": 0.63,
+          "ci": [
+            0.5322052958094291,
+            0.7181763946567546
+          ],
+          "k": 63,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      }
+    ],
+    "j": [
+      {
+        "detector": "rule_complaint_descriptor_allowlist",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_descriptor_classifier",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_complaint_descriptor_review",
+        "detection": {
+          "value": 0.74,
+          "ci": [
+            0.6462901055081282,
+            0.8159530153525186
+          ],
+          "k": 74,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.01,
+          "ci": [
+            0.0017674320641406505,
+            0.054486196178705315
+          ],
+          "k": 1,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      }
+    ],
+    "k": [
+      {
+        "detector": "rule_resolution_status_keywords",
+        "detection": {
+          "value": 0.98,
+          "ci": [
+            0.929988209271456,
+            0.9944980324498376
+          ],
+          "k": 98,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_resolution_status_classifier",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_resolution_status_review",
+        "detection": {
+          "value": 0.73,
+          "ci": [
+            0.6356788323205499,
+            0.8073041585042365
+          ],
+          "k": 73,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.01,
+          "ci": [
+            0.0017674320641406505,
+            0.054486196178705315
+          ],
+          "k": 1,
+          "n": 100
+        },
+        "precision_at_rate": 0.5983606557377049
+      }
+    ],
+    "l": [
+      {
+        "detector": "rule_pii_regex",
+        "detection": {
+          "value": 0.81,
+          "ci": [
+            0.7222115462093562,
+            0.8748524849023126
+          ],
+          "k": 81,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "stat_pii_template_novelty",
+        "detection": {
+          "value": 1.0,
+          "ci": [
+            0.9630065017930143,
+            1.0
+          ],
+          "k": 100,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      },
+      {
+        "detector": "llm_pii_review",
+        "detection": {
+          "value": 0.7,
+          "ci": [
+            0.6041514536665332,
+            0.7810511470506724
+          ],
+          "k": 70,
+          "n": 100
+        },
+        "row_fpr": {
+          "value": 0.0,
+          "ci": [
+            3.469446951953614e-18,
+            0.03699349820698568
+          ],
+          "k": 0,
+          "n": 100
+        },
+        "precision_at_rate": 1.0
+      }
+    ]
+  },
+  "rate_sweep": [
+    {
+      "problem": "d",
+      "detector": "rule_nyc_bbox",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "stat_coordinate_outlier",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.5813953488372093,
+        "ci": [
+          0.4332857738696422,
+          0.7161544907215082
+        ],
+        "k": 25,
+        "n": 43
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "rule_nyc_bbox",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "stat_coordinate_outlier",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.8741258741258742,
+        "ci": [
+          0.8098019533303097,
+          0.9188750896474237
+        ],
+        "k": 125,
+        "n": 143
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "rule_nyc_bbox",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "stat_coordinate_outlier",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9652509652509652,
+        "ci": [
+          0.9457437737039062,
+          0.977908404276104
+        ],
+        "k": 500,
+        "n": 518
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "rule_nyc_bbox",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      }
+    },
+    {
+      "problem": "d",
+      "detector": "stat_coordinate_outlier",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9928514694201748,
+        "ci": [
+          0.9887280422281235,
+          0.9954733996661163
+        ],
+        "k": 2500,
+        "n": 2518
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "rule_exact_duplicate_rows",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "stat_bloom_duplicate",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "rule_exact_duplicate_rows",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "stat_bloom_duplicate",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.9920634920634921,
+        "ci": [
+          0.9564132000148392,
+          0.9985976349391875
+        ],
+        "k": 125,
+        "n": 126
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "rule_exact_duplicate_rows",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "stat_bloom_duplicate",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "rule_exact_duplicate_rows",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      }
+    },
+    {
+      "problem": "e",
+      "detector": "stat_bloom_duplicate",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "rule_near_duplicate_key",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.84,
+        "ci": [
+          0.6534637839282114,
+          0.9359654854332355
+        ],
+        "k": 21,
+        "n": 25
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.8453609810751531,
+          1.0
+        ],
+        "k": 21,
+        "n": 21
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "stat_near_duplicate_similarity",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.84,
+        "ci": [
+          0.6534637839282114,
+          0.9359654854332355
+        ],
+        "k": 21,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.7,
+        "ci": [
+          0.5212421254128504,
+          0.8333525173175619
+        ],
+        "k": 21,
+        "n": 30
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "rule_near_duplicate_key",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.88,
+        "ci": [
+          0.8114261894188212,
+          0.9259141113628507
+        ],
+        "k": 110,
+        "n": 125
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9662560647018358,
+          0.9999999999999999
+        ],
+        "k": 110,
+        "n": 110
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "stat_near_duplicate_similarity",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.904,
+        "ci": [
+          0.8396803879985666,
+          0.9442287738851058
+        ],
+        "k": 113,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.9262295081967213,
+        "ci": [
+          0.865730505922926,
+          0.960706194466768
+        ],
+        "k": 113,
+        "n": 122
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "rule_near_duplicate_key",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.822,
+        "ci": [
+          0.7860548114500956,
+          0.8530351132926648
+        ],
+        "k": 411,
+        "n": 500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9907399351269889,
+          0.9999999999999999
+        ],
+        "k": 411,
+        "n": 411
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "stat_near_duplicate_similarity",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.846,
+        "ci": [
+          0.811734636678946,
+          0.8749893197216598
+        ],
+        "k": 423,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9791666666666666,
+        "ci": [
+          0.9608851190582741,
+          0.9890015693724385
+        ],
+        "k": 423,
+        "n": 432
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "rule_near_duplicate_key",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.8628,
+        "ci": [
+          0.848755402487869,
+          0.8757313630817016
+        ],
+        "k": 2157,
+        "n": 2500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9982222393942819,
+          1.0
+        ],
+        "k": 2157,
+        "n": 2157
+      }
+    },
+    {
+      "problem": "f",
+      "detector": "stat_near_duplicate_similarity",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.8868,
+        "ci": [
+          0.8737821250081391,
+          0.898630997710466
+        ],
+        "k": 2217,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9959568733153639,
+        "ci": [
+          0.9923335018979593,
+          0.9978714255715273
+        ],
+        "k": 2217,
+        "n": 2226
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "rule_closed_after_created",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "stat_duration_outlier",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.11160714285714286,
+        "ci": [
+          0.0767479309288632,
+          0.15956313861650034
+        ],
+        "k": 25,
+        "n": 224
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "rule_closed_after_created",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "stat_duration_outlier",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.38580246913580246,
+        "ci": [
+          0.33443061187913137,
+          0.43985052917547596
+        ],
+        "k": 125,
+        "n": 324
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "rule_closed_after_created",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "stat_duration_outlier",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.7173601147776184,
+        "ci": [
+          0.6828106647737708,
+          0.7495267721550578
+        ],
+        "k": 500,
+        "n": 697
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "rule_closed_after_created",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      }
+    },
+    {
+      "problem": "h",
+      "detector": "stat_duration_outlier",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9314456035767511,
+        "ci": [
+          0.9212560387097848,
+          0.9404019256763134
+        ],
+        "k": 2500,
+        "n": 2684
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "rule_zip_prefix_borough",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.7142857142857143,
+        "ci": [
+          0.5494506513681738,
+          0.836734637635653
+        ],
+        "k": 25,
+        "n": 35
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "stat_zip_borough_frequency",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.7142857142857143,
+        "ci": [
+          0.5494506513681738,
+          0.836734637635653
+        ],
+        "k": 25,
+        "n": 35
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "rule_zip_prefix_borough",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.9259259259259259,
+        "ci": [
+          0.8690133972817375,
+          0.9592694584070376
+        ],
+        "k": 125,
+        "n": 135
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "stat_zip_borough_frequency",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.9259259259259259,
+        "ci": [
+          0.8690133972817375,
+          0.9592694584070376
+        ],
+        "k": 125,
+        "n": 135
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "rule_zip_prefix_borough",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9803921568627451,
+        "ci": [
+          0.9642863194559934,
+          0.9893152079968279
+        ],
+        "k": 500,
+        "n": 510
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "stat_zip_borough_frequency",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9803921568627451,
+        "ci": [
+          0.9642863194559934,
+          0.9893152079968279
+        ],
+        "k": 500,
+        "n": 510
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "rule_zip_prefix_borough",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9968102073365231,
+        "ci": [
+          0.9937180352208348,
+          0.9983827963220884
+        ],
+        "k": 2500,
+        "n": 2508
+      }
+    },
+    {
+      "problem": "i",
+      "detector": "stat_zip_borough_frequency",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9968102073365231,
+        "ci": [
+          0.9937180352208348,
+          0.9983827963220884
+        ],
+        "k": 2500,
+        "n": 2508
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "rule_complaint_descriptor_allowlist",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.78125,
+        "ci": [
+          0.6124500635075647,
+          0.8897616374739581
+        ],
+        "k": 25,
+        "n": 32
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "stat_descriptor_classifier",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.5434782608695652,
+        "ci": [
+          0.4018018105980127,
+          0.6784526621771542
+        ],
+        "k": 25,
+        "n": 46
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "rule_complaint_descriptor_allowlist",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.946969696969697,
+        "ci": [
+          0.8945821108242697,
+          0.9740775827951562
+        ],
+        "k": 125,
+        "n": 132
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "stat_descriptor_classifier",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.992,
+        "ci": [
+          0.9560752476950048,
+          0.9985864048960021
+        ],
+        "k": 124,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.8551724137931035,
+        "ci": [
+          0.7887296914856833,
+          0.9032818005817368
+        ],
+        "k": 124,
+        "n": 145
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "rule_complaint_descriptor_allowlist",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9861932938856016,
+        "ci": [
+          0.9717780866964729,
+          0.9932962851803084
+        ],
+        "k": 500,
+        "n": 507
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "stat_descriptor_classifier",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.996,
+        "ci": [
+          0.9855342847848231,
+          0.9989023694773173
+        ],
+        "k": 498,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9613899613899614,
+        "ci": [
+          0.941117957855603,
+          0.9748690568216685
+        ],
+        "k": 498,
+        "n": 518
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "rule_complaint_descriptor_allowlist",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9976057462090981,
+        "ci": [
+          0.9947860188117204,
+          0.9989022443393165
+        ],
+        "k": 2500,
+        "n": 2506
+      }
+    },
+    {
+      "problem": "j",
+      "detector": "stat_descriptor_classifier",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.996,
+        "ci": [
+          0.9926522418385753,
+          0.9978258059081364
+        ],
+        "k": 2490,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9932189868368568,
+        "ci": [
+          0.989166861718304,
+          0.9957619123833998
+        ],
+        "k": 2490,
+        "n": 2507
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "rule_resolution_status_keywords",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.88,
+        "ci": [
+          0.7004420607907267,
+          0.9583318284955964
+        ],
+        "k": 22,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.7857142857142857,
+        "ci": [
+          0.6046141434627812,
+          0.8978753966710211
+        ],
+        "k": 22,
+        "n": 28
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "stat_resolution_status_classifier",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.6097560975609756,
+        "ci": [
+          0.45726856934123794,
+          0.7434385493987647
+        ],
+        "k": 25,
+        "n": 41
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "rule_resolution_status_keywords",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.96,
+        "ci": [
+          0.9097744468602555,
+          0.9827953909280842
+        ],
+        "k": 120,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.9523809523809523,
+        "ci": [
+          0.8999983205231048,
+          0.9779955116120489
+        ],
+        "k": 120,
+        "n": 126
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "stat_resolution_status_classifier",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.8865248226950354,
+        "ci": [
+          0.8236128062225586,
+          0.928934157108818
+        ],
+        "k": 125,
+        "n": 141
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "rule_resolution_status_keywords",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.982,
+        "ci": [
+          0.9661483290912607,
+          0.990501806703803
+        ],
+        "k": 491,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9879275653923542,
+        "ci": [
+          0.9739146421230708,
+          0.9944556703945967
+        ],
+        "k": 491,
+        "n": 497
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "stat_resolution_status_classifier",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9689922480620154,
+        "ci": [
+          0.9502280771937708,
+          0.980825019452265
+        ],
+        "k": 500,
+        "n": 516
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "rule_resolution_status_keywords",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.9868,
+        "ci": [
+          0.9815207815089733,
+          0.9905854959972753
+        ],
+        "k": 2467,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.997573797007683,
+        "ci": [
+          0.9947165795268422,
+          0.9988875897007528
+        ],
+        "k": 2467,
+        "n": 2473
+      }
+    },
+    {
+      "problem": "k",
+      "detector": "stat_resolution_status_classifier",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9936406995230525,
+        "ci": [
+          0.9896945129471127,
+          0.9960817910758125
+        ],
+        "k": 2500,
+        "n": 2516
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "rule_pii_regex",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.8,
+        "ci": [
+          0.6086904963045967,
+          0.9113941531319742
+        ],
+        "k": 20,
+        "n": 25
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "stat_pii_template_novelty",
+      "rate": 0.001,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.8668077490609515,
+          0.9999999999999999
+        ],
+        "k": 25,
+        "n": 25
+      },
+      "precision": {
+        "value": 0.5952380952380952,
+        "ci": [
+          0.44494312750039344,
+          0.7295713885251867
+        ],
+        "k": 25,
+        "n": 42
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "rule_pii_regex",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.832,
+        "ci": [
+          0.7567907928528235,
+          0.8874117857248478
+        ],
+        "k": 104,
+        "n": 125
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9643786456275479,
+          0.9999999999999999
+        ],
+        "k": 104,
+        "n": 104
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "stat_pii_template_novelty",
+      "rate": 0.005,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9701846062916737,
+          1.0
+        ],
+        "k": 125,
+        "n": 125
+      },
+      "precision": {
+        "value": 0.8802816901408451,
+        "ci": [
+          0.8166349472995467,
+          0.9238952206877431
+        ],
+        "k": 125,
+        "n": 142
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "rule_pii_regex",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.832,
+        "ci": [
+          0.7967256709103735,
+          0.8622117670231558
+        ],
+        "k": 416,
+        "n": 500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9908502156230959,
+          0.9999999999999999
+        ],
+        "k": 416,
+        "n": 416
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "stat_pii_template_novelty",
+      "rate": 0.02,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9923756595384479,
+          1.0
+        ],
+        "k": 500,
+        "n": 500
+      },
+      "precision": {
+        "value": 0.9671179883945842,
+        "ci": [
+          0.9479751296545929,
+          0.979370402887352
+        ],
+        "k": 500,
+        "n": 517
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "rule_pii_regex",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.7964,
+        "ci": [
+          0.7801662501267546,
+          0.8117242606638209
+        ],
+        "k": 1991,
+        "n": 2500
+      },
+      "precision": {
+        "value": 1.0,
+        "ci": [
+          0.9980743036978161,
+          1.0
+        ],
+        "k": 1991,
+        "n": 1991
+      }
+    },
+    {
+      "problem": "l",
+      "detector": "stat_pii_template_novelty",
+      "rate": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.9984657739382173,
+          0.9999999999999999
+        ],
+        "k": 2500,
+        "n": 2500
+      },
+      "precision": {
+        "value": 0.9932459276916965,
+        "ci": [
+          0.9892097938652424,
+          0.9957787667249991
+        ],
+        "k": 2500,
+        "n": 2517
+      }
+    }
+  ],
+  "null_spike_sweep": [
+    {
+      "problem": "g",
+      "detector": "rule_null_rate_thresholds",
+      "fraction": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.2,
+        "ci": [
+          0.03622410863243014,
+          0.6244653702374747
+        ],
+        "k": 1,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.20654931437723745,
+          1.0
+        ],
+        "k": 1,
+        "n": 1
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "stat_null_spike_binomial",
+      "fraction": 0.1,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "rule_null_rate_thresholds",
+      "fraction": 0.25,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.2,
+        "ci": [
+          0.03622410863243014,
+          0.6244653702374747
+        ],
+        "k": 1,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.20654931437723745,
+          1.0
+        ],
+        "k": 1,
+        "n": 1
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "stat_null_spike_binomial",
+      "fraction": 0.25,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "rule_null_rate_thresholds",
+      "fraction": 0.5,
+      "n_batches": 5,
+      "detection": {
+        "value": 0.6,
+        "ci": [
+          0.2307242812760128,
+          0.882379225767352
+        ],
+        "k": 3,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.4385029682449546,
+          1.0
+        ],
+        "k": 3,
+        "n": 3
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "stat_null_spike_binomial",
+      "fraction": 0.5,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "rule_null_rate_thresholds",
+      "fraction": 0.9,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      }
+    },
+    {
+      "problem": "g",
+      "detector": "stat_null_spike_binomial",
+      "fraction": 0.9,
+      "n_batches": 5,
+      "detection": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      },
+      "localisation": {
+        "value": 1.0,
+        "ci": [
+          0.5655175352168251,
+          1.0
+        ],
+        "k": 5,
+        "n": 5
+      }
+    }
+  ],
+  "background": [
+    {
+      "problem": "a",
+      "family": "rule",
+      "detector": "rule_schema_columns",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": null,
+      "examples": []
+    },
+    {
+      "problem": "a",
+      "family": "stat",
+      "detector": "stat_column_profile_match",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": null,
+      "examples": []
+    },
+    {
+      "problem": "b",
+      "family": "rule",
+      "detector": "rule_dtype_contract",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": null,
+      "examples": []
+    },
+    {
+      "problem": "b",
+      "family": "stat",
+      "detector": "stat_value_type_profile",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": null,
+      "examples": []
+    },
+    {
+      "problem": "c",
+      "family": "rule",
+      "detector": "rule_datetime_format",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": 0.0,
+      "examples": []
+    },
+    {
+      "problem": "c",
+      "family": "stat",
+      "detector": "stat_datetime_shape_shift",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": 0.0,
+      "examples": []
+    },
+    {
+      "problem": "d",
+      "family": "rule",
+      "detector": "rule_nyc_bbox",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": 0.0,
+      "examples": []
+    },
+    {
+      "problem": "d",
+      "family": "stat",
+      "detector": "stat_coordinate_outlier",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "alerts_per_batch": 1.0,
+      "flagged_per_1000_rows": 0.71,
+      "examples": [
+        "2 rows have coordinates far from where the reference model puts them (2 checked against state-plane x/y, 0 against the robust lat/lon centre); 0 fit once latitude and longitude are swapped",
+        "1 rows have coordinates far from where the reference model puts them (1 checked against state-plane x/y, 0 against the robust lat/lon centre); 0 fit once latitude and longitude are swapped",
+        "4 rows have coordinates far from where the reference model puts them (4 checked against state-plane x/y, 0 against the robust lat/lon centre); 0 fit once latitude and longitude are swapped"
+      ]
+    },
+    {
+      "problem": "e",
+      "family": "rule",
+      "detector": "rule_exact_duplicate_rows",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": 0.0,
+      "examples": []
+    },
+    {
+      "problem": "e",
+      "family": "stat",
+      "detector": "stat_bloom_duplicate",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.05,
+        "ci": [
+          0.008881448800795402,
+          0.23613119344674205
+        ],
+        "k": 1,
+        "n": 20
+      },
+      "alerts_per_batch": 0.05,
+      "flagged_per_1000_rows": 0.01,
+      "examples": [
+        "1 rows have a fingerprint seen earlier in the batch (Bloom filter)"
+      ]
+    },
+    {
+      "problem": "f",
+      "family": "rule",
+      "detector": "rule_near_duplicate_key",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "alerts_per_batch": 1.0,
+      "flagged_per_1000_rows": 59.74,
+      "examples": [
+        "198 rows repeat an earlier request within 300 s under a new unique_key",
+        "306 rows repeat an earlier request within 300 s under a new unique_key",
+        "292 rows repeat an earlier request within 300 s under a new unique_key"
+      ]
+    },
+    {
+      "problem": "f",
+      "family": "stat",
+      "detector": "stat_near_duplicate_similarity",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "alerts_per_batch": 1.0,
+      "flagged_per_1000_rows": 60.38,
+      "examples": [
+        "198 rows are near-copies of an earlier row (similarity above the reference threshold)",
+        "307 rows are near-copies of an earlier row (similarity above the reference threshold)",
+        "293 rows are near-copies of an earlier row (similarity above the reference threshold)"
+      ]
+    },
+    {
+      "problem": "g",
+      "family": "rule",
+      "detector": "rule_null_rate_thresholds",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.16112515805281938
+        ],
+        "k": 0,
+        "n": 20
+      },
+      "alerts_per_batch": 0.0,
+      "flagged_per_1000_rows": 0.0,
+      "examples": []
+    },
+    {
+      "problem": "g",
+      "family": "stat",
+      "detector": "stat_null_spike_binomial",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.1,
+        "ci": [
+          0.027866481213768224,
+          0.3010336452284873
+        ],
+        "k": 2,
+        "n": 20
+      },
+      "alerts_per_batch": 0.9,
+      "flagged_per_1000_rows": 17.88,
+      "examples": [
+        "DOB: closed_date is null in 8 of 144 rows (5.6%); reference 0.0%, normal batches up to 0.0%; beta-binomial p = 5.0e-20 after Bonferroni over 220 cells",
+        "HPD: closed_date is null in 116 of 2041 rows (5.7%); reference 0.1%, normal batches up to 0.7%; beta-binomial p = 1.8e-11 after Bonferroni over 220 cells",
+        "DEP: resolution_description is null in 187 of 528 rows (35.4%); reference 0.7%, normal batches up to 2.3%; beta-binomial p = 2.6e-80 after Bonferroni over 220 cells"
+      ]
+    },
+    {
+      "problem": "h",
+      "family": "rule",
+      "detector": "rule_closed_after_created",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.45,
+        "ci": [
+          0.2581978582556243,
+          0.6579146575496577
+        ],
+        "k": 9,
+        "n": 20
+      },
+      "alerts_per_batch": 0.45,
+      "flagged_per_1000_rows": 0.44,
+      "examples": [
+        "3 rows were closed before they were created (closed_date < created_date)",
+        "1 rows were closed before they were created (closed_date < created_date)",
+        "9 rows were closed before they were created (closed_date < created_date)"
+      ]
+    },
+    {
+      "problem": "h",
+      "family": "stat",
+      "detector": "stat_duration_outlier",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 1.0,
+        "ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "k": 20,
+        "n": 20
+      },
+      "alerts_per_batch": 1.0,
+      "flagged_per_1000_rows": 8.13,
+      "examples": [
+        "33 rows were closed implausibly early for their complaint type (0 before they were created)",
+        "27 rows were closed implausibly early for their complaint type (3 before they were created)",
+        "30 rows were closed implausibly early for their complaint type (0 before they were created)"
+      ]
+    },
+    {
+      "problem": "i",
+      "family": "rule",
+      "detector": "rule_zip_prefix_borough",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.85,
+        "ci": [
+          0.6395811352592431,
+          0.9476312541037835
+        ],
+        "k": 17,
+        "n": 20
+      },
+      "alerts_per_batch": 0.85,
+      "flagged_per_1000_rows": 0.75,
+      "examples": [
+        "2 rows have a ZIP whose USPS prefix belongs to another borough (0 are not New York City ZIPs)",
+        "4 rows have a ZIP whose USPS prefix belongs to another borough (0 are not New York City ZIPs)",
+        "3 rows have a ZIP whose USPS prefix belongs to another borough (0 are not New York City ZIPs)"
+      ]
+    },
+    {
+      "problem": "i",
+      "family": "stat",
+      "detector": "stat_zip_borough_frequency",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.85,
+        "ci": [
+          0.6395811352592431,
+          0.9476312541037835
+        ],
+        "k": 17,
+        "n": 20
+      },
+      "alerts_per_batch": 0.85,
+      "flagged_per_1000_rows": 0.73,
+      "examples": [
+        "2 rows have a borough that is unusual for their ZIP (relative likelihood < 1); 0 rows not judged (ZIP unseen or under 20 reference rows)",
+        "4 rows have a borough that is unusual for their ZIP (relative likelihood < 1); 2 rows not judged (ZIP unseen or under 20 reference rows)",
+        "2 rows have a borough that is unusual for their ZIP (relative likelihood < 1); 5 rows not judged (ZIP unseen or under 20 reference rows)"
+      ]
+    },
+    {
+      "problem": "j",
+      "family": "rule",
+      "detector": "rule_complaint_descriptor_allowlist",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.9,
+        "ci": [
+          0.6989663547715128,
+          0.9721335187862319
+        ],
+        "k": 18,
+        "n": 20
+      },
+      "alerts_per_batch": 0.9,
+      "flagged_per_1000_rows": 2.45,
+      "examples": [
+        "2 row(s) have a (complaint_type, descriptor) pair that is not on the allow-list",
+        "1 row(s) have a (complaint_type, descriptor) pair that is not on the allow-list",
+        "3 row(s) have a (complaint_type, descriptor) pair that is not on the allow-list"
+      ]
+    },
+    {
+      "problem": "j",
+      "family": "stat",
+      "detector": "stat_descriptor_classifier",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.9,
+        "ci": [
+          0.6989663547715128,
+          0.9721335187862319
+        ],
+        "k": 18,
+        "n": 20
+      },
+      "alerts_per_batch": 0.9,
+      "flagged_per_1000_rows": 1.37,
+      "examples": [
+        "2 row(s) have a descriptor that is unlikely for their complaint type",
+        "1 row(s) have a descriptor that is unlikely for their complaint type",
+        "4 row(s) have a descriptor that is unlikely for their complaint type"
+      ]
+    },
+    {
+      "problem": "k",
+      "family": "rule",
+      "detector": "rule_resolution_status_keywords",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.75,
+        "ci": [
+          0.531299122381256,
+          0.8881382985923343
+        ],
+        "k": 15,
+        "n": 20
+      },
+      "alerts_per_batch": 0.75,
+      "flagged_per_1000_rows": 0.63,
+      "examples": [
+        "3 row(s) have a resolution text that contradicts their status (3 Closed with pending-only text, 0 open with finished-only text)",
+        "3 row(s) have a resolution text that contradicts their status (2 Closed with pending-only text, 1 open with finished-only text)",
+        "2 row(s) have a resolution text that contradicts their status (2 Closed with pending-only text, 0 open with finished-only text)"
+      ]
+    },
+    {
+      "problem": "k",
+      "family": "stat",
+      "detector": "stat_resolution_status_classifier",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.95,
+        "ci": [
+          0.763868806553258,
+          0.9911185511992047
+        ],
+        "k": 19,
+        "n": 20
+      },
+      "alerts_per_batch": 0.95,
+      "flagged_per_1000_rows": 1.38,
+      "examples": [
+        "4 row(s) have a status that is unlikely for their resolution text",
+        "15 row(s) have a status that is unlikely for their resolution text",
+        "1 row(s) have a status that is unlikely for their resolution text"
+      ]
+    },
+    {
+      "problem": "l",
+      "family": "rule",
+      "detector": "rule_pii_regex",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.35,
+        "ci": [
+          0.18119182410108206,
+          0.5671457233147638
+        ],
+        "k": 7,
+        "n": 20
+      },
+      "alerts_per_batch": 0.35,
+      "flagged_per_1000_rows": 0.07,
+      "examples": [
+        "1 rows contain personal data in free text (R-l2 phone number: 1)"
+      ]
+    },
+    {
+      "problem": "l",
+      "family": "stat",
+      "detector": "stat_pii_template_novelty",
+      "n_batches": 20,
+      "n_errors": 0,
+      "batches_alerted": {
+        "value": 0.95,
+        "ci": [
+          0.763868806553258,
+          0.9911185511992047
+        ],
+        "k": 19,
+        "n": 20
+      },
+      "alerts_per_batch": 0.95,
+      "flagged_per_1000_rows": 0.69,
+      "examples": [
+        "2 rows contain tokens never seen in reference free text",
+        "1 rows contain tokens never seen in reference free text",
+        "6 rows contain tokens never seen in reference free text"
+      ]
+    }
+  ]
+}

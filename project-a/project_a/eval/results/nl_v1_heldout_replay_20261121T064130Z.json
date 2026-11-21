@@ -1,0 +1,1963 @@
+{
+ "summary": {
+  "split": "heldout",
+  "prompt_version": "v1",
+  "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+  "model": "gemini-3.5-flash-lite",
+  "mode": "replay",
+  "n": 35,
+  "behaviour_correct": 32,
+  "confusion": {
+   "compute": {
+    "compute": 21
+   },
+   "ask": {
+    "ask": 6,
+    "unsupported": 1
+   },
+   "unsupported": {
+    "unsupported": 5
+   },
+   "law-change": {
+    "ask": 1,
+    "compute": 1
+   }
+  },
+  "compute_rows": 21,
+  "compute_fields_correct": 273,
+  "compute_fields_total": 273,
+  "compute_rows_all_fields": 21,
+  "end_to_end": 21,
+  "per_field": {
+   "fy": 21,
+   "age": 21,
+   "gross_salary": 21,
+   "basic_salary": 21,
+   "hra_received": 21,
+   "rent_paid": 21,
+   "metro": 21,
+   "sec_80c": 21,
+   "sec_80ccd1b": 21,
+   "sec_80d_self": 21,
+   "sec_80d_parents": 21,
+   "parents_senior": 21,
+   "home_loan_interest": 21
+  },
+  "ask_rows": 7,
+  "ask_correct": 6,
+  "unsupported_rows": 5,
+  "unsupported_correct": 5,
+  "engine_called_when_not_compute": 0,
+  "engine_called_on_non_compute_rows": 1,
+  "non_compute_rows": 14,
+  "false_compute": 1,
+  "parse_errors": 0,
+  "llm_calls": 35,
+  "latency_mean_s": 1.9136832499377696,
+  "latency_p95_s": 2.951853916980326,
+  "prompt_tokens": 111798,
+  "output_tokens": 8983,
+  "client_stats": {
+   "network_calls": 0,
+   "cache_hits": 35,
+   "retries": 0,
+   "http_429": 0,
+   "http_5xx": 0,
+   "reported_delays_s": []
+  },
+  "incomplete": false,
+  "not_run": [],
+  "quota_error": null,
+  "false_compute_rate": 0.07142857142857142,
+  "calls_today": "calls today on gemini-3.5-flash-lite: 150 requests (148 OK) [quota day 2026-11-20, Pacific time]"
+ },
+ "rows": [
+  {
+   "id": "NL-01",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 32,
+    "gross_salary": 600000,
+    "basic_salary": 300000,
+    "hra_received": 120000,
+    "rent_paid": 144000,
+    "sec_80c": 150000,
+    "sec_80d_self": 25000,
+    "metro": false
+   },
+   "result": {
+    "old_tax": 0,
+    "new_tax": 0,
+    "old_total_income": 261000,
+    "new_total_income": 525000,
+    "best": "new",
+    "saving": 0,
+    "reason": "Both regimes give Rs 0; the new regime is chosen as the default.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 32",
+    "gross_salary: 6 x lakh = 600000",
+    "basic_salary: 25 x thousand x 12 (monthly) = 300000",
+    "hra_received: 10 x thousand x 12 (monthly) = 120000",
+    "rent_paid: 12,000 x ones x 12 (monthly) = 144000",
+    "sec_80c: 1.5 x lakh = 150000",
+    "sec_80d_self: 25 x thousand = 25000",
+    "city 'Bengaluru' -> non-metro",
+    "engine hand_coded: old 0, new 0, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"32\",\n  \"text\": \"I'm 32\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"For FY 2024-25\"\n },\n \"city\": {\n  \"name\": \"Bengaluru\",\n  \"text\": \"Bengaluru\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"6\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"gross salary is 6 LPA\"\n  },\n  \"basic_salary\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"basic is 25k a month\"\n  },\n  \"hra_received\": {\n   \"value\": \"10\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"HRA 10k a month\"\n  },\n  \"rent_paid\": {\n   \"value\": \"12,000\",\n   \"scale\": \"ones\",\n   \"period\": \"monthly\",\n   \"text\": \"pay rent of 12,000 per month\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"put 1.5 lakh in PPF\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"pay 25k health insurance for myself\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3223,
+    "output_tokens": 455,
+    "latency_s": 3.2023734580143355,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-02",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 63,
+    "gross_salary": 600000,
+    "sec_80c": 100000,
+    "sec_80d_self": 50000
+   },
+   "result": {
+    "old_tax": 0,
+    "new_tax": 0,
+    "old_total_income": 400000,
+    "new_total_income": 525000,
+    "best": "new",
+    "saving": 0,
+    "reason": "Both regimes give Rs 0; the new regime is chosen as the default.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 63",
+    "gross_salary: 50 x thousand x 12 (monthly) = 600000",
+    "sec_80c: 1 x lakh = 100000",
+    "sec_80d_self: 50 x thousand = 50000",
+    "engine hand_coded: old 0, new 0, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"63\",\n  \"text\": \"Main 63 saal ka hoon\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25 mein\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"salary 50 hazaar mahina hai\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"LIC mein 1 lakh dala\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"apne health insurance ka premium 50k bhara\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3204,
+    "output_tokens": 279,
+    "latency_s": 2.951853916980326,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-03",
+   "language": "mixed",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 63,
+    "gross_salary": 1000000,
+    "sec_80c": 100000,
+    "sec_80d_self": 50000
+   },
+   "result": {
+    "old_tax": 72800,
+    "new_tax": 44200,
+    "old_total_income": 800000,
+    "new_total_income": 925000,
+    "best": "new",
+    "saving": 28600,
+    "reason": "The new regime is cheaper: Rs 44200 against Rs 72800, a saving of Rs 28600.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY '2024-25' -> FY 2024-25",
+    "age: 63",
+    "gross_salary: 10,00,000 x ones = 1000000",
+    "sec_80c: 1 x lakh = 100000",
+    "sec_80d_self: 50 x thousand = 50000",
+    "engine hand_coded: old 72800, new 44200, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"63\",\n  \"text\": \"Age 63\"\n },\n \"year\": {\n  \"label\": \"2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"10,00,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"salary ₹10,00,000\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"1 lakh (PPF)\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"mediclaim for myself 50k\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3198,
+    "output_tokens": 276,
+    "latency_s": 1.7593302910099737,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-05",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 32,
+    "gross_salary": 2500000,
+    "basic_salary": 1250000,
+    "hra_received": 500000,
+    "rent_paid": 600000,
+    "sec_80c": 150000,
+    "sec_80d_self": 25000,
+    "metro": false
+   },
+   "result": {
+    "old_tax": 366600,
+    "new_tax": 434200,
+    "old_total_income": 1800000,
+    "new_total_income": 2425000,
+    "best": "old",
+    "saving": 67600,
+    "reason": "The old regime is cheaper: Rs 366600 against Rs 434200, a saving of Rs 67600.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 24-25' -> FY 2024-25",
+    "age: 32",
+    "gross_salary: 25,00,000 x ones = 2500000",
+    "basic_salary: 12.5 x lakh = 1250000",
+    "hra_received: 5 x lakh = 500000",
+    "rent_paid: 50 x thousand x 12 (monthly) = 600000",
+    "sec_80c: 1.5 x lakh = 150000",
+    "sec_80d_self: 25,000 x ones = 25000",
+    "city 'Pune' -> non-metro",
+    "engine hand_coded: old 366600, new 434200, best old"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"32\",\n  \"text\": \"32-year-old\"\n },\n \"year\": {\n  \"label\": \"FY 24-25\",\n  \"type\": \"FY\",\n  \"text\": \"in FY 24-25\"\n },\n \"city\": {\n  \"name\": \"Pune\",\n  \"text\": \"Pune\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"25,00,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"Gross salary ₹25,00,000\"\n  },\n  \"basic_salary\": {\n   \"value\": \"12.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"basic is ₹12.5 lakh\"\n  },\n  \"hra_received\": {\n   \"value\": \"5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"HRA ₹5 lakh\"\n  },\n  \"rent_paid\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"Rent is 50k a month\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"80C investments 1.5 lakh\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"25,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"self health cover premium 25,000\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3221,
+    "output_tokens": 460,
+    "latency_s": 2.3628461249754764,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-06",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 63,
+    "gross_salary": 2500000,
+    "sec_80c": 100000,
+    "sec_80d_self": 50000
+   },
+   "result": {
+    "old_tax": 520000,
+    "new_tax": 434200,
+    "old_total_income": 2300000,
+    "new_total_income": 2425000,
+    "best": "new",
+    "saving": 85800,
+    "reason": "The new regime is cheaper: Rs 434200 against Rs 520000, a saving of Rs 85800.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 63",
+    "gross_salary: 25 x lakh = 2500000",
+    "sec_80c: 1 x lakh = 100000",
+    "sec_80d_self: 50 x thousand = 50000",
+    "engine hand_coded: old 520000, new 434200, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"63\",\n  \"text\": \"Papa ki age 63 hai\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"(FY 2024-25)\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"25\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"unki salary 25 lakh saalana hai\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"Unhone 80C mein 1 lakh\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"apne mediclaim pe 50 hazaar diye\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3203,
+    "output_tokens": 283,
+    "latency_s": 2.1330887909862213,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-07",
+   "language": "mixed",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 32,
+    "gross_salary": 5000000,
+    "basic_salary": 2500000,
+    "hra_received": 1000000,
+    "rent_paid": 1200000,
+    "sec_80c": 150000,
+    "sec_80d_self": 25000,
+    "metro": false
+   },
+   "result": {
+    "old_tax": 998400,
+    "new_tax": 1214200,
+    "old_total_income": 3825000,
+    "new_total_income": 4925000,
+    "best": "old",
+    "saving": 215800,
+    "reason": "The old regime is cheaper: Rs 998400 against Rs 1214200, a saving of Rs 215800.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 32",
+    "gross_salary: 0.5 x crore = 5000000",
+    "basic_salary: 25 x lakh = 2500000",
+    "hra_received: 10 x lakh = 1000000",
+    "rent_paid: 1 x lakh x 12 (monthly) = 1200000",
+    "sec_80c: 1.5 x lakh = 150000",
+    "sec_80d_self: 25 x thousand = 25000",
+    "city 'Ahmedabad' -> non-metro",
+    "engine hand_coded: old 998400, new 1214200, best old"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"32\",\n  \"text\": \"I'm 32\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for FY 2024-25\"\n },\n \"city\": {\n  \"name\": \"Ahmedabad\",\n  \"text\": \"Ahmedabad based\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"0.5\",\n   \"scale\": \"crore\",\n   \"period\": \"annual\",\n   \"text\": \"Salary 0.5 cr gross for FY 2024-25\"\n  },\n  \"basic_salary\": {\n   \"value\": \"25\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"basic 25 lakh\"\n  },\n  \"hra_received\": {\n   \"value\": \"10\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"HRA 10 lakh\"\n  },\n  \"rent_paid\": {\n   \"value\": \"1\",\n   \"scale\": \"lakh\",\n   \"period\": \"monthly\",\n   \"text\": \"Ghar ka rent 1 lakh per month hai\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"80C full 1.5L\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"25k health insurance (self)\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3213,
+    "output_tokens": 458,
+    "latency_s": 2.7593772080144845,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-09",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 63,
+    "gross_salary": 10000000,
+    "sec_80c": 100000,
+    "sec_80d_self": 50000
+   },
+   "result": {
+    "old_tax": 3146000,
+    "new_tax": 3051620,
+    "old_total_income": 9800000,
+    "new_total_income": 9925000,
+    "best": "new",
+    "saving": 94380,
+    "reason": "The new regime is cheaper: Rs 3051620 against Rs 3146000, a saving of Rs 94380.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: AY 'AY 2025-26' -> FY 2024-25",
+    "age: 63",
+    "gross_salary: 1 x crore = 10000000",
+    "sec_80c: 1,00,000 x ones = 100000",
+    "sec_80d_self: 50,000 x ones = 50000",
+    "engine hand_coded: old 3146000, new 3051620, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"63\",\n  \"text\": \"Meri umar 63 hai\"\n },\n \"year\": {\n  \"label\": \"AY 2025-26\",\n  \"type\": \"AY\",\n  \"text\": \"AY 2025-26\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"1\",\n   \"scale\": \"crore\",\n   \"period\": \"annual\",\n   \"text\": \"salary 1 cr per annum\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1,00,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"80C mein 1,00,000\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"50,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"self ka health insurance 50,000\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3201,
+    "output_tokens": 289,
+    "latency_s": 2.073711584031116,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-10",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 1000000,
+    "sec_80c": 150000,
+    "sec_80ccd1b": 50000,
+    "sec_80d_self": 25000
+   },
+   "result": {
+    "old_tax": 59800,
+    "new_tax": 44200,
+    "old_total_income": 725000,
+    "new_total_income": 925000,
+    "best": "new",
+    "saving": 15600,
+    "reason": "The new regime is cheaper: Rs 44200 against Rs 59800, a saving of Rs 15600.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 10 x lakh = 1000000",
+    "sec_80c: 1.5 x lakh = 150000",
+    "sec_80ccd1b: 50 x thousand = 50000",
+    "sec_80d_self: 25 x thousand = 25000",
+    "engine hand_coded: old 59800, new 44200, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"I'm 30\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"in FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"10\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"10 LPA\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"1.5 lakh under 80C\"\n  },\n  \"sec_80ccd1b\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"50k into my own NPS account under 80CCD(1B)\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"25k for my health insurance\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3216,
+    "output_tokens": 334,
+    "latency_s": 1.5977239579660818,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-11",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 750000,
+    "sec_80c": 150000,
+    "sec_80ccd1b": 50000,
+    "sec_80d_self": 25000
+   },
+   "result": {
+    "old_tax": 0,
+    "new_tax": 0,
+    "old_total_income": 475000,
+    "new_total_income": 675000,
+    "best": "new",
+    "saving": 0,
+    "reason": "Both regimes give Rs 0; the new regime is chosen as the default.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 7.5 x lakh = 750000",
+    "sec_80c: 1.5 x lakh = 150000",
+    "sec_80ccd1b: 50 x thousand = 50000",
+    "sec_80d_self: 25 x thousand = 25000",
+    "engine hand_coded: old 0, new 0, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"Main 30 ka hoon\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25 mein\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"7.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"₹7.5 lakh salary\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"80C 1.5 lakh\"\n  },\n  \"sec_80ccd1b\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"NPS mein khud se 50k (1B)\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"25k ka health insurance\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": [\n  {\n   \"tag\": \"city_missing\",\n   \"field\": null,\n   \"question\": \"Which city do you live in?\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3203,
+    "output_tokens": 370,
+    "latency_s": 1.8093642920139246,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-13",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 1200000,
+    "basic_salary": 600000,
+    "hra_received": 100000,
+    "rent_paid": 300000,
+    "metro": false
+   },
+   "result": {
+    "old_tax": 132600,
+    "new_tax": 71500,
+    "old_total_income": 1050000,
+    "new_total_income": 1125000,
+    "best": "new",
+    "saving": 61100,
+    "reason": "The new regime is cheaper: Rs 71500 against Rs 132600, a saving of Rs 61100.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: 'April 2024 to March 2025' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 1 x lakh x 12 (monthly) = 1200000",
+    "basic_salary: 50 x thousand x 12 (monthly) = 600000",
+    "hra_received: 1,00,000 x ones = 100000",
+    "rent_paid: 25 x thousand x 12 (monthly) = 300000",
+    "city 'Hyderabad' -> non-metro",
+    "engine hand_coded: old 132600, new 71500, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"I'm 30\"\n },\n \"year\": {\n  \"label\": \"April 2024 to March 2025\",\n  \"type\": \"calendar\",\n  \"text\": \"From April 2024 to March 2025\"\n },\n \"city\": {\n  \"name\": \"Hyderabad\",\n  \"text\": \"Hyderabad\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"1\",\n   \"scale\": \"lakh\",\n   \"period\": \"monthly\",\n   \"text\": \"gross salary was 1 lakh a month\"\n  },\n  \"basic_salary\": {\n   \"value\": \"50\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"basic of 50k a month\"\n  },\n  \"hra_received\": {\n   \"value\": \"1,00,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"HRA of ₹1,00,000 for the whole year\"\n  },\n  \"rent_paid\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"Rent is 25k per month\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3213,
+    "output_tokens": 357,
+    "latency_s": 2.1074179579736665,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-15",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "rent_paid": 240000,
+    "gross_salary": 1200000,
+    "basic_salary": 300000,
+    "hra_received": 150000,
+    "metro": true
+   },
+   "result": {
+    "old_tax": 117000,
+    "new_tax": 71500,
+    "old_total_income": 1000000,
+    "new_total_income": 1125000,
+    "best": "new",
+    "saving": 45500,
+    "reason": "The new regime is cheaper: Rs 71500 against Rs 117000, a saving of Rs 45500.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "rent_paid: 20 x thousand x 12 (monthly) = 240000",
+    "gross_salary: 12,00,000 x ones = 1200000",
+    "basic_salary: 3 x lakh = 300000",
+    "hra_received: 1.5 x lakh = 150000",
+    "city 'Delhi' -> metro",
+    "engine hand_coded: old 117000, new 71500, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"Age 30\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": {\n  \"name\": \"Delhi\",\n  \"text\": \"Delhi\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"rent_paid\": {\n   \"value\": \"20\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"20k mahina\"\n  },\n  \"gross_salary\": {\n   \"value\": \"12,00,000\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"salary 12,00,000 hai\"\n  },\n  \"basic_salary\": {\n   \"value\": \"3\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"basic 3 lakh\"\n  },\n  \"hra_received\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"HRA 1.5 lakh saal ka\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3202,
+    "output_tokens": 340,
+    "latency_s": 1.6344003329868428,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-16",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 2000000,
+    "sec_80c": 100000
+   },
+   "result": {
+    "old_tax": 382200,
+    "new_tax": 278200,
+    "old_total_income": 1850000,
+    "new_total_income": 1925000,
+    "best": "new",
+    "saving": 104000,
+    "reason": "The new regime is cheaper: Rs 278200 against Rs 382200, a saving of Rs 104000.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 20 x lakh = 2000000",
+    "sec_80c: 1 x lakh = 100000",
+    "engine hand_coded: old 382200, new 278200, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"30 years old\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"in FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"20\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"20 LPA salary\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"₹1 lakh in 80C (EPF + PPF)\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3187,
+    "output_tokens": 219,
+    "latency_s": 1.4369700839743018,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-18",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 550000
+   },
+   "result": {
+    "old_tax": 0,
+    "new_tax": 0,
+    "old_total_income": 500000,
+    "new_total_income": 475000,
+    "best": "new",
+    "saving": 0,
+    "reason": "Both regimes give Rs 0; the new regime is chosen as the default.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 5.5 x lakh = 550000",
+    "engine hand_coded: old 0, new 0, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"age 30\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25 mein\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"5.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"salary 5.5 lakh hai\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3174,
+    "output_tokens": 164,
+    "latency_s": 1.7900747919920832,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-19",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 550010
+   },
+   "result": {
+    "old_tax": 13000,
+    "new_tax": 0,
+    "old_total_income": 500010,
+    "new_total_income": 475010,
+    "best": "new",
+    "saving": 13000,
+    "reason": "The new regime is cheaper: Rs 0 against Rs 13000, a saving of Rs 13000.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 5,50,010 x ones = 550010",
+    "engine hand_coded: old 13000, new 0, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"I'm 30\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"5,50,010\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"My total salary for FY 2024-25 was ₹5,50,010\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3185,
+    "output_tokens": 186,
+    "latency_s": 1.3367754999781027,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-21",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 797230
+   },
+   "result": {
+    "old_tax": 64420,
+    "new_tax": 23110,
+    "old_total_income": 747230,
+    "new_total_income": 722230,
+    "best": "new",
+    "saving": 41310,
+    "reason": "The new regime is cheaper: Rs 23110 against Rs 64420, a saving of Rs 41310.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 797230 x ones = 797230",
+    "engine hand_coded: old 64420, new 23110, best new"
+   ],
+   "raw_output": "{\n  \"age\": {\n    \"value\": \"30\",\n    \"text\": \"I'm 30\"\n  },\n  \"year\": {\n    \"label\": \"FY 2024-25\",\n    \"type\": \"FY\",\n    \"text\": \"in FY 2024-25\"\n  },\n  \"city\": null,\n  \"parents_senior\": null,\n  \"amounts\": {\n    \"gross_salary\": {\n      \"value\": \"797230\",\n      \"scale\": \"ones\",\n      \"period\": \"annual\",\n      \"text\": \"Single salary income of 797230 rupees\"\n    }\n  },\n  \"unsupported\": [],\n  \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3184,
+    "output_tokens": 183,
+    "latency_s": 1.5287664160132408,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-22",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 5075010
+   },
+   "result": {
+    "old_tax": 1391010,
+    "new_tax": 1237610,
+    "old_total_income": 5025010,
+    "new_total_income": 5000010,
+    "best": "new",
+    "saving": 153400,
+    "reason": "The new regime is cheaper: Rs 1237610 against Rs 1391010, a saving of Rs 153400.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY '2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 50,75,010 x ones = 5075010",
+    "engine hand_coded: old 1391010, new 1237610, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"umar 30\"\n },\n \"year\": {\n  \"label\": \"2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"2024-25 ke liye\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"50,75,010\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"Gross salary ₹50,75,010\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3182,
+    "output_tokens": 171,
+    "latency_s": 1.2746417919988744,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-23",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 10075010
+   },
+   "result": {
+    "old_tax": 3243510,
+    "new_tax": 3077370,
+    "old_total_income": 10025010,
+    "new_total_income": 10000010,
+    "best": "new",
+    "saving": 166140,
+    "reason": "The new regime is cheaper: Rs 3077370 against Rs 3243510, a saving of Rs 166140.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 1,00,75,010 x ones = 10075010",
+    "engine hand_coded: old 3243510, new 3077370, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"30 years old\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"in FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"1,00,75,010\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"salary of Rs 1,00,75,010\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3181,
+    "output_tokens": 179,
+    "latency_s": 1.8919025409850292,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-25",
+   "language": "hinglish",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 50050010
+   },
+   "result": {
+    "old_tax": 19256260,
+    "new_tax": 19087250,
+    "old_total_income": 50000010,
+    "new_total_income": 49975010,
+    "best": "new",
+    "saving": 169010,
+    "reason": "The new regime is cheaper: Rs 19087250 against Rs 19256260, a saving of Rs 169010.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 5,00,50,010 x ones = 50050010",
+    "engine hand_coded: old 19256260, new 19087250, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"age 30\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25 mein\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"5,00,50,010\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"Meri gross salary 5,00,50,010 rupaye hai\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3186,
+    "output_tokens": 182,
+    "latency_s": 1.3380293749505654,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-26",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 30,
+    "gross_salary": 5075000
+   },
+   "result": {
+    "old_tax": 1391000,
+    "new_tax": 1237600,
+    "old_total_income": 5025000,
+    "new_total_income": 5000000,
+    "best": "new",
+    "saving": 153400,
+    "reason": "The new regime is cheaper: Rs 1237600 against Rs 1391000, a saving of Rs 153400.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 30",
+    "gross_salary: 50.75 x lakh = 5075000",
+    "engine hand_coded: old 1391000, new 1237600, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"30\",\n  \"text\": \"I'm 30\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"in FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"50.75\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"earned 50.75 lakh gross salary\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3179,
+    "output_tokens": 171,
+    "latency_s": 1.8218812909908593,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-28",
+   "language": "mixed",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 82,
+    "gross_salary": 1050010
+   },
+   "result": {
+    "old_tax": 104000,
+    "new_tax": 49400,
+    "old_total_income": 1000010,
+    "new_total_income": 975010,
+    "best": "new",
+    "saving": 54600,
+    "reason": "The new regime is cheaper: Rs 49400 against Rs 104000, a saving of Rs 54600.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 82",
+    "gross_salary: 10,50,010 x ones = 1050010",
+    "engine hand_coded: old 104000, new 49400, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"82\",\n  \"text\": \"मेरी उम्र 82 साल है\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"10,50,010\",\n   \"scale\": \"ones\",\n   \"period\": \"annual\",\n   \"text\": \"Salary income 10,50,010\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3180,
+    "output_tokens": 177,
+    "latency_s": 1.8857984160422347,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-29",
+   "language": "en",
+   "expected": "compute",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2024-25",
+    "age": 59,
+    "gross_salary": 900000
+   },
+   "result": {
+    "old_tax": 85800,
+    "new_tax": 33800,
+    "old_total_income": 850000,
+    "new_total_income": 825000,
+    "best": "new",
+    "saving": 52000,
+    "reason": "The new regime is cheaper: Rs 33800 against Rs 85800, a saving of Rs 52000.",
+    "rule_version": "fy2024_25.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 59",
+    "gross_salary: 75 x thousand x 12 (monthly) = 900000",
+    "engine hand_coded: old 85800, new 33800, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"59\",\n  \"text\": \"I'm 59\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"75\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"salary for FY 2024-25 is 75k per month\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3176,
+    "output_tokens": 175,
+    "latency_s": 1.580366000009235,
+    "cached": true,
+    "problems": []
+   },
+   "field_match": {
+    "fy": true,
+    "age": true,
+    "gross_salary": true,
+    "basic_salary": true,
+    "hra_received": true,
+    "rent_paid": true,
+    "metro": true,
+    "sec_80c": true,
+    "sec_80ccd1b": true,
+    "sec_80d_self": true,
+    "sec_80d_parents": true,
+    "parents_senior": true,
+    "home_loan_interest": true
+   },
+   "field_diff": {},
+   "end_to_end": true
+  },
+  {
+   "id": "NL-33",
+   "language": "en",
+   "expected": "ask",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [
+    "interest_portion_unknown"
+   ],
+   "got_tags": [
+    "interest_portion_unknown"
+   ],
+   "questions": [
+    {
+     "id": "interest_portion_unknown:home_loan_interest",
+     "tag": "interest_portion_unknown",
+     "field": "home_loan_interest",
+     "question": "What is the interest portion of your home loan EMI for the year?",
+     "source": "llm"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 35",
+    "gross_salary: 18 x lakh = 1800000",
+    "home_loan_emi: 40 x thousand x 12 (monthly) = 480000",
+    "ask: interest_portion_unknown:home_loan_interest -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"35\",\n  \"text\": \"I'm 35\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"18\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"salary 18 LPA\"\n  },\n  \"home_loan_emi\": {\n   \"value\": \"40\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"home loan EMI of 40k a month\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": [\n  {\n   \"tag\": \"interest_portion_unknown\",\n   \"field\": \"home_loan_interest\",\n   \"question\": \"What is the interest portion of your home loan EMI for the year?\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3196,
+    "output_tokens": 270,
+    "latency_s": 1.3760947919799946,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-34",
+   "language": "hinglish",
+   "expected": "ask",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [
+    "conflicting_amounts"
+   ],
+   "got_tags": [
+    "conflicting_amounts"
+   ],
+   "questions": [
+    {
+     "id": "conflicting_amounts:gross_salary",
+     "tag": "conflicting_amounts",
+     "field": "gross_salary",
+     "question": "You mentioned two different figures for your salary (14 lakh and 16.2 lakh). Which one should be used as your gross salary?",
+     "source": "llm"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 28",
+    "gross_salary: 14 x lakh = 1400000",
+    "sec_80c: 1.5 x lakh = 150000",
+    "LLM flagged conflicting_amounts (gross_salary)",
+    "ask: conflicting_amounts:gross_salary -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"28\",\n  \"text\": \"Age 28\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"14\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"Meri salary 14 lakh hai\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"80C 1.5 lakh\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": [\n  {\n   \"tag\": \"conflicting_amounts\",\n   \"field\": \"gross_salary\",\n   \"question\": \"You mentioned two different figures for your salary (14 lakh and 16.2 lakh). Which one should be used as your gross salary?\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3198,
+    "output_tokens": 282,
+    "latency_s": 1.8641349580138922,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-35",
+   "language": "mixed",
+   "expected": "ask",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [
+    "period_unclear"
+   ],
+   "got_tags": [
+    "period_unclear"
+   ],
+   "questions": [
+    {
+     "id": "period_unclear:gross_salary",
+     "tag": "period_unclear",
+     "field": "gross_salary",
+     "question": "Is your salary of 85,000 per month or annual?",
+     "source": "llm"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 27",
+    "gross_salary: 'Meri salary 85,000 hai': per month or per year is unclear",
+    "ask: period_unclear:gross_salary -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"27\",\n  \"text\": \"I'm 27\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"85,000\",\n   \"scale\": \"ones\",\n   \"period\": \"unknown\",\n   \"text\": \"Meri salary 85,000 hai\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": [\n  {\n   \"tag\": \"period_unclear\",\n   \"field\": \"gross_salary\",\n   \"question\": \"Is your salary of 85,000 per month or annual?\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3177,
+    "output_tokens": 221,
+    "latency_s": 1.7007763339788653,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-36",
+   "language": "mixed",
+   "expected": "ask",
+   "status": "unsupported",
+   "engine_calls": 0,
+   "expected_tags": [
+    "gross_vs_ctc"
+   ],
+   "got_tags": [
+    "employer_nps_80ccd2"
+   ],
+   "questions": [],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "unsupported: employer_nps_80ccd2 -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"31\",\n  \"text\": \"Age 31\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"for FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"18\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"CTC 18 lakh hai\"\n  },\n  \"sec_80c\": {\n   \"value\": \"1.5\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"80C 1.5L\"\n  }\n },\n \"unsupported\": [\n  \"employer_nps_80ccd2\"\n ],\n \"ambiguities\": [\n  {\n   \"tag\": \"gross_vs_ctc\",\n   \"field\": \"gross_salary\",\n   \"question\": \"Is your CTC equal to your taxable gross salary after removing components like employer PF?\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3189,
+    "output_tokens": 285,
+    "latency_s": 2.4624512909795158,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": false
+  },
+  {
+   "id": "NL-38",
+   "language": "en",
+   "expected": "ask",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [
+    "parents_age_missing"
+   ],
+   "got_tags": [
+    "parents_age_missing"
+   ],
+   "questions": [
+    {
+     "id": "parents_age_missing:",
+     "tag": "parents_age_missing",
+     "field": null,
+     "question": "What is the age of your parents? This determines the maximum deduction limit for their health insurance.",
+     "source": "llm"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 40",
+    "gross_salary: 22 x lakh = 2200000",
+    "sec_80d_parents: 45 x thousand = 45000",
+    "sec_80d_self: 25 x thousand = 25000",
+    "ask: parents_age_missing -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"40\",\n  \"text\": \"I'm 40\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"in FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"22\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"salary of 22 lakh\"\n  },\n  \"sec_80d_parents\": {\n   \"value\": \"45\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"45k health insurance for my parents\"\n  },\n  \"sec_80d_self\": {\n   \"value\": \"25\",\n   \"scale\": \"thousand\",\n   \"period\": \"annual\",\n   \"text\": \"25k for myself\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": [\n  {\n   \"tag\": \"parents_age_missing\",\n   \"field\": \"sec_80d_parents\",\n   \"question\": \"What is the age of your parents? This determines the maximum deduction limit for their health insurance.\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3196,
+    "output_tokens": 330,
+    "latency_s": 2.0045277919853106,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-39",
+   "language": "hinglish",
+   "expected": "ask",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [
+    "amount_missing"
+   ],
+   "got_tags": [
+    "amount_missing"
+   ],
+   "questions": [
+    {
+     "id": "amount_missing:gross_salary",
+     "tag": "amount_missing",
+     "field": "gross_salary",
+     "question": "What is the exact amount of the bonus you received in March?",
+     "source": "llm"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 29",
+    "gross_salary: 10 x lakh = 1000000",
+    "LLM flagged amount_missing (gross_salary)",
+    "ask: amount_missing:gross_salary -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"29\",\n  \"text\": \"Age 29\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"10\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"Salary 10 lakh hai\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": [\n  {\n   \"tag\": \"amount_missing\",\n   \"field\": \"gross_salary\",\n   \"question\": \"What is the exact amount of the bonus you received in March?\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3177,
+    "output_tokens": 208,
+    "latency_s": 2.808944667049218,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-40",
+   "language": "mixed",
+   "expected": "ask",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [
+    "amount_missing"
+   ],
+   "got_tags": [
+    "amount_missing"
+   ],
+   "questions": [
+    {
+     "id": "amount_missing:sec_80c",
+     "tag": "amount_missing",
+     "field": "sec_80c",
+     "question": "What is the 80C investment amount for the year, in rupees?",
+     "source": "template"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2024-25' -> FY 2024-25",
+    "age: 26",
+    "gross_salary: 5.6 x lakh = 560000",
+    "sec_80c: mentioned without a figure ('80C mein kuch investments kiye hain')",
+    "ask: amount_missing:sec_80c -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"26\",\n  \"text\": \"Age 26\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"5.6\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"salary 5.6 lakh\"\n  },\n  \"sec_80c\": {\n   \"value\": null,\n   \"scale\": \"ones\",\n   \"period\": \"unknown\",\n   \"text\": \"80C mein kuch investments kiye hain\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3182,
+    "output_tokens": 214,
+    "latency_s": 2.1018862500204705,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-41",
+   "language": "en",
+   "expected": "unsupported",
+   "status": "unsupported",
+   "engine_calls": 0,
+   "expected_tags": [
+    "employer_nps_80ccd2"
+   ],
+   "got_tags": [
+    "employer_nps_80ccd2"
+   ],
+   "questions": [],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "unsupported: employer_nps_80ccd2 -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"34\",\n  \"text\": \"age 34\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"24\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"Salary 24 LPA\"\n  }\n },\n \"unsupported\": [\n  \"employer_nps_80ccd2\"\n ],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3200,
+    "output_tokens": 175,
+    "latency_s": 1.532459249952808,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-42",
+   "language": "hinglish",
+   "expected": "unsupported",
+   "status": "unsupported",
+   "engine_calls": 0,
+   "expected_tags": [
+    "multi_city_hra"
+   ],
+   "got_tags": [
+    "multi_city_hra"
+   ],
+   "questions": [],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "unsupported: multi_city_hra -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"29\",\n  \"text\": \"age 29\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25\"\n },\n \"city\": {\n  \"name\": \"Mumbai\",\n  \"text\": \"Mumbai mein tha\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"20\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"Salary 20 lakh\"\n  },\n  \"basic_salary\": {\n   \"value\": \"10\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"basic 10 lakh\"\n  },\n  \"hra_received\": {\n   \"value\": \"4\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"HRA 4 lakh\"\n  },\n  \"rent_paid\": {\n   \"value\": \"40\",\n   \"scale\": \"thousand\",\n   \"period\": \"monthly\",\n   \"text\": \"rent 40k\"\n  }\n },\n \"unsupported\": [\n  \"multi_city_hra\"\n ],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3210,
+    "output_tokens": 335,
+    "latency_s": 2.318149833998177,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-45",
+   "language": "en",
+   "expected": "unsupported",
+   "status": "unsupported",
+   "engine_calls": 0,
+   "expected_tags": [
+    "non_resident"
+   ],
+   "got_tags": [
+    "foreign_income",
+    "non_resident"
+   ],
+   "questions": [],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "unsupported: foreign_income, non_resident -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"31\",\n  \"text\": \"Age 31\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"of FY 2024-25\"\n },\n \"city\": {\n  \"name\": \"Dubai\",\n  \"text\": \"Dubai\"\n },\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"6\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"6 lakh\"\n  }\n },\n \"unsupported\": [\n  \"non_resident\",\n  \"foreign_income\"\n ],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3195,
+    "output_tokens": 190,
+    "latency_s": 1.3647389999823645,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-46",
+   "language": "mixed",
+   "expected": "unsupported",
+   "status": "unsupported",
+   "engine_calls": 0,
+   "expected_tags": [
+    "foreign_income"
+   ],
+   "got_tags": [
+    "foreign_income",
+    "other_unsupported"
+   ],
+   "questions": [],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "unsupported: foreign_income, other_unsupported -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"33\",\n  \"text\": \"Age 33\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2024-25 mein\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"8\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"Indian salary 8 lakh\"\n  }\n },\n \"unsupported\": [\n  \"foreign_income\",\n  \"other_unsupported\"\n ],\n \"ambiguities\": [\n  {\n   \"tag\": \"other_ambiguity\",\n   \"field\": null,\n   \"question\": \"Aapki foreign income (US company ki salary) ko Indian tax ke antargat report karne ke liye details unclear hain.\"\n  }\n ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3199,
+    "output_tokens": 235,
+    "latency_s": 2.270235167001374,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-47",
+   "language": "en",
+   "expected": "unsupported",
+   "status": "unsupported",
+   "engine_calls": 0,
+   "expected_tags": [
+    "esop_perquisite"
+   ],
+   "got_tags": [
+    "esop_perquisite"
+   ],
+   "questions": [],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "unsupported: esop_perquisite -> engine not called"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"35\",\n  \"text\": \"age 35\"\n },\n \"year\": {\n  \"label\": \"FY 2024-25\",\n  \"type\": \"FY\",\n  \"text\": \"In FY 2024-25\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"30\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"My salary is 30 lakh\"\n  }\n },\n \"unsupported\": [\n  \"esop_perquisite\"\n ],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3206,
+    "output_tokens": 174,
+    "latency_s": 1.3540003329981118,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-48",
+   "language": "en",
+   "expected": "law-change",
+   "status": "ask",
+   "engine_calls": 0,
+   "expected_tags": [],
+   "got_tags": [
+    "age_missing"
+   ],
+   "questions": [
+    {
+     "id": "age_missing:",
+     "tag": "age_missing",
+     "field": null,
+     "question": "How old are you? Your age changes the tax calculation.",
+     "source": "llm"
+    }
+   ],
+   "normalised_input": null,
+   "result": null,
+   "trace": [
+    "year: FY 'FY 2025-26' -> FY 2025-26",
+    "age: not stated (never defaulted)",
+    "gross_salary: 12 x lakh = 1200000",
+    "ask: age_missing -> engine not called"
+   ],
+   "raw_output": "{\n  \"age\": null,\n  \"year\": {\n    \"label\": \"FY 2025-26\",\n    \"type\": \"FY\",\n    \"text\": \"in the FY 2025-26\"\n  },\n  \"city\": null,\n  \"parents_senior\": null,\n  \"amounts\": {\n    \"gross_salary\": {\n      \"value\": \"12\",\n      \"scale\": \"lakh\",\n      \"period\": \"annual\",\n      \"text\": \"earning 12 lakh\"\n    }\n  },\n  \"unsupported\": [],\n  \"ambiguities\": [\n    {\n      \"tag\": \"age_missing\",\n      \"field\": null,\n      \"question\": \"How old are you? Your age changes the tax calculation.\"\n    }\n  ]\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3177,
+    "output_tokens": 195,
+    "latency_s": 1.9941080000135116,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  },
+  {
+   "id": "NL-50",
+   "language": "mixed",
+   "expected": "law-change",
+   "status": "compute",
+   "engine_calls": 1,
+   "expected_tags": [],
+   "got_tags": [],
+   "questions": [],
+   "normalised_input": {
+    "fy": "2025-26",
+    "age": 34,
+    "gross_salary": 1800000
+   },
+   "result": {
+    "old_tax": 351000,
+    "new_tax": 150800,
+    "old_total_income": 1750000,
+    "new_total_income": 1725000,
+    "best": "new",
+    "saving": 200200,
+    "reason": "The new regime is cheaper: Rs 150800 against Rs 351000, a saving of Rs 200200.",
+    "rule_version": "fy2025_26.v1"
+   },
+   "trace": [
+    "year: FY 'FY 2025-26' -> FY 2025-26",
+    "age: 34",
+    "gross_salary: 18 x lakh = 1800000",
+    "engine hand_coded: old 351000, new 150800, best new"
+   ],
+   "raw_output": "{\n \"age\": {\n  \"value\": \"34\",\n  \"text\": \"age 34\"\n },\n \"year\": {\n  \"label\": \"FY 2025-26\",\n  \"type\": \"FY\",\n  \"text\": \"FY 2025-26\"\n },\n \"city\": null,\n \"parents_senior\": null,\n \"amounts\": {\n  \"gross_salary\": {\n   \"value\": \"18\",\n   \"scale\": \"lakh\",\n   \"period\": \"annual\",\n   \"text\": \"salary 18 lakh hai\"\n  }\n },\n \"unsupported\": [],\n \"ambiguities\": []\n}",
+   "llm": {
+    "prompt_version": "v1",
+    "prompt_sha256": "98483783902a08542020df5846b215a5d26bf8cc7197e8d0734feb93573a553e",
+    "model": "gemini-3.5-flash-lite",
+    "attempts": 1,
+    "prompt_tokens": 3185,
+    "output_tokens": 161,
+    "latency_s": 1.5497119579813443,
+    "cached": true,
+    "problems": []
+   },
+   "tags_found": true
+  }
+ ],
+ "not_run": []
+}

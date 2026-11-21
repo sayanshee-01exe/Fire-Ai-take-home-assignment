@@ -1,0 +1,1158 @@
+{
+ "summary": {
+  "engine": "llm_query",
+  "split": "dev",
+  "cases": 10,
+  "repeats": 1,
+  "runs": 10,
+  "tax_exact": 10,
+  "tax_within_10": 10,
+  "tax_within_1pct": 10,
+  "income_exact": 10,
+  "best_match": 10,
+  "unparseable": 0,
+  "latency_mean_s": 22.590273233206243,
+  "latency_p95_s": 36.19179808301851,
+  "prompt_tokens": 22672,
+  "output_tokens": 18278,
+  "cache_hits": 0,
+  "model": "gemini-3.5-flash",
+  "mode": "live",
+  "client_stats": {
+   "network_calls": 10,
+   "cache_hits": 0,
+   "retries": 0,
+   "http_429": 0,
+   "http_5xx": 0,
+   "reported_delays_s": []
+  },
+  "notional_cost_per_1000_usd": 5.2496599999999995,
+  "notional_prices_per_m_usd": {
+   "input": 0.3,
+   "output": 2.5,
+   "verified": false
+  }
+ },
+ "rows": [
+  {
+   "id": "slab_boundary-01",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 299990,
+    "old_tax": 0,
+    "old_total_income": 324990
+   },
+   "got": {
+    "old_total_income": 324990,
+    "old_tax": 0,
+    "new_total_income": 299990,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 9.192403124994598,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1795,
+    "thoughts_tokens": 1236
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 374990,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Exempt HRA",
+      "amount": 0,
+      "clause": "C-HRA"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Interest on Home Loan",
+      "amount": 0,
+      "clause": "C-24B"
+     },
+     {
+      "step": "Chapter VI-A Deductions",
+      "amount": 0,
+      "clause": "C-80C"
+     },
+     {
+      "step": "Total Income (rounded)",
+      "amount": 324990,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 3749.5,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 3749.5,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Surcharge",
+      "amount": 0,
+      "clause": "C-SUR"
+     },
+     {
+      "step": "Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 374990,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income (rounded)",
+      "amount": 299990,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 0,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 0,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Surcharge",
+      "amount": 0,
+      "clause": "C-SUR"
+     },
+     {
+      "step": "Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-05",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 700000,
+    "old_tax": 59800,
+    "old_total_income": 725000
+   },
+   "got": {
+    "old_total_income": 725000,
+    "old_tax": 59800,
+    "new_total_income": 700000,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 33.46225416701054,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1470,
+    "thoughts_tokens": 970
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 775000,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income",
+      "amount": 725000,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 57500,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Rebate under section 87A",
+      "amount": 0,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Surcharge",
+      "amount": 0,
+      "clause": "C-SUR"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 2300,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 59800,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 775000,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income",
+      "amount": 700000,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 20000,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Rebate under section 87A",
+      "amount": 20000,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Surcharge",
+      "amount": 0,
+      "clause": "C-SUR"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-09",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 52000,
+    "new_total_income": 1000010,
+    "old_tax": 124800,
+    "old_total_income": 1025010
+   },
+   "got": {
+    "old_total_income": 1025010,
+    "old_tax": 124800,
+    "new_total_income": 1000010,
+    "new_tax": 52000,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 19.25892162497621,
+   "usage": {
+    "prompt_tokens": 2268,
+    "output_tokens": 2407,
+    "thoughts_tokens": 1809
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 1075010,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income after rounding",
+      "amount": 1025010,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 120003,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 0,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Surcharge",
+      "amount": 0,
+      "clause": "C-SUR"
+     },
+     {
+      "step": "Health and Education Cess (4%)",
+      "amount": 4800.12,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 124800,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 1075010,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income after rounding",
+      "amount": 1000010,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 50001.5,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Section 87A Marginal Relief",
+      "amount": 0,
+      "clause": "C-87A-NEW-MR"
+     },
+     {
+      "step": "Surcharge",
+      "amount": 0,
+      "clause": "C-SUR"
+     },
+     {
+      "step": "Health and Education Cess (4%)",
+      "amount": 2000.06,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 52000,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-13",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 145600,
+    "new_total_income": 1499990,
+    "old_tax": 280800,
+    "old_total_income": 1524990
+   },
+   "got": {
+    "old_total_income": 1524990,
+    "old_tax": 280800,
+    "new_total_income": 1499990,
+    "new_tax": 145600,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 36.19179808301851,
+   "usage": {
+    "prompt_tokens": 2268,
+    "output_tokens": 2128,
+    "thoughts_tokens": 1524
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 1574990,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income after rounding",
+      "amount": 1524990,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 269997,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 10799.88,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax",
+      "amount": 280800,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 1574990,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income after rounding",
+      "amount": 1499990,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 139998,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 5599.92,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax",
+      "amount": 145600,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-17",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 225000,
+    "old_tax": 0,
+    "old_total_income": 250000
+   },
+   "got": {
+    "old_total_income": 250000,
+    "old_tax": 0,
+    "new_total_income": 225000,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 29.114375208038837,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1315,
+    "thoughts_tokens": 882
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross salary",
+      "amount": 300000,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total income",
+      "amount": 250000,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Tax on total income",
+      "amount": 0,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Rebate section 87A",
+      "amount": 0,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross salary",
+      "amount": 300000,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Standard deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total income",
+      "amount": 225000,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Tax on total income",
+      "amount": 0,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Rebate section 87A",
+      "amount": 0,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-21",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 475010,
+    "old_tax": 13000,
+    "old_total_income": 500010
+   },
+   "got": {
+    "old_total_income": 500010,
+    "old_tax": 13000,
+    "new_total_income": 475010,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 32.40226000000257,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1888,
+    "thoughts_tokens": 1177
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 550010,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income after deductions",
+      "amount": 500010,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 12502,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Rebate s.87A",
+      "amount": 0,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Health and Education Cess (4%)",
+      "amount": 500.08,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 13000,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 550010,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income after standard deduction",
+      "amount": 475010,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 8750.5,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Rebate s.87A",
+      "amount": 8750.5,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Tax after Rebate",
+      "amount": 0,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-25",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 274990,
+    "old_tax": 0,
+    "old_total_income": 299990
+   },
+   "got": {
+    "old_total_income": 299990,
+    "old_tax": 0,
+    "new_total_income": 274990,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 18.496019707992673,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1315,
+    "thoughts_tokens": 978
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "amount": 349990,
+      "clause": "C-STD-OLD",
+      "step": "Gross salary"
+     },
+     {
+      "amount": 50000,
+      "clause": "C-STD-OLD",
+      "step": "Standard deduction"
+     },
+     {
+      "amount": 299990,
+      "clause": "C-288A",
+      "step": "Total income after rounding"
+     },
+     {
+      "amount": 0,
+      "clause": "C-SLAB-OLD",
+      "step": "Slab tax (Senior Citizen)"
+     },
+     {
+      "amount": 0,
+      "clause": "C-288B",
+      "step": "Final tax payable"
+     }
+    ],
+    "new": [
+     {
+      "amount": 349990,
+      "clause": "C-STD-NEW",
+      "step": "Gross salary"
+     },
+     {
+      "amount": 75000,
+      "clause": "C-STD-NEW",
+      "step": "Standard deduction"
+     },
+     {
+      "amount": 274990,
+      "clause": "C-288A",
+      "step": "Total income after rounding"
+     },
+     {
+      "amount": 0,
+      "clause": "C-SLAB-NEW",
+      "step": "Slab tax"
+     },
+     {
+      "amount": 0,
+      "clause": "C-288B",
+      "step": "Final tax payable"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-29",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 475000,
+    "old_tax": 0,
+    "old_total_income": 500000
+   },
+   "got": {
+    "old_total_income": 500000,
+    "old_tax": 0,
+    "new_total_income": 475000,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 25.5975824999623,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1892,
+    "thoughts_tokens": 1109
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 550000,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Less: Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income (rounded)",
+      "amount": 500000,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax (Senior Citizen: 0 to 3L Nil, 3L to 5L @ 5%)",
+      "amount": 10000,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Less: Rebate under section 87A",
+      "amount": 10000,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Tax after rebate",
+      "amount": 0,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 550000,
+      "clause": "gross_salary"
+     },
+     {
+      "step": "Less: Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income (rounded)",
+      "amount": 475000,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax (0 to 3L Nil, 3L to 4.75L @ 5%)",
+      "amount": 8750,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Less: Rebate under section 87A",
+      "amount": 8750,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Tax after rebate",
+      "amount": 0,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slab_boundary-33",
+   "category": "slab_boundary",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 475010,
+    "old_tax": 0,
+    "old_total_income": 500010
+   },
+   "got": {
+    "old_total_income": 500010,
+    "old_tax": 0,
+    "new_total_income": 475010,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 11.876652708044276,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 2225,
+    "thoughts_tokens": 1734
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 550010,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income",
+      "amount": 500010,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax (Age 80+)",
+      "amount": 2,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 0,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Cess (4%)",
+      "amount": 0.08,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 550010,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income",
+      "amount": 475010,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Slab Tax",
+      "amount": 8750.5,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 8750.5,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rebate_87a-01",
+   "category": "rebate_87a",
+   "run_index": 0,
+   "expected": {
+    "best": "new",
+    "new_tax": 0,
+    "new_total_income": 474990,
+    "old_tax": 0,
+    "old_total_income": 499990
+   },
+   "got": {
+    "old_total_income": 499990,
+    "old_tax": 0,
+    "new_total_income": 474990,
+    "new_tax": 0,
+    "best": "new"
+   },
+   "error": null,
+   "raw_output": null,
+   "tax_exact": true,
+   "tax_within_10": true,
+   "tax_within_1pct": true,
+   "income_exact": true,
+   "best_match": true,
+   "latency_s": 10.310465208021924,
+   "usage": {
+    "prompt_tokens": 2267,
+    "output_tokens": 1843,
+    "thoughts_tokens": 1346
+   },
+   "cached": false,
+   "llm_trace": {
+    "old": [
+     {
+      "step": "Gross Salary",
+      "amount": 549990,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Exempt HRA",
+      "amount": 0,
+      "clause": "C-HRA"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 50000,
+      "clause": "C-STD-OLD"
+     },
+     {
+      "step": "Total Income after rounding",
+      "amount": 499990,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Tax on Total Income (Slab Tax)",
+      "amount": 12499.5,
+      "clause": "C-SLAB-OLD"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 12499.5,
+      "clause": "C-87A-OLD"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ],
+    "new": [
+     {
+      "step": "Gross Salary",
+      "amount": 549990,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Standard Deduction",
+      "amount": 75000,
+      "clause": "C-STD-NEW"
+     },
+     {
+      "step": "Total Income after rounding",
+      "amount": 474990,
+      "clause": "C-288A"
+     },
+     {
+      "step": "Tax on Total Income (Slab Tax)",
+      "amount": 8749.5,
+      "clause": "C-SLAB-NEW"
+     },
+     {
+      "step": "Section 87A Rebate",
+      "amount": 8749.5,
+      "clause": "C-87A-NEW"
+     },
+     {
+      "step": "Health and Education Cess",
+      "amount": 0,
+      "clause": "C-CESS"
+     },
+     {
+      "step": "Final Tax Payable",
+      "amount": 0,
+      "clause": "C-288B"
+     }
+    ]
+   }
+  }
+ ]
+}

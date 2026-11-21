@@ -1,0 +1,45 @@
+{
+ "cache_key": "82ce054263234df2827025acf1c777260049b92de6ebde5d5f130cc3b6adca52",
+ "model": "gemini-3.1-flash-lite",
+ "temperature": 0.0,
+ "run_index": 0,
+ "json_mode": true,
+ "system": "You are an Indian income-tax calculator for salaried resident individuals. Apply ONLY the rules below, exactly as written, to compute tax under both regimes.\n\n# Salaried-individual income-tax rules: FY 2024-25 (AY 2025-26)\n\nSingle source of rule text for all three implementations (hand-coded, LLM-at-query-time, LLM-compiled).\nNumbers here must match params_fy2024_25.json (the hand-coded engine reads that file).\nEach rule has a clause ID. Every rupee in an answer must trace back to one of these IDs.\nScope: resident individual, salary income only. No capital gains, business or other heads.\n\nSources (official): Income Tax Department tax-rates page\n(incometaxindia.gov.in/Documents/Left Menu/TAX RATES_Indvl.htm), HRA FAQ page on incometaxindia.gov.in,\nFinance Act 2024 (Finance (No. 2) Act 2024 for the new-regime standard deduction), Income-tax Act 1961.\n\n## Deductions from salary\n\n- **C-STD-OLD** (s.16(ia)): standard deduction Rs 50,000, old regime. Limited to salary left after exempt HRA.\n- **C-STD-NEW** (s.16(ia) as amended by Finance (No. 2) Act 2024): standard deduction Rs 75,000, new regime.\n- **C-HRA** (s.10(13A), Rule 2A): old regime only. Exempt HRA = least of\n  (a) HRA actually received, (b) 50% of salary if rented home is in Delhi, Mumbai, Kolkata or Chennai,\n  else 40% of salary, (c) rent paid minus 10% of salary. Floor at 0.\n  \"Salary\" = basic + dearness allowance (+ commission on fixed % of turnover).\n  FY 2024-25: only the four cities above are metro. (Eight cities apply from FY 2026-27, not here.)\n- **C-24B** (s.24(b)): old regime only. Interest on loan for a self-occupied house, deductible up to Rs 2,00,000.\n  Not allowed in the new regime.\n\n## Chapter VI-A deductions (old regime only)\n\n- **C-80C** (s.80C): up to Rs 1,50,000.\n- **C-80CCD1B** (s.80CCD(1B)): additional NPS up to Rs 50,000, over and above 80C.\n- **C-80D-SELF** (s.80D): premium for self, spouse and children: up to Rs 25,000;\n  Rs 50,000 if the taxpayer is 60 or older.\n- **C-80D-PARENTS** (s.80D): premium for parents: up to Rs 25,000; Rs 50,000 if a parent is 60 or older.\n  The two 80D blocks are capped separately and then added. Preventive health check-up (up to Rs 5,000)\n  sits inside these limits.\n\n## Rounding\n\n- **C-288A**: total income is rounded to the nearest Rs 10 (last digit 5 or more rounds up).\n- **C-288B**: final tax payable is rounded to the nearest Rs 10 the same way.\n\n## Slabs on total income\n\n**C-SLAB-OLD** (age on 31 March 2025 decides the table):\n\n| Age | Slab | Rate |\n|---|---|---|\n| below 60 | up to 2,50,000 | nil |\n| | 2,50,000 to 5,00,000 | 5% |\n| | 5,00,000 to 10,00,000 | 20% |\n| | above 10,00,000 | 30% |\n| 60 to under 80 | up to 3,00,000 | nil |\n| | 3,00,000 to 5,00,000 | 5% |\n| | 5,00,000 to 10,00,000 | 20% |\n| | above 10,00,000 | 30% |\n| 80 and above | up to 5,00,000 | nil |\n| | 5,00,000 to 10,00,000 | 20% |\n| | above 10,00,000 | 30% |\n\n**C-SLAB-NEW** (s.115BAC(1A), all ages): up to 3,00,000 nil; 3,00,001 to 7,00,000 5%;\n7,00,001 to 10,00,000 10%; 10,00,001 to 12,00,000 15%; 12,00,001 to 15,00,000 20%; above 15,00,000 30%.\n\n## Rebate s.87A (resident individuals)\n\n- **C-87A-OLD**: total income up to Rs 5,00,000: rebate = lower of tax and Rs 12,500. No marginal relief.\n- **C-87A-NEW**: total income up to Rs 7,00,000: rebate = lower of tax and Rs 25,000.\n- **C-87A-NEW-MR** (marginal relief): if total income is above Rs 7,00,000, tax cannot exceed\n  (total income minus Rs 7,00,000). Applied before surcharge and cess.\n\n## Surcharge (on income tax after rebate)\n\n- **C-SUR**: total income above 50 lakh: 10%; above 1 crore: 15%; above 2 crore: 25%;\n  above 5 crore: 37% under the old regime, capped at 25% under the new regime.\n- **C-SUR-MR** (marginal relief): tax plus surcharge cannot exceed (tax plus surcharge payable at the\n  threshold income) plus (total income minus threshold). Thresholds: 50 lakh, 1 crore, 2 crore, 5 crore.\n  Tax at the threshold uses the surcharge rate of the band below it.\n\n## Cess\n\n- **C-CESS**: health and education cess 4% on (income tax + surcharge).\n\n## Order of computation\n\n1. Gross salary minus exempt HRA (old only), minus standard deduction; minus s.24(b) interest (old only).\n2. Minus Chapter VI-A deductions (old only). Floor at 0. Round per C-288A. = Total income.\n3. Slab tax, then 87A rebate (and its marginal relief), then surcharge with its marginal relief, then cess.\n4. Round per C-288B. Compare regimes: choose the lower final tax (tie goes to the new regime).\n\n\nInput fields (all money is annual, in whole rupees):\n- fy: financial year. age: age in years on 31 March of that year.\n- gross_salary: total salary, including HRA received and all allowances.\n- basic_salary: basic + dearness allowance (the \"salary\" used for the HRA rule).\n- hra_received: HRA received from the employer. rent_paid: rent paid in the year.\n- metro: true if the rented home is in Delhi, Mumbai, Kolkata or Chennai.\n- sec_80c, sec_80ccd1b: amounts invested (before applying the limits).\n- sec_80d_self: health-insurance premium for self, spouse and children. sec_80d_parents: for parents.\n- parents_senior: true if a parent is 60 or older.\n- home_loan_interest: interest on a loan for a self-occupied house (before the limit).\n\nRespond with exactly one JSON object and nothing else, in this shape:\n{\n  \"old_regime\": {\"taxable_income\": <integer rupees>, \"tax\": <integer rupees>,\n                 \"trace\": [{\"step\": \"<what was done>\", \"amount\": <number>, \"clause\": \"<clause ID>\"}, ...]},\n  \"new_regime\": {\"taxable_income\": <integer rupees>, \"tax\": <integer rupees>,\n                 \"trace\": [...]}\n}\n\"taxable_income\" is total income after rounding (C-288A). \"tax\" is the final tax payable after rebate,\nsurcharge, cess and rounding (C-288B). Keep each trace short: one entry per step, citing the clause ID.",
+ "prompt": "Compute the tax for this case:\n{\"age\": 30, \"basic_salary\": 0, \"fy\": \"2024-25\", \"gross_salary\": 797230, \"home_loan_interest\": 0, \"hra_received\": 0, \"metro\": false, \"parents_senior\": false, \"rent_paid\": 0, \"sec_80c\": 0, \"sec_80ccd1b\": 0, \"sec_80d_parents\": 0, \"sec_80d_self\": 0}",
+ "raw_response": {
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"old_regime\": {\n    \"taxable_income\": 747230,\n    \"tax\": 64428,\n    \"trace\": [\n      {\"step\": \"Gross salary minus standard deduction\", \"amount\": 747230, \"clause\": \"C-STD-OLD\"},\n      {\"step\": \"Total income after rounding\", \"amount\": 747230, \"clause\": \"C-288A\"},\n      {\"step\": \"Tax on slab 0-2.5L (0) + 2.5-5L (12500) + 5-7.47L (49446)\", \"amount\": 61946, \"clause\": \"C-SLAB-OLD\"},\n      {\"step\": \"Cess at 4%\", \"amount\": 2478, \"clause\": \"C-CESS\"},\n      {\"step\": \"Final tax rounded\", \"amount\": 64424, \"clause\": \"C-288B\"}\n    ]\n  },\n  \"new_regime\": {\n    \"taxable_income\": 722230,\n    \"tax\": 23112,\n    \"trace\": [\n      {\"step\": \"Gross salary minus standard deduction\", \"amount\": 722230, \"clause\": \"C-STD-NEW\"},\n      {\"step\": \"Total income after rounding\", \"amount\": 722230, \"clause\": \"C-288A\"},\n      {\"step\": \"Tax on slab 0-3L (0) + 3-7L (20000) + 7-7.22L (2223)\", \"amount\": 22223, \"clause\": \"C-SLAB-NEW\"},\n      {\"step\": \"Cess at 4%\", \"amount\": 889, \"clause\": \"C-CESS\"},\n      {\"step\": \"Final tax rounded\", \"amount\": 23112, \"clause\": \"C-288B\"}\n    ]\n  }\n}",
+       "thoughtSignature": "EqEBCp4BAWkUfRNtwIAXQRI6v5QZTA95LH/nkFaeO3N0UH84nOi7ExIpQMqwd2jvTJc1n1SyfqzaTohQHoWnJ1Pe68yxjNcxACOv4DSbxnzkwazmpEGSsNKkIzdmvBc8y3wBK7zH1lHmaXlVog3aZy64R+GqdhDokuIwqYV/rsnUiqVa7TQZXMl6RNWcOOVhJ863dX1tS9swwrhMkOQocO29W/A="
+      }
+     ],
+     "role": "model"
+    },
+    "finishReason": "STOP",
+    "index": 0
+   }
+  ],
+  "usageMetadata": {
+   "promptTokenCount": 2267,
+   "candidatesTokenCount": 491,
+   "totalTokenCount": 2758,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 2267
+    }
+   ],
+   "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.1-flash-lite",
+  "responseId": "BZgAa6rxIYKK694P-priqAM"
+ },
+ "prompt_tokens": 2267,
+ "output_tokens": 491,
+ "thoughts_tokens": 0,
+ "latency_s": 3.1129850420402363,
+ "recorded_at": "2026-11-20T18:57:12+00:00"
+}

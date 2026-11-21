@@ -1,0 +1,2 @@
+# Replies recorded by the UI's live mode (kept apart from the committed llm_cache/).
+live_cache/

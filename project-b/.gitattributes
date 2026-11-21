@@ -1,0 +1,4 @@
+# Keep text byte-identical on every platform: the LLM cache, fixtures and manifests are
+# compared and hashed, so a CRLF conversion on checkout must not change them.
+* text=auto eol=lf
+*.parquet binary

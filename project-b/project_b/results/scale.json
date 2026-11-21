@@ -1,0 +1,109 @@
+{
+  "assumptions_and_projection": {
+    "rows per second, daily mean": {
+      "value": 578.7037037037037,
+      "unit": "rows/s",
+      "source": "projection",
+      "how": "50 M / 86,400 s"
+    },
+    "rows per second, peak hour": {
+      "value": 1736.111111111111,
+      "unit": "rows/s",
+      "source": "projection",
+      "how": "mean x PEAK_TO_MEAN (3.0)"
+    },
+    "batches per day": {
+      "value": 10000.0,
+      "unit": "batches",
+      "source": "projection",
+      "how": "50 M / 5,000-row batches"
+    },
+    "largest customer, rows per day": {
+      "value": 9312949.642995933,
+      "unit": "rows",
+      "source": "projection",
+      "how": "Zipf s=1.0 over 120 customers"
+    },
+    "smallest customer, rows per day": {
+      "value": 77607.91369163276,
+      "unit": "rows",
+      "source": "projection",
+      "how": "same; its baselines take longest to learn"
+    },
+    "largest customer, batches per hour at peak": {
+      "value": 232.82374107489832,
+      "unit": "batches/h",
+      "source": "projection",
+      "how": "its rows/day / 24 x PEAK_TO_MEAN / batch size"
+    },
+    "local throughput, one laptop core": {
+      "value": 22882.8730724858,
+      "unit": "rows/s",
+      "source": "measured",
+      "how": "pipeline_summary.json"
+    },
+    "cores needed at peak": {
+      "value": 1,
+      "unit": "cores",
+      "source": "projection",
+      "how": "peak rows/s x HEADROOM (2.0) / measured rows/s per core"
+    },
+    "CPU-hours per day": {
+      "value": 0.6069556407927109,
+      "unit": "core-h",
+      "source": "projection",
+      "how": "50 M / measured rows/s / 3,600"
+    },
+    "compute cost per day": {
+      "value": 0.03034778203963555,
+      "unit": "USD",
+      "source": "projection",
+      "how": "CPU-hours x $0.05/vCPU-h (config)"
+    },
+    "LLM values escalated per 1M rows (clean + real batches)": {
+      "value": 0.0,
+      "unit": "values",
+      "source": "measured",
+      "how": "pipeline_summary.json llm_by_kind"
+    },
+    "LLM values per day": {
+      "value": 0.0,
+      "unit": "values",
+      "source": "projection",
+      "how": "rate x 50 M x NOVELTY_DECAY (1.0): upper bound without a cross-day cache"
+    },
+    "LLM requests per day": {
+      "value": 0.0,
+      "unit": "requests",
+      "source": "projection",
+      "how": "values/day x measured requests per value"
+    },
+    "LLM input / output tokens per day": {
+      "value": [
+        0.0,
+        0.0
+      ],
+      "unit": "tokens",
+      "source": "projection",
+      "how": "values/day x measured tokens per value"
+    },
+    "LLM cost per day": {
+      "value": 0.0,
+      "unit": "USD",
+      "source": "projection",
+      "how": "tokens x list price for gemini-3.5-flash-lite (config, 2026-11-20, Gemini Developer API pricing page (Standard tier, text))"
+    },
+    "LLM requests per day vs free-tier cap": {
+      "value": 0.0,
+      "unit": "x the cap",
+      "source": "projection",
+      "how": "requests/day / 500 (free-tier requests/day, AI Studio rate-limit page)"
+    },
+    "LLM wait per batch at peak, largest customer": {
+      "value": 0.0,
+      "unit": "s",
+      "source": "projection",
+      "how": "no LLM request in the measured plan"
+    }
+  }
+}

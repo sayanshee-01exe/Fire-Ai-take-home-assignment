@@ -1,0 +1,41 @@
+# Patterns that start with "/" match only at the repository root. Unanchored folder
+# patterns such as "data/" would ALSO match the source package project_b/data/ and the
+# committed test fixtures in tests/data/, so data folders are always anchored here.
+
+# ---- Data downloaded or derived at run time (re-created by the pipeline) ----
+/data/
+# Reduced development runs of the harness; the full run writes project_b/results/.
+/project_b/results/partial/
+/project_b/results/quick_check_*/
+# Replay-only reproducibility checks (python -m project_b --results-dir ...): compared, not committed.
+/project_b/results/replay_check*/
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Python caches and temporary files ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.tmp
+*.log
+
+# ---- OS / editor noise ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ---- Personal working notes (not part of the submission) ----
+/SUBMISSION_CHECKLIST.md

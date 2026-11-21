@@ -1,0 +1,50 @@
+{
+  "fy": "2025-26",
+  "rule_version": "fy2025_26.v1",
+  "assessment_year": "2026-27",
+  "rounding_unit": 10,
+  "cess_percent": 4,
+  "age_bands": {"senior_from": 60, "super_senior_from": 80},
+  "standard_deduction": {"old": 50000, "new": 75000},
+  "slabs": {
+    "old": {
+      "below_60": [[250000, 0], [500000, 5], [1000000, 20], [null, 30]],
+      "senior": [[300000, 0], [500000, 5], [1000000, 20], [null, 30]],
+      "super_senior": [[500000, 0], [1000000, 20], [null, 30]]
+    },
+    "new": [[400000, 0], [800000, 5], [1200000, 10], [1600000, 15], [2000000, 20], [2400000, 25], [null, 30]]
+  },
+  "rebate_87a": {
+    "old": {"limit": 500000, "max": 12500, "marginal_relief": false},
+    "new": {"limit": 1200000, "max": 60000, "marginal_relief": true}
+  },
+  "surcharge": {
+    "old": [[5000000, 10], [10000000, 15], [20000000, 25], [50000000, 37]],
+    "new": [[5000000, 10], [10000000, 15], [20000000, 25]]
+  },
+  "hra": {
+    "metro_pct": 50,
+    "non_metro_pct": 40,
+    "rent_excess_over_pct_of_salary": 10,
+    "metro_cities": ["Delhi", "Mumbai", "Kolkata", "Chennai"]
+  },
+  "limits": {
+    "sec_24b": 200000,
+    "sec_80c": 150000,
+    "sec_80ccd1b": 50000,
+    "sec_80d": {"self": 25000, "self_senior": 50000, "parents": 25000, "parents_senior": 50000}
+  },
+  "changes_from_fy2024_25": {
+    "slabs.new": "0-4L nil, 4-8L 5%, 8-12L 10%, 12-16L 15%, 16-20L 20%, 20-24L 25%, above 24L 30% (was 0-3L nil ... above 15L 30%)",
+    "rebate_87a.new.limit": "12,00,000 (was 7,00,000)",
+    "rebate_87a.new.max": "60,000 (was 25,000)",
+    "rebate_87a.new.marginal_relief": "kept, now just above 12,00,000: tax before cess cannot exceed total income minus 12,00,000. confirmed on the official calculator, rows OC26-03 to OC26-06 (12 of 12 official rows match)",
+    "sources": "Union Budget 2025-26 speech; PIB press release 2098406; Finance Act 2025 highlights on incometaxindia.gov.in (as cited in the task; not re-fetched in this session)"
+  },
+  "verification": {
+    "slabs_new_and_87a_new": "from the task's cited official sources (Budget 2025-26 speech, PIB 2098406, Finance Act 2025 highlights); not yet checked on the official calculator for AY 2026-27",
+    "new_regime_87a_marginal_relief_at_12l": "confirmed on the official calculator, rows OC26-03 to OC26-06 (12 of 12 official rows match) (AY 2026-27)",
+    "unchanged_items": "standard deduction 50,000 / 75,000, old-regime slabs and 87A, surcharge rates and the new-regime 25% cap, cess 4%, rounding: stated as unchanged in the task; deduction limits (80C, 80CCD(1B), 80D, 24(b)) carried over from FY 2024-25 and still unverified on an official page (risk R3)",
+    "metro_list": "four-city list kept for FY 2025-26 (the eight-city list applies from FY 2026-27)"
+  }
+}

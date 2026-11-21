@@ -1,0 +1,89 @@
+{
+ "about": "Closed-list tags per query, derived mechanically (keyword rules, first match wins) from clarification_topics and unsupported_features in queries.jsonl. Built on 2026-11-20 before any parser output existed; not to be changed afterwards. Compute and law-change rows have [].",
+ "map": {
+  "NL-01": [],
+  "NL-02": [],
+  "NL-03": [],
+  "NL-04": [],
+  "NL-05": [],
+  "NL-06": [],
+  "NL-07": [],
+  "NL-08": [],
+  "NL-09": [],
+  "NL-10": [],
+  "NL-11": [],
+  "NL-12": [],
+  "NL-13": [],
+  "NL-14": [],
+  "NL-15": [],
+  "NL-16": [],
+  "NL-17": [],
+  "NL-18": [],
+  "NL-19": [],
+  "NL-20": [],
+  "NL-21": [],
+  "NL-22": [],
+  "NL-23": [],
+  "NL-24": [],
+  "NL-25": [],
+  "NL-26": [],
+  "NL-27": [],
+  "NL-28": [],
+  "NL-29": [],
+  "NL-30": [],
+  "NL-31": [
+   "age_missing"
+  ],
+  "NL-32": [
+   "city_missing"
+  ],
+  "NL-33": [
+   "interest_portion_unknown"
+  ],
+  "NL-34": [
+   "conflicting_amounts"
+  ],
+  "NL-35": [
+   "period_unclear"
+  ],
+  "NL-36": [
+   "gross_vs_ctc"
+  ],
+  "NL-37": [
+   "year_missing_or_ambiguous"
+  ],
+  "NL-38": [
+   "parents_age_missing"
+  ],
+  "NL-39": [
+   "amount_missing"
+  ],
+  "NL-40": [
+   "amount_missing"
+  ],
+  "NL-41": [
+   "employer_nps_80ccd2"
+  ],
+  "NL-42": [
+   "multi_city_hra"
+  ],
+  "NL-43": [
+   "capital_gains"
+  ],
+  "NL-44": [
+   "business_income"
+  ],
+  "NL-45": [
+   "non_resident"
+  ],
+  "NL-46": [
+   "foreign_income"
+  ],
+  "NL-47": [
+   "esop_perquisite"
+  ],
+  "NL-48": [],
+  "NL-49": [],
+  "NL-50": []
+ }
+}

@@ -1,0 +1,44 @@
+{
+  "fy": "2024-25",
+  "rule_version": "fy2024_25.v1",
+  "rounding_unit": 10,
+  "cess_percent": 4,
+  "age_bands": {"senior_from": 60, "super_senior_from": 80},
+  "standard_deduction": {"old": 50000, "new": 75000},
+  "slabs": {
+    "old": {
+      "below_60": [[250000, 0], [500000, 5], [1000000, 20], [null, 30]],
+      "senior": [[300000, 0], [500000, 5], [1000000, 20], [null, 30]],
+      "super_senior": [[500000, 0], [1000000, 20], [null, 30]]
+    },
+    "new": [[300000, 0], [700000, 5], [1000000, 10], [1200000, 15], [1500000, 20], [null, 30]]
+  },
+  "rebate_87a": {
+    "old": {"limit": 500000, "max": 12500, "marginal_relief": false},
+    "new": {"limit": 700000, "max": 25000, "marginal_relief": true}
+  },
+  "surcharge": {
+    "old": [[5000000, 10], [10000000, 15], [20000000, 25], [50000000, 37]],
+    "new": [[5000000, 10], [10000000, 15], [20000000, 25]]
+  },
+  "hra": {
+    "metro_pct": 50,
+    "non_metro_pct": 40,
+    "rent_excess_over_pct_of_salary": 10,
+    "metro_cities": ["Delhi", "Mumbai", "Kolkata", "Chennai"]
+  },
+  "limits": {
+    "sec_24b": 200000,
+    "sec_80c": 150000,
+    "sec_80ccd1b": 50000,
+    "sec_80d": {"self": 25000, "self_senior": 50000, "parents": 25000, "parents_senior": 50000}
+  },
+  "verification": {
+    "slabs_rebate_surcharge_cess": "read on incometaxindia.gov.in tax-rates page (individuals, AY 2025-26), 2026-11-20",
+    "old_regime_87a_no_marginal_relief": "official page gives no marginal-relief wording for the old regime; confirm with the official calculator at total income 5,00,010",
+    "standard_deduction_new_75000": "third-party sources only (Finance (No. 2) Act 2024); confirm on an official page",
+    "hra_metro_list": "incometaxindia.gov.in HRA page snippet seen via search; page fetch failed",
+    "limits_80c_80ccd1b_24b_80d": "NOT yet verified on an official page (risk R3)",
+    "rounding_unit_10": "statutory reading of s.288A/288B; official calculator behaviour NOT yet checked (risk R1)"
+  }
+}

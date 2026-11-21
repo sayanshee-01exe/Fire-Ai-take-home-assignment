@@ -1,0 +1,3972 @@
+{
+ "note": "Jan-Aug 2023 candidate resolution texts for problem k, each read by hand against the criterion in project_b/inject.py; decision = keep (may carry an injected contradiction) or exclude (status-neutral or ambiguous). Public agency template texts. borderline = kept, but judged borderline by the independent reviewer while reading (30 closed texts).",
+ "entries": [
+  {
+   "kind": "open",
+   "agency": "DCWP",
+   "jan_aug_rows": 1130,
+   "decision": "keep",
+   "text": "The Department of Consumer and Worker Protection (DCWP) sent you a complaint form.  To help you, DCWP must get the completed form and any requested documents within 30 days.  You can send requested information by email, fax, or mail. Contact information is on the complaint form.  You may also be able to submit requested information at nyc.gov/dcwp. You must enter your NYC311 Service Request number.  If you didn't receive the complaint form within 15 days from the date you filed your Service Request, call DCWP Consumer Services at (212) 487-4110. You must provide your NYC311 Service Request number.  DCWP will contact you about 30 days after getting your completed form and documents.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DCWP",
+   "jan_aug_rows": 671,
+   "decision": "keep",
+   "text": "The Department of Consumer and Worker Protection (DCWP) is reviewing your complaint. DCWP may contact you directly if it needs additional information.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DEP",
+   "jan_aug_rows": 326,
+   "decision": "keep",
+   "text": "The Department of Environmental Protection has inspected your complaint and determined that further investigation is required. More information will be available once the condition is resolved. Please visit nyc.gov/311 or call 311 at a later time to check the status of your complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DEP",
+   "jan_aug_rows": 54,
+   "decision": "exclude",
+   "text": "Please call 311 for further information. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 488,
+   "decision": "exclude",
+   "text": "Your Service Request has been submitted to the Department of Buildings.  Please check back later for status.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 131,
+   "decision": "keep",
+   "text": "The Department of Buildings reviewed this complaint and assigned it to the Special Operations Team for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 130,
+   "decision": "keep",
+   "text": "The Department of Buildings attempted to investigate this complaint but could not gain access to the location. Please schedule an appointment for a follow up inspection by contacting the appropriate unit at Department of Buildings. You can find contact information at https://www1.nyc.gov/site/buildings/dob/contact-us.page",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 70,
+   "decision": "keep",
+   "text": "The Department of Buildings reviewed this complaint and assigned it to the Electrical Division for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 44,
+   "decision": "keep",
+   "text": "The Department of Buildings has attempted to conduct an inspection of this premises and was denied access. A second attempt will be made.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 43,
+   "decision": "keep",
+   "text": "The Department of Buildings has reviewed this complaint and has reassigned it to our Executive Inspections Unit.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 34,
+   "decision": "exclude",
+   "text": "The Department of Buildings has reviewed this complaint and determnined that it would be best addressed by the Department of Investigation.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOB",
+   "jan_aug_rows": 31,
+   "decision": "keep",
+   "text": "The Department of Buildings reviewed this complaint and assigned it to the Construction Division for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOHMH",
+   "jan_aug_rows": 284,
+   "decision": "exclude",
+   "text": "The Department of Health and Mental Hygiene has received and processed your complaint. All restaurants and mobile food vendors are inspected annually. Restaurant inspection results can be found on WWW.NYC.GOV or a copy of the inspection can be requested from 311.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOT",
+   "jan_aug_rows": 258,
+   "decision": "keep",
+   "text": "The Department of Transportation referred this complaint to the Inspections Unit for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DOT",
+   "jan_aug_rows": 69,
+   "decision": "keep",
+   "text": "The Department of Transportation inspected this complaint and referred it to the Arterial Division for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 4074,
+   "decision": "keep",
+   "text": "NYC Parks created a work order for the tree condition and expects to address the issue within 120 days from the date of the tree assessment, barring any weather-related requests.   NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 1054,
+   "decision": "keep",
+   "text": "NYC Parks reviewed this request and will visit the location to investigate the condition.  Under NYC Parksâ Tree Risk Management Program, all trees under the agency's jurisdiction are assessed for risk, and work is prioritized to address the conditions with the highest risk first.  For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.   To learn more about the trees in your neighborhood, visit the NYC Tree Map at nyc.gov/parks/treemap.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 147,
+   "decision": "keep",
+   "text": "NYC Parks created a work order for the tree condition and expects to address the issue within 28 days from the date of the tree assessment, barring any weather-related requests.   NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 51,
+   "decision": "keep",
+   "text": "The reported condition was inspected and a work order has been filed to correct it.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 49,
+   "decision": "exclude",
+   "text": "NYC Parks or another agency performed work to make the site safe and passable. Any debris remaining at the site will be removed as soon as possible. This process may be delayed after a storm.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 43,
+   "decision": "keep",
+   "text": "NYC Parks reviewed this request and will visit the location to investigate the condition.    Under NYC Parksâ Tree Risk Management Program, all trees under the agency's jurisdiction are assessed for risk, and work is prioritized to address the conditions with the highest risk first.    For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.     To learn more about the trees in your neighborhood, visit the NYC Tree Map at nyc.gov/parks/treemap.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 31,
+   "decision": "keep",
+   "text": "NYC Parks created a work order for the tree condition and is expects to address the issue within 28 days from the date of the tree assessment, barring any weather-related requests.   NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 24,
+   "decision": "keep",
+   "text": "NYC Parks created a work order for the tree condition and expects to address the issue within 7 days from the date of the tree assessment, barring any weather-related requests.   NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DPR",
+   "jan_aug_rows": 20,
+   "decision": "keep",
+   "text": "NYC Parks inspected the tree and assigned it to priority category C. The agency works on trees based on priority. They categorize tree conditions from A (highest priority) to D (lowest priority).  There isnât a set timeframe for work in category C. If the condition gets worse, please file a new request. Parks will reinspect the tree and update the priority level if needed. You can track the status of the work through the Tree Work Hub at nyc.gov/parks/treework.  If you prefer not to wait, you can hire a qualified tree care contractor. You'd need to pay for the work yourself and get a Tree Work Permit. You can apply for the free permit at nyc.gov/parks/trees.  Are you interested in caring for street trees in your neighborhood? You can get trained and certified by Trees New York to prune low-hanging branches. To learn about the free Citizen Pruner program, visit treesny.org/citizen-pruners-stewardship.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DSNY",
+   "jan_aug_rows": 66,
+   "decision": "keep",
+   "text": "The Department of Sanitation has sent this complaint to the appropriate district garage or bureau for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "DSNY",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "text": "The lot you reported isn't vacant because it contains an occupied structure. The Department of Sanitation (DSNY) will refer your complaint to their enforcement division for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "TLC",
+   "jan_aug_rows": 572,
+   "decision": "keep",
+   "text": "The Taxi and Limousine Commission (TLC) has received your complaint. Within 30 days, the TLC representative who will be handling your case will contact you.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "TLC",
+   "jan_aug_rows": 68,
+   "decision": "exclude",
+   "text": "The Taxi and Limousine Commission has issued a notice to the driver, asking the driver to plead guilty to an appropriate charge. If a hearing is needed, you will be notified by mail or email of your hearing date.",
+   "borderline": false
+  },
+  {
+   "kind": "open",
+   "agency": "TLC",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "text": "The Taxi and Limousine Commission (TLC) called and left a message for you. They need to speak with you to confirm the details of your complaint. If you do not respond within 14 days, your complaint will be closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 2301,
+   "decision": "exclude",
+   "reason": "waiting for the customer's complaint form; DCA will contact later - not finished",
+   "text": "The Department of Consumer Affairs has already mailed you a complaint form. In order for DCA to be able to help, you must complete that form and return it to DCA along with requested documentation. DCA will contact you approximately 30 days after receiving your complete complaint which we must forward to the reported business for its response. If you do not receive the complaint form within 15 days from the date of your initial request, please call 311 back.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 2257,
+   "decision": "keep",
+   "reason": "insufficient information, the Department was not able to act: final outcome",
+   "text": "Your complaint was referred to the Department of Consumer Affairs. There was insufficient information and the Department was not able to act on the matter.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 2145,
+   "decision": "exclude",
+   "reason": "acknowledgement; DCA will investigate - not finished",
+   "text": "The Department of Consumer Affairs (DCA) received your report. DCA will investigate your request and work with other relevant City agencies to resolve it. If necessary, the City will take enforcement action.   To check the status of your complaint, call 311 with your Service Request Number.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 1455,
+   "decision": "keep",
+   "reason": "DCWP closed the request (no details to act on)",
+   "text": "The Department of Consumer and Worker Protection (DCWP) closed your NYC311 Service Request.   DCWP couldn't take action on your complaint because it didn't include important details, such as your contact information or the business's name or location.  If you would like to pursue this complaint, you can file a new NYC311 Service Request. Please provide more information about the complaint so DCWP can help you.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 693,
+   "decision": "keep",
+   "reason": "DCWP closed the complaint (form not returned)",
+   "text": "The Department of Consumer and Worker Protection (DCWP) closed your complaint. It was closed because you didn't submit a completed complaint form or requested documents within 30 days of DCWP's request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 690,
+   "decision": "keep",
+   "reason": "no law violated, no agency can act: determined no action is possible",
+   "text": "Unfortunately, the behavior that you complained about does not violate any law or rule. As a result, no city agency has the jurisdiction to act on the matter.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 670,
+   "decision": "keep",
+   "reason": "not its jurisdiction, no agency can act, no further assistance",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  Unfortunately, DCWP doesn't know of any agency that can act on the complaint and can't provide further assistance.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 417,
+   "decision": "exclude",
+   "reason": "inspection being scheduled - not finished",
+   "text": "The Department of Consumer Affairs is scheduling an inspection which will take place within 35 days. Please do not file duplicate complaints or call to check results during this time. After 35 days, call 311 with your Service Request Number and ask for Service Request Status - DCA.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 374,
+   "decision": "exclude",
+   "reason": "information-only: the information is in the Notes to Customer",
+   "text": "The Department of Consumer and Worker Protection (DCWP) provided information about your complaint. You can find it in the Notes to Customer section of your NYC311 Service Request.  If you didn't get the information, call DCWP Consumer Services at (212) 487-4110. You must provide your NYC311 Service Request number.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 174,
+   "decision": "exclude",
+   "reason": "review finished but the status is reported separately - no outcome stated",
+   "text": "The Department of Consumer and Worker Protection (DCWP) finished reviewing your complaint. DCWP will contact you directly to report its status.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 94,
+   "decision": "exclude",
+   "reason": "referral: contact DSNY",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the Department of Sanitation (DSNY). NYC311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 57,
+   "decision": "exclude",
+   "reason": "referral: should be referred to DSNY",
+   "text": "The Department of Consumer Affairs has determined that this issue is not within its jurisdiction and should be referred to the Department of Sanitation. 311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 51,
+   "decision": "exclude",
+   "reason": "referral: NYS Office of the Professions",
+   "text": "The Department of Consumer Affairs has determined that this issue should be referred to the New York State Education Department's Office of the Professions. Customers can call (800) 442-8106.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 51,
+   "decision": "exclude",
+   "reason": "referral: contact NYPD",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the New York Police Department (NYPD) for assistance. NYC311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 50,
+   "decision": "exclude",
+   "reason": "referral: NYS Attorney General",
+   "text": "The Department of Consumer Affairs has determined that this issue should be referred to the New York State Office of the Attorney General. Customers may call (800) 771-7755 for more information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 45,
+   "decision": "exclude",
+   "reason": "referral: should be referred to NYPD",
+   "text": "The Department of Consumer Affairs has determined that this issue is not within its jurisdiction and should be referred to the New York Police Department. 311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 45,
+   "decision": "exclude",
+   "reason": "referral: contact the NYS Attorney General",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the New York State Office of the Attorney General. Call (800) 771-7755 or visit ag.ny.gov.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 41,
+   "decision": "exclude",
+   "reason": "referral: contact DOHMH",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the Department of Health and Mental Hygiene (DOHMH). NYC311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 40,
+   "decision": "exclude",
+   "reason": "referral: should be referred to DOB",
+   "text": "The Department of Consumer Affairs has determined that this issue is not within its jurisdiction and should be referred to the Department of Buildings. 311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 39,
+   "decision": "exclude",
+   "reason": "referral: contact DOB",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the Department of Buildings (DOB). NYC311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 38,
+   "decision": "exclude",
+   "reason": "referral: NYS Bureau of Proprietary School Supervision",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.   You should contact the New York State Education Department's Bureau of Proprietary School Supervision. Call (212) 643-4760 or visit acces.nysed.gov/bpss.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 35,
+   "decision": "exclude",
+   "reason": "referral: should be referred to DMV",
+   "text": "The Department of Consumer Affairs has determined that this issue is not within its jurisdiction and should be referred to the Department of Motor Vehicles. You can call (518) 486-9786.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 33,
+   "decision": "exclude",
+   "reason": "referral: should be referred to NYS Agriculture & Markets",
+   "text": "The Department of Consumer Affairs has determined that this issue is not within its jurisdiction and should be referred to the New York State Dept. of Agriculture & Markets. You can call (800) 554-4501.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 25,
+   "decision": "exclude",
+   "reason": "referral: should be referred to DOHMH",
+   "text": "The Department of Consumer Affairs has determined that this issue is not within its jurisdiction and should be referred to the Department of Health and Mental Hygiene. 311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 24,
+   "decision": "exclude",
+   "reason": "referral: contact NYS Office of the Professions",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.   You should contact the New York State Education Department's Office of the Professions. Call (800) 442-8106 or visit op.nysed.gov.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 24,
+   "decision": "exclude",
+   "reason": "referral: pursue the complaint in court",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You can pursue your complaint in the Court System. Call (800) 268-7869 or visit nycourts.gov.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 24,
+   "decision": "exclude",
+   "reason": "referral: contact NYS Agriculture and Markets",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the New York State Department of Agriculture and Markets. Call (800) 554-4501 or visit agriculture.ny.gov.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 23,
+   "decision": "exclude",
+   "reason": "referral: contact DMV",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the Department of Motor Vehicles. Call (800) 698-2931 or (518) 486-9786. You can also visit dmv.ny.gov.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DCWP",
+   "jan_aug_rows": 21,
+   "decision": "exclude",
+   "reason": "referral: contact CCHR",
+   "text": "The Department of Consumer and Worker Protection (DCWP) determined this issue isn't within its jurisdiction.  You should contact the Commission on Human Rights (CCHR). NYC311 can help you file a complaint or contact the agency for further assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 21730,
+   "decision": "keep",
+   "reason": "inspection: no violation observed, no summons",
+   "text": "The Department of Environmental Protection (DEP) didn't observe a violation of the NYC Air or Noise Code at the time of inspection and couldn't issue a summons.  If the problem still exists, please go to nyc.gov/311 or call 311 to file a new Service Request. If you're outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 20503,
+   "decision": "exclude",
+   "reason": "duplicate; the original complaint is still being addressed",
+   "text": "The Department of Environmental Protection determined that this complaint is a duplicate of a previously filed complaint. The original complaint is being addressed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 10303,
+   "decision": "keep",
+   "reason": "inspection: problem not found",
+   "text": "The Department of Environment Protection inspected your complaint but could not find the problem you reported. If the condition persists, please call 311 (or 212-639-9675 if calling from a non-New York City area code) with more detailed information to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 7283,
+   "decision": "keep",
+   "reason": "test kit mailed; request explicitly closed",
+   "text": "The Department of Environmental Protection (DEP) mailed you the free lead test kit you requested. The kit includes instructions for collecting a water sample and contact information for DEP's Lead Program Unit if you have any questions. Please use the included pre-paid label to mail the sample to the lab for analysis. It may take the lab up to 30 days to complete their analysis and mail you the test results. This Service Request is closed and no further status will be available from 311.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 6950,
+   "decision": "keep",
+   "reason": "action taken: hydrant shut",
+   "text": "The Department of Environmental Protection investigated this complaint and shut the running hydrant.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 4116,
+   "decision": "keep",
+   "reason": "determined that it could be closed",
+   "text": "The Department of Environmental Protection researched this complaint and determined that it could be closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 4032,
+   "decision": "keep",
+   "reason": "inspection: no sewer back-up found",
+   "text": "The Department of Environmental Protection investigated this complaint and found there was no sewer back up in the city system at the time of the inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 2964,
+   "decision": "keep",
+   "reason": "action taken: hydrants opened to flush mains",
+   "text": "The Department of Environmental Protection investigated this complaint and opened fire hydrants to flush water mains in the area.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 2915,
+   "decision": "exclude",
+   "reason": "will keep the location under observation - future action",
+   "text": "The Department of Environmental Protection will keep the location under observation for idling commercial vehicles.Â Summonses will be issued when warranted.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 2521,
+   "decision": "keep",
+   "reason": "inspection outcome: temporary condition",
+   "text": "The Department of Environmental Protection investigated this complaint and found it to be a temporary condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 2174,
+   "decision": "keep",
+   "reason": "inspection outcome: no city sewer issue",
+   "text": "The Department of Environmental Protection has investigated this complaint. Upon investigation, there was no indication of a city sewer issue and there is a suspected sewer backup due to an internal plumbing issue.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1876,
+   "decision": "exclude",
+   "reason": "status pointer: status not available online, call 311",
+   "text": "The status of this Service Request is currently not available online. Please call 311 for further assistance. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1775,
+   "decision": "keep",
+   "reason": "action taken: catch basin cleaned",
+   "text": "The Department of Environmental Protection inspected your complaint and cleaned the catch basin or inlet. If the condition returns, please call 311 (or 212-639-9675 if calling from a non-New York City area code) to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1697,
+   "decision": "exclude",
+   "reason": "duplicate; the original complaint is still being addressed",
+   "text": "The Department of Environmental Protection has determined that this issue was previously reported by another customer The original complaint is being addressed. If the condition persists, please call 311 (or 212-639-9675 if calling from a non-New York City area code) to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1686,
+   "decision": "keep",
+   "reason": "action taken: hydrant repaired or replaced",
+   "text": "The Department of Environmental Protection investigated this complaint and repaired or replaced the hydrant.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1671,
+   "decision": "keep",
+   "reason": "action taken: warning letter sent",
+   "text": "The Department of Environmental Protection (DEP) sent the dog owner a warning letter. It includes recommendations on how to reduce their dog's barking. DEP also sent you a letter to acknowledge your complaint.   DEP expects it may take about six weeks for the changes they recommend to take effect.   If the excessive dog barking continues after that time, please file a new Service Request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1344,
+   "decision": "keep",
+   "reason": "resolved by phone",
+   "text": "The Department of Environmental Protection resolved this complaint by speaking to the complainant on the phone.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1295,
+   "decision": "keep",
+   "reason": "condition fixed (leak resolved by homeowner)",
+   "text": "The Department of Environmental Protection has investigated this complaint and a leak, not a city issue, has been resolved by homeowner.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1283,
+   "decision": "exclude",
+   "reason": "inspection scheduled - not finished",
+   "text": "The Department of Environmental Protection scheduled an inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1146,
+   "decision": "keep",
+   "reason": "inspection outcome: inside condition on private property",
+   "text": "The Department of Environmental Protection investigated this complaint and determined it is an inside condition within the complainant's property.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 1024,
+   "decision": "keep",
+   "reason": "determined no further action is required",
+   "text": "The Department of Environmental Protection investigated this complaint and determined that no further action is required.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 832,
+   "decision": "keep",
+   "reason": "action taken: blockage relieved",
+   "text": "The Department of Environmental Protection has investigated this complaint. Surcharge conditions have been confirmed and attributed to grease. Work was performed to relieve the blockage.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 745,
+   "decision": "keep",
+   "reason": "violation observed, summons issued",
+   "text": "The Department of Environmental Protection (DEP) observed a violation of the NYC Air or Noise Code during the inspection. DEP issued a summons.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 688,
+   "decision": "exclude",
+   "reason": "finding (debris obstructing the catch basin) without saying it was cleared - ambiguous",
+   "text": "The Department of Environmental Protection has investigated this complaint and found that debris was obstructing the catch basin.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 642,
+   "decision": "exclude",
+   "reason": "waiting to reach the complainant (message left) - not finished",
+   "text": "The Department of Environmental Protection requires contact with the complainant to investigate this complaint. A message was left for the complainant at the phone number provided.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 586,
+   "decision": "keep",
+   "reason": "action taken: repair made",
+   "text": "The Department of Environmental Protection investigated this complaint and made a repair.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 542,
+   "decision": "keep",
+   "reason": "DEP closed the request (no name / address)",
+   "text": "The Department of Environmental Protection (DEP) closed your Service Request because it didn't include your full name and address. DEP needs this information to respond to the complaint.  If the excessive barking continues, please file a new Service Request with your full name and address.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 528,
+   "decision": "keep",
+   "reason": "inspection outcome: surcharge caused by rain, nothing to repair",
+   "text": "The Department of Environmental Protection has investigated this complaint. Surcharge conditions have been confirmed due to rain intensity or volume.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 429,
+   "decision": "keep",
+   "reason": "action taken: repair work performed",
+   "text": "The Department of Environmental Protection has investigated this complaint and has performed repair work.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 417,
+   "decision": "exclude",
+   "reason": "failed attempt (letter undeliverable), not said closed",
+   "text": "The Department of Environmental Protection sent a letter to the complainant and/or respondent and the letter was returned as undeliverable.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 409,
+   "decision": "exclude",
+   "reason": "referral: to DOT for further action",
+   "text": "The Department of Environmental Protection inspected your complaint and referred it to the Department of Transportation for further action. If the problem persists, please call 311 (or 212-639-9675 if calling from a non-New York City area code) to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 392,
+   "decision": "keep",
+   "reason": "action taken: leak resolved",
+   "text": "The Department of Environmental Protection investigated this complaint and resolved the leak.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 380,
+   "decision": "keep",
+   "reason": "complaint closed after no response",
+   "text": "The Department of Environmental Protection requires contact with the complainant to investigate this complaint. The complaint was closed because attempts made to contact the complainant by phone and/or letter received no response.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 285,
+   "decision": "keep",
+   "reason": "resolved during a field inspection",
+   "text": "The Department of Environmental Protection investigated this complaint and resolved the issue during a field inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 261,
+   "decision": "exclude",
+   "reason": "finding (hydrant running with a spray cap) with no outcome or action stated - ambiguous",
+   "text": "The Department of Environmental Protection investigated this complaint and found that a spray cap was in use while the hydrant was running.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 231,
+   "decision": "keep",
+   "reason": "action taken: caps and chains installed",
+   "text": "The Department of Environmental Protection investigated this complaint and installed caps and chains.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 196,
+   "decision": "exclude",
+   "reason": "duplicate; the original complaint is still being addressed",
+   "text": "The Department of Environmental Protection has determined that this issue was previously reported by another customer The original complaint is being addressed. If the condition persists, please call 311 (or 212-639-9675 if calling from a non-New York City area code) with more detailed information to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 189,
+   "decision": "keep",
+   "reason": "closed or canceled at the complainant's request",
+   "text": "The Department of Environmental Protection closed or canceled this complaint at the complainant's request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 183,
+   "decision": "exclude",
+   "reason": "an inspection is warranted - future action",
+   "text": "The Department of Environmental Protection determined that an inspection is warranted to investigate this complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 183,
+   "decision": "keep",
+   "reason": "inspection: catch basin now functioning properly",
+   "text": "The Department of Environmental Protection inspected your complaint and determined that the catch basin is now functioning properly.  If the condition returns, please call 311 (or 212-639-9675 if calling from a non-New York City area code) to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 177,
+   "decision": "exclude",
+   "reason": "information-only: a report was sent, no outcome stated",
+   "text": "The Department of Environmental Protection sent a report to the complainant.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 173,
+   "decision": "keep",
+   "reason": "action taken: second warning letter sent (an inspection only on new complaints)",
+   "text": "The Department of Environmental Protection (DEP) sent the dog owner a second warning letter. DEP also sent you another letter to acknowledge your complaint. DEP will schedule an inspection if they get additional complaints after two weeks have passed.  If the excessive dog barking continues, please file a new Service Request.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 173,
+   "decision": "exclude",
+   "reason": "failed attempt (wrong phone number), not said closed",
+   "text": "The Department of Environmental Protection attempted to contact the complainant by phone, but the phone number provided was incorrect. If the problem still exists, please call 311 and file a new complaint with the correct phone number. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 162,
+   "decision": "keep",
+   "reason": "violation or order issued",
+   "text": "The Department of Environmental Protection investigated the complaint and issued a violation or order.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 162,
+   "decision": "keep",
+   "reason": "inspection: no asbestos disturbed",
+   "text": "The Department of Environmental Protection investigated this complaint and found that no asbestos was disturbed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 141,
+   "decision": "keep",
+   "reason": "action taken: street flooding resolved",
+   "text": "The Department of Environmental Protection investigated this complaint and resolved the street flooding.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 140,
+   "decision": "exclude",
+   "reason": "referral: to another agency or utility for further action",
+   "text": "The Department of Environmental Protection investigated this complaint and referred it to another agency or utility for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 136,
+   "decision": "exclude",
+   "reason": "status pointer: status not available online, call 311",
+   "text": "The status of this Department of Environmental Protection (DEP) Service Request is not available online. Please call 311 and ask for further assistance with the status. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 135,
+   "decision": "exclude",
+   "reason": "failed attempt (no response to a message), not said closed",
+   "text": "The Department of Environmental Protection requires contact with the complainant to investigate this complaint. A message was left for the complainant at the phone number provided but received no response.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 107,
+   "decision": "keep",
+   "reason": "action taken: problem repaired",
+   "text": "The Department of Environmental Protection inspected your complaint and repaired the problem. If the condition returns, please call 311 (or 212-639-9675 if calling from a non-New York City area code) to submit a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 103,
+   "decision": "keep",
+   "reason": "action taken: manhole cover issue resolved",
+   "text": "The Department of Environmental Protection investigated this complaint and resolved the issue with the sewer manhole cover.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 94,
+   "decision": "keep",
+   "reason": "inspection: work compliant, no summons",
+   "text": "The Department of Environmental Protection (DEP) investigated this complaint. There is an active asbestos abatement project on file at the location. Because the work is in compliance with all of DEP's rules and regulations, no summons was issued.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 90,
+   "decision": "exclude",
+   "reason": "duplicate of another request, its state not given",
+   "text": "The Department of Environmental Protection determined that this complaint is a duplicate to another service request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 79,
+   "decision": "exclude",
+   "reason": "garbled outcome ('a defect was found done') - ambiguous",
+   "text": "The Department of Environmental Protection has investigated this complaint. Upon investigation, a defect was found done.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 65,
+   "decision": "exclude",
+   "reason": "sent to another bureau for further action - not finished",
+   "text": "The Department of Environmental Protection investigated this complaint and sent it to the Bureau of Environmental Compliance for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 61,
+   "decision": "keep",
+   "reason": "DEP closed the request (must be reported to NYPD)",
+   "text": "The Department of Environmental Protection (DEP) closed your Service Request because animal abuse or neglect must be reported to the NYPD. Call 911 to report animal abuse in progress. To report past or chronic abuse or neglect, please call 311 or visit nyc.gov/311 and search for \"animal abuse.\"",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 61,
+   "decision": "keep",
+   "reason": "action completed: catch basin searched",
+   "text": "The Department of Environmental Protection (DEP) investigated this request and completed a search of the catch basin.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 59,
+   "decision": "keep",
+   "reason": "action taken: hydrant locked",
+   "text": "The Department of Environmental Protection investigated this complaint and locked the hydrant.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 59,
+   "decision": "keep",
+   "reason": "action taken: catch basin replaced",
+   "text": "The Department of Environmental Protection investigated this complaint and replaced the damaged or missing catch basin.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 57,
+   "decision": "exclude",
+   "reason": "area kept under observation, no outcome stated - ambiguous",
+   "text": "The Department of Environmental Protection only received one complaint for this location.  However, we did keep the area under observation for possible reoccurrence of air or noise pollution infractions.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 56,
+   "decision": "keep",
+   "reason": "action taken: water main restored",
+   "text": "The Department of Environmental Protection investigated this complaint and restored the water main to service.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 56,
+   "decision": "keep",
+   "reason": "odor survey: no odors found",
+   "text": "The Department of Environmental Protection performed an odor survey and found no odors.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 52,
+   "decision": "keep",
+   "reason": "DEP closed the request (no owner location)",
+   "text": "The Department of Environmental Protection (DEP) closed your Service Request because it didn't include enough dog owner location information to respond to the complaint.  If the excessive dog barking continues, please file a new Service Request. You must include an NYC address for the dog's owner so DEP can send them a letter.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 50,
+   "decision": "keep",
+   "reason": "asbestos found, violation issued",
+   "text": "The Department of Environmental Protection (DEP) found asbestos during the inspection. DEP issued a violation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 48,
+   "decision": "exclude",
+   "reason": "failed attempt (no answer), not said closed",
+   "text": "The Department of Environmental Protection requires contact with the complainant to investigate this complaint. There was no answer at the phone number provided.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 47,
+   "decision": "keep",
+   "reason": "action taken: issue resolved",
+   "text": "The Department of Environmental Protection investigated this complaint and resolved the issue.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 46,
+   "decision": "keep",
+   "reason": "inspection outcome: not City water, not City jurisdiction",
+   "text": "The Department of Environmental Protection investigated the issue and found that the water source mentioned was not City water and therefore not under City jurisdiction.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 45,
+   "decision": "exclude",
+   "reason": "information incomplete or incorrect, no outcome or closure stated - ambiguous",
+   "text": "The Department of Environmental Protection investigated this complaint and determined that the information provided by the complainant was incomplete or incorrect.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 43,
+   "decision": "keep",
+   "reason": "action completed: infrastructure cleaned",
+   "text": "NYC DEP investigated and determined the infrastructure required cleaning, which was completed at the time of the inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 41,
+   "decision": "keep",
+   "reason": "resolved by phone",
+   "text": "The Department of Environmental Protection spoke to the complainant via telephone and was able to resolve the complaint without inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 40,
+   "decision": "keep",
+   "reason": "inspection: no violation found",
+   "text": "The Department of Environmental Protection investigated this complaint. No violation was found or issued.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 38,
+   "decision": "exclude",
+   "reason": "finding (defective sewer) without saying it was repaired - ambiguous",
+   "text": "The Department of Environmental Protection has investigated this complaint. Surcharge conditions have been confirmed and is attributed to a defective sewer.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 36,
+   "decision": "keep",
+   "reason": "investigated; potability letter / water quality report sent (outcome)",
+   "text": "The Department of Environmental Protection investigated the complaint and sent a letter of potability and/or a water quality report.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 31,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "The Department of Environmental Protection investigated this complaint but could not gain access to the location. If the problem still exists, please call 311 and file a new complaint with additional access information. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 25,
+   "decision": "exclude",
+   "reason": "failed attempt (no response, letter sent), not said closed",
+   "text": "The Department of Environmental Protection requires contact with the complainant to investigate this complaint. A letter was sent after phone messages received no response.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 24,
+   "decision": "keep",
+   "reason": "action taken: repair completed",
+   "text": "NYC DEP investigated the damaged basin and completed the necessary repair.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 23,
+   "decision": "keep",
+   "reason": "inspection outcome: owner's responsibility",
+   "text": "The Department of Environmental Protection investigated the complaint and determined that the condition is the responsibility of the home or business owner.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "reason": "functioning properly, no further action required",
+   "text": "NYC DEP investigated and determined the seepage basin was functioning properly and no further action required.  Seepage  basin typically drain within 72 hours.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "reason": "no appointment possible; complaint closed",
+   "text": "The Department of Environmental Protection requires an appointment to inspect this complaint type.  Complainant information was not provided and an appointment could not be scheduled.  The complaint has been closed. If the problem still exists, please call 311 and file a new complaint including your contact information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DEP",
+   "jan_aug_rows": 20,
+   "decision": "keep",
+   "reason": "inspection: no violation found",
+   "text": "The Department of Environmental Protection investigated this complaint and found no violation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 13592,
+   "decision": "keep",
+   "reason": "response: individual not found",
+   "text": "The mobile outreach response team went to the location provided but could not find the individual that you reported.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 4881,
+   "decision": "keep",
+   "reason": "response: services offered and refused",
+   "text": "The mobile outreach response team offered services to the individual, but the individual did not accept assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 3221,
+   "decision": "exclude",
+   "reason": "still coordinating with partners to address the condition - not finished",
+   "text": "The Department of Homeless Services (DHS) visited the location and is coordinating with their agency partners to address the condition. No further information will be available with 311.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 2079,
+   "decision": "keep",
+   "reason": "not enough information to act: final outcome",
+   "text": "The Department of Homeless Services did not have enough information to act on your request.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 1543,
+   "decision": "exclude",
+   "reason": "referral: to NYPD",
+   "text": "Based on the information you provided, the Department of Homeless Services has referred this request to the New York City Police Department.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 1407,
+   "decision": "keep",
+   "reason": "visit: condition not found",
+   "text": "The Department of Homeless Services (DHS) visited the location but could not find the condition you reported. If it still exists, please submit a new Service Request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 885,
+   "decision": "keep",
+   "reason": "response: individual found, assistance offered",
+   "text": "The individual was found and outreach assistance was offered.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 684,
+   "decision": "keep",
+   "reason": "administratively closed",
+   "text": "Due to technical issues or other circumstances, the Department of Homeless Services has determined that this request should now be administratively closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 596,
+   "decision": "exclude",
+   "reason": "not within its jurisdiction, no closure or further step stated - implicit referral",
+   "text": "The Department of Homeless Services has reviewed your Service Request and determined that the issue is not within its jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 44,
+   "decision": "keep",
+   "reason": "visit: person not found",
+   "text": "The Department of Homeless Services (DHS) visited the location but could not find the person that you reported. If they are still there, please submit a new service request with more details. Include the specific location and a detailed description of the person.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DHS",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "reason": "response: services refused",
+   "text": "The person has refused services from the mobile outreach response team.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 24672,
+   "decision": "keep",
+   "reason": "determined no further action was necessary",
+   "text": "The Department of Buildings investigated this complaint and determined that no further action was necessary.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 11426,
+   "decision": "exclude",
+   "reason": "no access (twice), 'file a new complaint' but not said closed",
+   "text": "The Department of Buildings attempted to investigate this complaint twice but could not gain access to the location. If the problem still exists, please call 311 and file a new complaint with additional access information. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 9458,
+   "decision": "keep",
+   "reason": "OATH summons issued",
+   "text": "The Department of Buildings investigated this complaint and issued an Office of Administrative Trials and Hearings (OATH) summons.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 6635,
+   "decision": "keep",
+   "reason": "reviewed and closed",
+   "text": "The Department of Buildings reviewed this complaint and closed it. If the problem still exists, please call 311 and file a new complaint. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 5075,
+   "decision": "exclude",
+   "reason": "duplicate addressed under another request - its state not clear",
+   "text": "The Department of Buildings determined that the conditions described in this complaint were addressed under another service request number. Click on \"Learn More\" in the \"Did You Know\" section below for more information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 2050,
+   "decision": "keep",
+   "reason": "denied access twice; no further attempts will be made",
+   "text": "The Department of Buildings has made a second attempt to conduct an inspection of this premises and was denied access. No further attempts will be made.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 1127,
+   "decision": "exclude",
+   "reason": "failed attempt (premises not located), not said closed",
+   "text": "The Department of Buildings attempted to investigate this complaint but could not locate the premises. If the problem still exists, please call 311 and file a new complaint with additional information about how to locate the building. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 856,
+   "decision": "keep",
+   "reason": "action taken: stop work order removed",
+   "text": "The Department of Buildings investigated this complaint and removed the stop work order.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 657,
+   "decision": "exclude",
+   "reason": "referral: to DOT for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the Department of Transportation for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 542,
+   "decision": "keep",
+   "reason": "determined no further action was necessary",
+   "text": "The Department of Buildings reviewed this complaint and determined that no further action was necessary.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 288,
+   "decision": "exclude",
+   "reason": "referral: to NYCHA for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the New York City Housing Authority for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 224,
+   "decision": "exclude",
+   "reason": "no access; another attempt will be made - not finished",
+   "text": "The Department of Buildings has made an attempt execute an access warrant at this property that resulted in no access. Another attempt will be made.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 151,
+   "decision": "exclude",
+   "reason": "referral: to NYPD for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the New York Police Department for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 132,
+   "decision": "exclude",
+   "reason": "violation prepared but not issued, next step not stated - ambiguous",
+   "text": "The Department of Buildings investigated this complaint and prepared a violation but were unable to issue it.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 128,
+   "decision": "keep",
+   "reason": "partial stop work order violation issued",
+   "text": "The Department of Buildings investigated this complaint and issued a partial stop work order violation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 122,
+   "decision": "keep",
+   "reason": "partial vacate order issued",
+   "text": "The Department of Buildings has investigated this complaint and found evidence of conditions that present an imminent danger duing occupancy of a portion of the property. A partial vacate order has been issued.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 119,
+   "decision": "keep",
+   "reason": "conditions corrected, vacate order rescinded",
+   "text": "The Department of Buildings has investigated this complaint and found that previous conditions that presented an imminent danger during occupancy of the property have been corrected. A full vacate order rescission has been granted.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 119,
+   "decision": "exclude",
+   "reason": "referral: to DEP for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the Department of Environmental Protection for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 112,
+   "decision": "exclude",
+   "reason": "referral: to HPD for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the Department of Housing Preservation and Development for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 108,
+   "decision": "exclude",
+   "reason": "denied access; another attempt will be made - not finished",
+   "text": "The Department of Buildings has made an attempt execute an access warrant at this property and was denied access. Another attempt will be made.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 102,
+   "decision": "keep",
+   "reason": "violation issued",
+   "text": "A DOB violation was issued for failing to comply with an existing Stop Work Order.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 94,
+   "decision": "exclude",
+   "reason": "referral: to DSNY for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the Department of Sanitation for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 92,
+   "decision": "keep",
+   "reason": "violation issued",
+   "text": "The Department of Buildings investigated this complaint and issued a violation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 72,
+   "decision": "exclude",
+   "reason": "referral: to Parks for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the Department of Parks and Recreation for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 49,
+   "decision": "keep",
+   "reason": "Unsafe Building notice filed",
+   "text": "The Department of Buildings investigated this complaint and filed an Unsafe Building notice.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 42,
+   "decision": "keep",
+   "reason": "full stop work order",
+   "text": "The Department of Buildings has inspected this location and found a compliance deficiency resulting in a Full Stop Work Order.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 29,
+   "decision": "keep",
+   "reason": "stop work order issued",
+   "text": "The Department of Buildings investigated this complaint and issued a stop work order for after-hours work only.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 27,
+   "decision": "keep",
+   "reason": "OATH summons and violation issued",
+   "text": "The Department of Buildings investigated this complaint and issued an Office of Administrative Trials and Hearings (OATH) summons and Department of Buildings violation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 23,
+   "decision": "keep",
+   "reason": "summons issued",
+   "text": "The Department of Buildings has investigated this complaint and found evidence that the standing vacate order is not being complied with. A failure to comply with the Vacate order summons has been issued.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOB",
+   "jan_aug_rows": 22,
+   "decision": "exclude",
+   "reason": "referral: to DOHMH for further action",
+   "text": "The Department of Buildings reviewed this complaint and referred it to the Department of Health and Mental Hygiene for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOE",
+   "jan_aug_rows": 631,
+   "decision": "keep",
+   "reason": "work completed, condition corrected",
+   "text": "The Department of Education completed the work and corrected the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOE",
+   "jan_aug_rows": 53,
+   "decision": "exclude",
+   "reason": "referral: not its jurisdiction, complaint referred",
+   "text": "The Department of Education determined that this issue is not within its jurisdiction. Your complaint has been referred.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOE",
+   "jan_aug_rows": 32,
+   "decision": "exclude",
+   "reason": "referral: forwarded to the Office of Charter Schools, which will contact you",
+   "text": "The Department of Education determined that this complaint concerns a charter school and forwarded it to the Office of Charter Schools. The Office of Charter Schools will contact you, or you may follow up with them directly.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOE",
+   "jan_aug_rows": 30,
+   "decision": "keep",
+   "reason": "insufficient information to act on: final outcome",
+   "text": "The Department of Education reviewed the complaint and determined that there is insufficient information to act on. If the condition persists please file a new service request with more details.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOE",
+   "jan_aug_rows": 28,
+   "decision": "exclude",
+   "reason": "referral: contact the private school",
+   "text": "The Department of Education determined that this complaint is not within its jurisdiction because it concerns a private school. Please contact the private school directly.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 10816,
+   "decision": "keep",
+   "reason": "administratively closed; issue addressed",
+   "text": "This SR was administratively closed. The issue you reported was addressed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 10325,
+   "decision": "keep",
+   "reason": "request closed (earlier complaint about the same location)",
+   "text": "This service request was closed because the Department of Health and Mental Hygiene received an earlier complaint about the same location.  You can find inspection results for this address by going to the online Rat Portal at www.nyc.gov/rats.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 8662,
+   "decision": "exclude",
+   "reason": "violations found but follow-up inspections will be scheduled - not finished",
+   "text": "The Department of Health and Mental Hygiene found violations on the property you reported. Follow-up inspections will be scheduled.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 8531,
+   "decision": "keep",
+   "reason": "inspection: no violations, passed",
+   "text": "The Department of Health and Mental Hygiene inspected the property you reported and did not find any violations at the time of the inspection. The property passed inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 2453,
+   "decision": "keep",
+   "reason": "action taken: advisory sent to the owner",
+   "text": "The owner or manager of the property was sent an advisory to correct the condition. If the condition persists, please call 311 or go online to www.nyc.gov/311 and submit another complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 2265,
+   "decision": "keep",
+   "reason": "responded; request closed",
+   "text": "The NYC Health Department has responded to your service request. For inspection results, please call (212) 676-1600 or email infobfscs@health.nyc.gov to request an inspection report. This service request has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 1757,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "The Department of Health and Mental Hygiene tried to inspect the property you reported but could not access the site. If you have information that will help the inspector access the site, please go online to nyc.gov/311 or call 311 and refile your complaint with contact information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 1158,
+   "decision": "keep",
+   "reason": "action taken: letter sent to the owner",
+   "text": "A letter was sent to the owner or manager of the property you reported instructing them to correct the condition. If the condition persists, please call 311 or go online to www.nyc.gov/311 and submit another complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 1029,
+   "decision": "keep",
+   "reason": "determined isolated incident; only routine inspections follow",
+   "text": "The Department of Health and Mental Hygiene has determined that the reported incident is isolated.  The establishment will be inspected according to its normal schedule for sanitary inspections.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 992,
+   "decision": "keep",
+   "reason": "request closed (another request exists)",
+   "text": "The NYC Health Department (DOHMH) found a service request already exists for the same location. This request has been closed. DOHMH is addressing the original request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 975,
+   "decision": "keep",
+   "reason": "investigated; request closed",
+   "text": "The NYC Health Department has investigated your complaint. You can get the status by calling 311 or (646) 632-6101 on weekdays between 9 AM and 5 PM. This service request has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 888,
+   "decision": "keep",
+   "reason": "inspection: passed with minor violations",
+   "text": "An inspection of the property was conducted and it passed with minor violations found.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 663,
+   "decision": "keep",
+   "reason": "closed and referred",
+   "text": "The Department of Health and Mental Hygiene closed this complaint and referred it to another agency because it was not within its jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 655,
+   "decision": "keep",
+   "reason": "inspection: no violations found",
+   "text": "An inspection of the property was conducted and no violations were found.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 638,
+   "decision": "exclude",
+   "reason": "another bureau will review whether an inspection is needed - not finished",
+   "text": "The Health Departmentâs Office of Environmental Investigations has determined this case was an isolated incident. The Departmentâs Bureau of Food Safety and Community Sanitation will review to see if a sanitary inspection is necessary. All food establishments are inspected annually. You can get results of all food safety inspections by going online to www.nyc.gov/health/restaurants.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 322,
+   "decision": "exclude",
+   "reason": "summons issued but follow-up inspections will be scheduled - not finished",
+   "text": "An inspection of the property was conducted and the owner was issued a summons. Follow-up inspections will be scheduled.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 322,
+   "decision": "keep",
+   "reason": "investigated: no violations cited",
+   "text": "The Department of Health and Mental Hygiene has investigated the complaint and no violations were cited.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 294,
+   "decision": "exclude",
+   "reason": "acknowledgement / information-only (mosquito tracking)",
+   "text": "Thank you for your report. The Department of Health and Mental Hygiene will use the information that you provided to help track and control mosquito populations throughout the City. No further information will be available from 311 on your report.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 167,
+   "decision": "keep",
+   "reason": "no violations, no further action needed",
+   "text": "The Department of Health and Mental Hygiene has investigated the Service Request. No Health Code violations or health hazards were noted. No further action is needed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 160,
+   "decision": "exclude",
+   "reason": "referral: to NYS Agriculture and Markets",
+   "text": "The Department of Health and Mental Hygiene regulates restaurants and other establishments that mostly sell food which is prepared on the premises. New York State Agriculture and Markets regulates those establishments that mostly sell pre-packaged food, including supermarkets, bodegas, green markets, fish and meat markets, and delis. This Service Request was referred to the New York State Agriculture and Markets.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 132,
+   "decision": "keep",
+   "reason": "investigated: no violations issued",
+   "text": "The Department of Health and Mental Hygiene has investigated the complaint and no violations were issued.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 120,
+   "decision": "keep",
+   "reason": "no violations, no further action needed",
+   "text": "The Department of Health and Mental Hygiene has investigated the complaint. No Health Code violations or health hazards noted. No further action needed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 90,
+   "decision": "keep",
+   "reason": "action taken: written notification sent to the owner",
+   "text": "The Department of Health and Mental Hygiene has sent official written notification to the Owner/Landlord warning them of potential violations and instructing them to correct the situation. If the situation persists 21 days after your initial complaint, please make a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 87,
+   "decision": "keep",
+   "reason": "complaint inactivated (notice mailed)",
+   "text": "You were mailed a notice of complaint inactivation which detailed why this complaint was inactivated.  If you need more information, you may call (646) 632-6104",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 66,
+   "decision": "keep",
+   "reason": "actioned and closed",
+   "text": "The Department of Health and Mental Hygiene (DOHMH) actioned and closed your service request. No further updates will be available.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 66,
+   "decision": "keep",
+   "reason": "request closed (referred to DEP)",
+   "text": "The NYC Health Department (DOHMH) closed your service request. They referred your complaint to the Department of Environmental Protection (DEP). DEP's Air Resources Program will address the issue. To learn more, contact DEP at nyc.gov/dep.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 63,
+   "decision": "keep",
+   "reason": "complaint inactivated (could not contact you)",
+   "text": "You were mailed a notice of complaint inactivation because the NYC Health Department tried and could not contact you to schedule a visit.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 52,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "An attempt was made to investigate the condition you reported but the inspector could not gain access to the site.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 43,
+   "decision": "keep",
+   "reason": "investigated: no NOV, advisory provided",
+   "text": "DOHMH investigated the complaint.  A Notice of Violation was not issued.  An advisory was provided for the management.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 40,
+   "decision": "exclude",
+   "reason": "violations identified, owner is still correcting - ambiguous",
+   "text": "An inspection of this property was conducted and violations were identified. The owner is correcting the condition. If the condition persists, please submit another complaint to 311.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 38,
+   "decision": "keep",
+   "reason": "no violations, no further action necessary",
+   "text": "The Department of Health and Mental Hygiene investigated the complaint and did not find any Health Code violations or health hazards. No further action is necessary.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 37,
+   "decision": "exclude",
+   "reason": "referral: to Parks",
+   "text": "The Department of Health and Mental Hygiene determined that this issue is not within its jurisdiction. It has been referred to the Department of Parks and Recreation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 32,
+   "decision": "exclude",
+   "reason": "failed attempt (address not located), not said closed",
+   "text": "The Department of Health and Mental Hygiene could not locate the address provided. Please go online to nyc.gov/311 or call 311 and file another request and provide the complete street address of the builiding. If your complaint was about a vacant lot, abandoned building ,street, or in a sewer, provide the nearest street address or intersection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 32,
+   "decision": "exclude",
+   "reason": "referral: to DOB",
+   "text": "The Department of Health and Mental Hygiene determined that this issue is not within its jurisdiction. It has been referred to the Department of Buildings.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 28,
+   "decision": "keep",
+   "reason": "request closed (referred to DOE)",
+   "text": "The NYC Health Department (DOHMH) closed your service request. They referred your complaint to the Department of Education (DOE). To learn more, contact DOE at (718) 935-2200 or schools.nyc.gov/connect-with-us.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOHMH",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "reason": "request closed, no further updates",
+   "text": "The NYC Health Department (DOHMH) Office of Public Health Engineering received your complaint. To learn more, call them at (718) 786-6004. This service request has been closed. No further updates will be available.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 21441,
+   "decision": "keep",
+   "reason": "action taken: problem repaired",
+   "text": "The Department of Transportation inspected this complaint and repaired the problem.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 9024,
+   "decision": "exclude",
+   "reason": "information pointer: outcome only in the Notes to Customer",
+   "text": "The Department of Transportation inspected the condition you reported. You can find additional information in the \"Notes to Customer\" field.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 6617,
+   "decision": "keep",
+   "reason": "request completed / condition corrected",
+   "text": "The Department of Transportation has completed the request or corrected the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 5659,
+   "decision": "exclude",
+   "reason": "referred to DEP; re-inspection in 60 days - not finished",
+   "text": "The Department of Transportation inspected and has requested the Department of Environmental Protection address the issue. The condition will be re-inspected in 60 days.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 5443,
+   "decision": "keep",
+   "reason": "inspection: meets standards / valid permit",
+   "text": "The Department of Transportation inspected the condition you reported and found that the condition meets its standards and/or there is a valid permit to conduct work.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 3314,
+   "decision": "exclude",
+   "reason": "duplicate; the original complaint is still being addressed",
+   "text": "The Department of Transportation determined that this complaint is a duplicate of a previously filed complaint. The original complaint is being addressed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 2822,
+   "decision": "exclude",
+   "reason": "will inspect within 180 days - future action",
+   "text": "The Department of Transportation will inspect the complaint location and notify the property owner within 180 days if a defective sidewalk condition exists. The property owner is responsible for maintaining, repairing and installing sidewalks adjoining their property, according to Section 19-152 of the New York City Administrative Code.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 2562,
+   "decision": "keep",
+   "reason": "inspection: problem not found",
+   "text": "The Department of Transportation inspected the location for the condition you reported and could not find the problem. It you would like to pursue the complaint, please call 311 or (212) 639-9675 with additional information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 2169,
+   "decision": "exclude",
+   "reason": "repair order issued; 30 days to correct, then a summons - not finished",
+   "text": "The Department of Transportation inspected the condition and issued a Corrective Action Repair (CAR) to the contractor or utility company. The responsible party has a maximum of 30 days to correct the condition. If the condition still exists, a summons will be issued. In some cases, the Department of Transportation will make the repairs and charge the responsible party for the costs.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1970,
+   "decision": "exclude",
+   "reason": "dismissal inspection scheduled - not finished",
+   "text": "A sidewalk dismissal inspection (work done by owner) has been scheduled. Department of Transportation is in direct contact with the responsible party.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1867,
+   "decision": "keep",
+   "reason": "inspection: problem not found",
+   "text": "The Department of Transportation inspected this complaint and did not find the reported problem.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1646,
+   "decision": "exclude",
+   "reason": "will inspect for a curb contract - future action",
+   "text": "The Department of Transportation will inspect the condition to determine if the location can be added to a curb contract (3-5 years). The property owner will be notified if there are sidewalk defects. Property owners are responsible for repairing and installing sidewalks adjoining their property, according to Section 19-152 of the NYC Administrative Code. Community Boards and elected officials may contribute funding for curb, affecting timeframe for construction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1307,
+   "decision": "keep",
+   "reason": "inspection: condition not found",
+   "text": "The Department of Transportation's inspectors could not find the condition you reported. If you would like to pursue the complaint, please check the address and submit a new Service Request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1187,
+   "decision": "exclude",
+   "reason": "not within its jurisdiction, no closure stated - implicit referral",
+   "text": "The Department of Transportation has determined that this issue is not within its jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1119,
+   "decision": "keep",
+   "reason": "inspected earlier and owner notified; nothing pending",
+   "text": "The Department of Transportation inspected the location more than six months ago and has notified the property owner of any defective sidewalk conditions. The property owner is responsible for maintaining, repairing and installing sidewalks adjoining their property, according to Section 19-152 of the New York City Administrative Code.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 1027,
+   "decision": "exclude",
+   "reason": "the establishment must remove the items - compliance pending, ambiguous",
+   "text": "The Department of Transportation inspected this location and determined that the establishment must remove all of the items immediately.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 960,
+   "decision": "keep",
+   "reason": "notice to correct issued",
+   "text": "The Department of Transportation inspected the condition you reported and issued a notice to the responsible party to correct the condition.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 926,
+   "decision": "exclude",
+   "reason": "re-inspection approved, date to come - future action",
+   "text": "The Department of Transportation has approved the sidewalk re-inspection request. The property owner will be notified by mail within 120 days with the date of re-inspection.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 749,
+   "decision": "keep",
+   "reason": "inspection: compliant / not hazardous / permit",
+   "text": "The Department of Transportation inspected the condition and determined it was in compliance with their standards, not hazardous, or a valid permit exists.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 701,
+   "decision": "exclude",
+   "reason": "summons issued but re-inspection within 10 days - not finished",
+   "text": "The Department of Transportation inspected the condition and issued a summons to the responsible party. A re-inspection will be done within 10 days. If the condition still exists, a second summons will be issued. In some cases, the Department of Transportation will make the repairs and charge the responsible party for the costs.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 649,
+   "decision": "keep",
+   "reason": "cannot schedule (no permit), a new request is needed: final outcome",
+   "text": "The Department of Transportation is unable to schedule a sidewalk dismissal inspection because there is no record of a permit to make a sidewalk repair. Owner must obtain a permit of record. Once a permit is obtained, the owner must call 3-1-1 to make another request for sidewalk dismissal - work done by owner.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 641,
+   "decision": "keep",
+   "reason": "inspection: compliant",
+   "text": "The Department of Transportation inspected the condition and determined that it is in compliance with its standards.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 629,
+   "decision": "keep",
+   "reason": "inspection: problem fixed",
+   "text": "The Department of Transportation inspected this complaint and found that the problem was fixed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 602,
+   "decision": "exclude",
+   "reason": "24 hours to come into compliance - outcome pending, ambiguous",
+   "text": "The Department of Transportation inspected this location and determined that the establishment has 24 hours to come into compliance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 564,
+   "decision": "exclude",
+   "reason": "information pointer: outcome only in the Notes to Customer",
+   "text": "The Department of Transportation inspected the condition you reported. You can find additional information in the \"Notes to Customer.\"",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 553,
+   "decision": "exclude",
+   "reason": "information pointer: see customer notes",
+   "text": "The condition has been inspected/investigated, see customer notes for more information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 534,
+   "decision": "exclude",
+   "reason": "resurfacing planned in 2-3 years - future action",
+   "text": "The Department of Transportation inspected the condition and made the determination that the street meets resurfacing standards and will be planned for either the next or future resurfacing seasons (2 - 3 years). The Department of Transportation works with Community Boards and elected officials to determine resurfacing priority. For specific scheduling information regarding your street, contact your Community Board.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 489,
+   "decision": "exclude",
+   "reason": "referral: not its jurisdiction, responsible party notified",
+   "text": "The condition was inspected and determined not to be under Department of Transportation's jurisdiction. The Department of Transportation notified the appropriate responsible party of the complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 484,
+   "decision": "keep",
+   "reason": "work completed (contractor report)",
+   "text": "The contractor has reported that the requested work has been completed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 480,
+   "decision": "exclude",
+   "reason": "not within its jurisdiction, no closure stated - implicit referral",
+   "text": "The Department of Transportation inspected the condition you reported and determined that this issue is not within its jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 427,
+   "decision": "keep",
+   "reason": "insufficient information to respond: final outcome",
+   "text": "The request submitted did not have sufficient information for the Department of Transportation to respond.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 413,
+   "decision": "keep",
+   "reason": "inspection: compliant / not hazardous / permit",
+   "text": "The condition was inspected and it was in compliance with Department of Transportation standards, not hazardous, or a valid permit exists.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 395,
+   "decision": "keep",
+   "reason": "resolved or information provided",
+   "text": "The Department of Transportation contacted the customer and resolved the service request or provided the information requested.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 363,
+   "decision": "exclude",
+   "reason": "repair expected in 30 days - not finished",
+   "text": "The Department of Transportation investigated this Service Request and determined this street requires general maintenance. This location has been processed into another system and is expected to be repaired in 30 days.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 347,
+   "decision": "keep",
+   "reason": "notice sent, temporary repairs made",
+   "text": "The Department of Transportation inspected the condition, sent notice to responsible party, and temporary repairs were made to make the area safe.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 323,
+   "decision": "exclude",
+   "reason": "referral: to DSNY",
+   "text": "The Department of Transportation has determined that this issue is not within its jurisdiction. It has been referred to the Department of Sanitation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 272,
+   "decision": "exclude",
+   "reason": "reconstruction project, long term - not finished",
+   "text": "The Department of Transportation investigated this request and determined this street requires a reconstruction project. This location is part of an existing project or may be included in a future project. These projects are long term and vary in length.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 260,
+   "decision": "exclude",
+   "reason": "will be repaired within 30 days - not finished",
+   "text": "The Department of Transportation inspected the condition you reported. It has been entered into the maintenance system. It will be repaired within 30 days.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 244,
+   "decision": "keep",
+   "reason": "condition not found, no action taken",
+   "text": "Upon inspection, the reported condition was not found, therefore no action was taken.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 229,
+   "decision": "exclude",
+   "reason": "failed attempt (address not found), not said closed",
+   "text": "The Department of Transportation's inspectors could not find the address you reported. If you would like to pursue the complaint, please check the address and call 311 or (212) 639-9675 with updated location information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 222,
+   "decision": "exclude",
+   "reason": "repair order issued; 30 days to correct, then a summons - not finished",
+   "text": "The Department of Transportation inspected the condition you reported and issued a Corrective Action Repair (CAR) to the contractor or utility company. The responsible party has a maximum of 30 days to correct the condition. If after that time the condition still exists, the Agency may issue the responsible party a summons and/or correct the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 218,
+   "decision": "keep",
+   "reason": "search completed, item not found",
+   "text": "After performing a thorough search, the Department of Transportation was unable to find the lost item. If the item is turned in later, you will be contacted.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 214,
+   "decision": "exclude",
+   "reason": "next scheduled maintenance will correct it - future action",
+   "text": "General maintenance and cleaning is on a regular schedule. The next scheduled maintenance and cleaning will correct the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 182,
+   "decision": "exclude",
+   "reason": "referral: to Parks",
+   "text": "The Department of Transportation has determined that this issue is not within its jurisdiction. It has been referred to the Department of Parks and Recreation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 174,
+   "decision": "keep",
+   "reason": "inspection: meets standards / valid permit",
+   "text": "The Department of Transportation inspected the condition you reported and found that the condition meets DOT standards and/or there is a valid permit to conduct work.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 172,
+   "decision": "exclude",
+   "reason": "referral: to the MTA",
+   "text": "The Department of Transportation has determined that this issue is not within its jurisdiction. It has been referred to the Metropolitan Transportation Authority.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 142,
+   "decision": "keep",
+   "reason": "establishment notified to register (notice)",
+   "text": "The Department of Transportation determined that the establishment is operating without authorization, and it was notified to register in the Open Restaurant Program.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 134,
+   "decision": "keep",
+   "reason": "condition not found",
+   "text": "The Department of Transportation (DOT) did not find the reported condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 126,
+   "decision": "keep",
+   "reason": "no violation on record, City cannot repair: final outcome",
+   "text": "The Department of Transportation reviewed its records and could not find a violation for your sidewalk. The City can only repair sidewalks which have received a violation. If you are the owner and you would like to make your sidewalk eligible for City Repair, call 311 or visit www.nyc.gov/311 online to report the damage on your sidewalk.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 115,
+   "decision": "keep",
+   "reason": "notice sent, temporary repairs made",
+   "text": "The Department of Transportation inspected the condition and sent notice to responsible party. Temporary repairs were made to make the area safe.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 112,
+   "decision": "keep",
+   "reason": "action taken: bike rack repaired",
+   "text": "The Department of Transportation has repaired the bike rack.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 108,
+   "decision": "keep",
+   "reason": "re-inspection request denied: final outcome",
+   "text": "The Department of Transportation has denied the sidewalk re-inspection request. The request to re-inspect is past the 75 day original notification period. The property owners are responsible for maintaining, repairing and installing sidewalks adjoining their properties.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 104,
+   "decision": "exclude",
+   "reason": "resurfacing scheduled this season - future action",
+   "text": "The Department of Transportation inspected the condition and made the determination that the street meets resurfacing standards and will be scheduled for this current resurfacing season (April - November). For specific weekly scheduling information regarding your street, contact your Community Board or visit our website www.NYC.gov/dot.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 97,
+   "decision": "exclude",
+   "reason": "'has either notified or will notify' - possibly pending, ambiguous",
+   "text": "The Department of Transportation has inspected the location within the last six months and has either notified or will notify the property owner of any defective sidewalk conditions. The property owner is responsible for maintaining, repairing and installing sidewalks adjoining their property, according to Section 19-152 of the New York City Administrative Code.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 95,
+   "decision": "keep",
+   "reason": "notice to correct issued",
+   "text": "The Department of Transportation inspected the condition and issued a notice to the responsible party to correct the condition.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 85,
+   "decision": "exclude",
+   "reason": "referral: NYS DOT notified",
+   "text": "The condition was inspected and determined not to be under New York City Department of Transportation's jurisdiction. The Department of Transportation notified the New York State Department of Transportation of the complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 82,
+   "decision": "exclude",
+   "reason": "will inspect for a curb contract - future action",
+   "text": "The Department of Transportation will inspect the condition and determine if the location will be added to the next or future season's curb construction contract (2 - 3 years). Community Boards and elected officials are consulted to determine curb construction priority and scheduling. For scheduling information regarding a specific curb, contact the local Community Board.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 81,
+   "decision": "exclude",
+   "reason": "referral: DEP asked to address it",
+   "text": "The City inspected the condition you reported and asked the Department of Environmental Protection to address the issue.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 81,
+   "decision": "exclude",
+   "reason": "referral: to NYPD",
+   "text": "The Department of Transportation has determined that this issue is not within its jurisdiction. It has been referred to the New York City Police Department.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 80,
+   "decision": "exclude",
+   "reason": "referral: to DOB",
+   "text": "The Department of Transportation has determined that this issue is not within its jurisdiction. It has been referred to the Department of Buildings.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 77,
+   "decision": "exclude",
+   "reason": "repair expected in a future project - not finished",
+   "text": "The Department of Transportation inspected the condition you reported and determined that it requires general maintenance. The details have been processed into another system and it is expected to be repaired in a future project.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 75,
+   "decision": "exclude",
+   "reason": "not within its jurisdiction, no closure stated - implicit referral",
+   "text": "The Department of Transportation determined that this issue is not within its jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 60,
+   "decision": "keep",
+   "reason": "dismissal request denied: final outcome",
+   "text": "The Department of Transportation has denied the request to dismiss the Sidewalk violation because there is no record of City repair.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 54,
+   "decision": "keep",
+   "reason": "action taken: items removed",
+   "text": "The Department of Transportation has removed the items.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 53,
+   "decision": "exclude",
+   "reason": "referral: to NYPD",
+   "text": "The Department of Transportation determined that this issue is not within its jurisdiction. It was referred to the New York City Police Department.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 41,
+   "decision": "keep",
+   "reason": "inspection: compliant or action taken",
+   "text": "The Department of Transportation recently inspected this site and found it to be in-compliance or took necessary action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 36,
+   "decision": "keep",
+   "reason": "lost item found",
+   "text": "The Department of Transportation found the lost item. If you have not been contacted, please contact the Staten Island Ferry Office at (718) 876-8441.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 33,
+   "decision": "keep",
+   "reason": "summons issued",
+   "text": "The Department of Transportation inspected the condition and issued a summons.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 32,
+   "decision": "exclude",
+   "reason": "30 days needed to respond - not finished",
+   "text": "The Department of Transportation requires 30 days to respond to this type of complaint. Please note your Service Request number for future reference.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 30,
+   "decision": "exclude",
+   "reason": "summons issued but re-inspection within 10 days - not finished",
+   "text": "The Department of Transportation inspected the condition you reported and issued a summons to the responsible party. A re-inspection will be done within 10 days. If the condition still exists, a second summons will be issued. In some cases, the Department of Transportation will make the repairs and charge the responsible party for the costs.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 30,
+   "decision": "exclude",
+   "reason": "failed attempt (address not found), not said closed",
+   "text": "The Department of Transportation's inspectors could not find the address you reported. If you would like to pursue the complaint, please check the address and submit a new Service Request.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 23,
+   "decision": "exclude",
+   "reason": "referral: to DCA",
+   "text": "The Department of Transportation determined that this issue is not within its jurisdiction. It was referred to the Department of Consumer Affairs.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DOT",
+   "jan_aug_rows": 22,
+   "decision": "keep",
+   "reason": "resolved or information provided",
+   "text": "The Department of Transportation contacted the customer and resolved the Service Request or provided the information requested.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 11382,
+   "decision": "keep",
+   "reason": "work order completed, problem corrected",
+   "text": "NYC Parks has completed the requested work order and corrected the problem.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 10505,
+   "decision": "keep",
+   "reason": "inspected: no work necessary",
+   "text": "NYC Parks visited the site and inspected the condition. No work is necessary at this time.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 9396,
+   "decision": "keep",
+   "reason": "work performed, condition corrected",
+   "text": "NYC Parks performed the work necessary to correct the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 8600,
+   "decision": "exclude",
+   "reason": "information-only: tree planting program change",
+   "text": "In an effort to more fully and efficiently service each city block, NYC Parks is shifting their street tree planting program to a neighborhood approach.  If the site that you requested meets the criteria for planting, NYC Parks will plant a tree through their new Neighborhood Tree Planting Program.   NYC Parks is no longer accepting new tree planting requests. Each neighborhood will be surveyed, inspected, and planted sequentially. NYC Parks foresters will be conducting tree removal, stump removal, and planting block by block and closing all unplantable tree beds. The most heat-vulnerable neighborhoods will be prioritized first.  To learn more about this program, visit nyc.gov/parks/street-tree-planting.  To learn more about the trees in your neighborhood, visit the NYC Tree Map at nyc.gov/parks/treemap.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 5342,
+   "decision": "exclude",
+   "reason": "work order created; work can take a year or more - not finished",
+   "text": "NYC Parks created a work order for the tree condition.  Please note that addressing this work can take up to a year or more depending on the higher priority work identified during this period and resources available to address this work.    NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.   Alternatively, you may choose complete the work yourself by hiring an independent contractor. The contractor must complete a Tree Work Permit application on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 4976,
+   "decision": "exclude",
+   "reason": "to be addressed in the next pruning cycle - future action",
+   "text": "Under NYC Parksâ Tree Risk Management Program, work is prioritized to address the conditions with the highest risk first.  NYC Parks determined that the issue will be addressed in the next pruning cycle through the routine block pruning program.  For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.   To learn more about the trees in your neighborhood, visit the NYC Tree Map at nyc.gov/parks/treemap.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 3747,
+   "decision": "exclude",
+   "reason": "tree to be placed on an upcoming contract - future action",
+   "text": "The location was inspected and is suitable for tree planting. Barring any unforeseen issues such as underground utilities and based on available funding, the requested tree will be placed on an upcoming contract. Please note that this process can take up to two years, depending on capacity and the location.   To find out where and when trees will be planted, please visit the Tree Work Hub at nyc.gov/parks/treework.  To learn more about the trees in your neighborhood, visit the NYC Street Tree Map at nyc.gov/parks/treemap.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 3454,
+   "decision": "keep",
+   "reason": "determined the location cannot receive a tree: final outcome",
+   "text": "NYC Parks determined that the requested location cannot receive a new tree because of conflicts with surrounding infrastructure.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 3349,
+   "decision": "keep",
+   "reason": "insufficient information to respond: final outcome",
+   "text": "The Service Request submitted did not have sufficient location or complaint information for NYC Parks to respond.  Please submit a new Service Request with adequate site details, including a full street address and descriptive location information.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 3327,
+   "decision": "keep",
+   "reason": "visit: tree condition not found",
+   "text": "NYC Parks visited the location but could not find the tree condition you reported.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 2610,
+   "decision": "keep",
+   "reason": "determined the site does not rate high enough for repair: final outcome",
+   "text": "NYC Parks inspected and determined this site does not rate high enough to be repaired by NYC Parks at this time.   We understand conditions may become worse over time. In three years, you may submit a service request via 311, the Parks website, or NYC Tree Map for a new inspection.   You can repair the sidewalk yourself by hiring an independent contractor. The contractor must complete a Tree Work Permit application on the NYC Parks website.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 2536,
+   "decision": "keep",
+   "reason": "condition not found, no action taken",
+   "text": "Upon inspection the reported condition was not found, and, therefore, no action was taken.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 2223,
+   "decision": "keep",
+   "reason": "no action taken: out of its jurisdiction",
+   "text": "No action was taken because NYC Parks determined that the issue is out of its jurisdiction. The condition may be on private property or in an area serviced by another organization.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 2185,
+   "decision": "keep",
+   "reason": "reviewed and corrected",
+   "text": "NYC Parks has reviewed the reported condition and corrected the problem.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 2069,
+   "decision": "exclude",
+   "reason": "site meets repair criteria; repair timing open - not finished",
+   "text": "NYC Parks inspected the requested repair site. This site meets the criteria for repair under the Trees & Sidewalks Program. The timeframe for repair work depends on available funding for the program, the severity of damage, and the other sidewalk requests in the surrounding district.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 944,
+   "decision": "keep",
+   "reason": "could not respond (resources elsewhere): final outcome",
+   "text": "NYC Parks couldn't respond to your complaint because they had to devote resources to other critical services at the time. The agency will use your complaint for future planning.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 815,
+   "decision": "keep",
+   "reason": "unable to respond (resources elsewhere): final outcome",
+   "text": "The agency was unable to respond to this complaint because they allocated resources to other critical services at the time. All complaints are used for future enforcement planning.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 802,
+   "decision": "keep",
+   "reason": "determined ineligible for the program: final outcome",
+   "text": "NYC Parks inspected and determined that the site is ineligible for the Trees and Sidewalks Program because of one or more of the following reasons:  - The property adjacent to the sidewalk is not in Tax Class 1 - The property adjacent to the sidewalk is not owner-occupied - The property adjacent to the sidewalk contains a place of business  You can repair the sidewalk yourself by hiring an independent contractor. The contractor must complete a Tree Work Permit application on the NYC Parks website.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 672,
+   "decision": "exclude",
+   "reason": "referral: contact the phone / cable provider",
+   "text": "NYC Parks does not perform tree work for phone or cable service. Please contact the appropriate service provider.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 633,
+   "decision": "keep",
+   "reason": "could not respond (not enough information): final outcome",
+   "text": "NYC Parks couldnât respond to your complaint because they didn't have enough information about the condition or location.  If the problem still exists and you would like to pursue this complaint, please submit a new Service Request with a more detailed description of the condition and/or location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 604,
+   "decision": "keep",
+   "reason": "inspected: no work needed",
+   "text": "NYC Parks inspected the condition and determined that no work was needed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 471,
+   "decision": "keep",
+   "reason": "no action taken: within acceptable parameters",
+   "text": "No action was taken because the agency determined the condition reported was within acceptable parameters for park/city use.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 434,
+   "decision": "keep",
+   "reason": "did not take action: out of its jurisdiction",
+   "text": "NYC Parks didn't take action because the issue you reported is out of their jurisdiction.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 383,
+   "decision": "exclude",
+   "reason": "under review for a future capital project - not finished",
+   "text": "Work to correct the reported condition is under review for a future capital project.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 264,
+   "decision": "keep",
+   "reason": "summons issued",
+   "text": "The reported condition was inspected and a summons has been issued.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 262,
+   "decision": "exclude",
+   "reason": "failed attempt (location not found), not said closed",
+   "text": "NYC Parks attempted to inspect the reported condition but could not find the location. Please file a new Service Request with adequate site details, including a full street address and descriptive location information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 240,
+   "decision": "exclude",
+   "reason": "referral: report it to DOT",
+   "text": "NYC Parks reviewed your complaint and determined that the issue needs to be handled by the Department of Transportation (DOT). Please report it to DOT by contacting 311.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 224,
+   "decision": "exclude",
+   "reason": "work order created; work can take a year or more - not finished",
+   "text": "NYC Parks created a work order for the tree condition. Please note that addressing this work can take up to a year or more depending on the higher priority work identified during this period and resources available to address this work.    NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.   Alternatively, you may choose complete the work yourself by hiring an independent contractor. The contractor must complete a Tree Work Permit application on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 215,
+   "decision": "exclude",
+   "reason": "out of its jurisdiction, no closure stated - implicit referral",
+   "text": "NYC Parks inspected the condition and determined that the issue is out of their jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 211,
+   "decision": "keep",
+   "reason": "insufficient information to respond: final outcome",
+   "text": "The Service Request submitted did not have sufficient location or complaint information for NYC Parks to respond. Please submit a new Service Request with adequate site details, including a full street address and descriptive location information.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 195,
+   "decision": "keep",
+   "reason": "determined ineligible for the program: final outcome",
+   "text": "NYC Parks determined that the requested site is ineligible for the Trees and Sidewalks Program, because the tree is not adjacent to a 1-, 2-, or 3-family home (NYC Tax Class 1 property).   You can repair the sidewalk yourself by hiring an independent contractor. The contractor must complete a Tree Work Permit application on the NYC Parks website",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 142,
+   "decision": "exclude",
+   "reason": "referral to Parks Enforcement Patrol, to be monitored - not finished",
+   "text": "This request has been referred to Parks Enforcement Patrol and will be monitored in upcoming patrols.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 120,
+   "decision": "exclude",
+   "reason": "site waitlisted - not finished",
+   "text": "NYC Parks inspected the requested repair site. This site meets the criteria for repair under the Trees & Sidewalks Program. However due to a high number of requests, they are only able to repair the very highest sites at this time, and your site has been waitlisted.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 120,
+   "decision": "exclude",
+   "reason": "work deferred, to be corrected later - not finished",
+   "text": "Work to correct the reported condition has been deferred because of seasonal considerations and will be corrected as soon as possible.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 114,
+   "decision": "exclude",
+   "reason": "out of its jurisdiction, may belong to another organization - implicit referral",
+   "text": "NYC Parks inspected and determined the issue was out of its jurisdiction. The condition may be on private property or in an area serviced by another organization.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 100,
+   "decision": "exclude",
+   "reason": "work order created; work can take a year or more - not finished",
+   "text": "NYC Parks created a work order for the tree condition.  Please note that addressing this work can take up to a year or more depending on the higher priority work identified during this period and resources available to address this work.      NYC Parks work priority categories range from Category A through D, with A being the most critical and time-sensitive. We will complete all work in Category A first and address work in lower priority categories in accordance with available resources. For more information about the Tree Risk Management Program, visit the NYC Urban Forest page on the NYC Parks website at nyc.gov/parks/trees.     Alternatively, you may choose complete the work yourself by hiring an independent contractor. The contractor must complete a Tree Work Permit application on the NYC Parks website at nyc.gov/parks/trees.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 85,
+   "decision": "exclude",
+   "reason": "referral: the utility will correct it - not finished",
+   "text": "NYC Parks informed the responsible public utility who will correct the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 66,
+   "decision": "exclude",
+   "reason": "referral: another entity notified",
+   "text": "NYC Parks determined that another entity needs to handle the condition. They have notified the appropriate resource.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 61,
+   "decision": "keep",
+   "reason": "determined the location cannot receive a tree now: final outcome",
+   "text": "NYC Parks determined that the requested location cannot receive a new tree due to temporary site circumstances or obstructions. Please submit a new Service Request after the temporary condition has been cleared.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 55,
+   "decision": "exclude",
+   "reason": "referral: report it to DSNY",
+   "text": "NYC Parks reviewed your complaint and determined that the issue needs to be handled by the Department of Sanitation (DSNY). Please report it to DSNY by contacting 311.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DPR",
+   "jan_aug_rows": 41,
+   "decision": "exclude",
+   "reason": "referral: contact NYPD",
+   "text": "NYC Parks determined that this issue is not within its jurisdiction. Please contact the New York Police Department for assistance.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 42383,
+   "decision": "keep",
+   "reason": "investigated: no condition found",
+   "text": "The Department of Sanitation investigated this complaint and found no condition at the location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 23942,
+   "decision": "keep",
+   "reason": "action taken: items collected",
+   "text": "The Department of Sanitation collected the requested items.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 20630,
+   "decision": "keep",
+   "reason": "investigated: no violation found",
+   "text": "The Department of Sanitation investigated this complaint and found no violation at the location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 19000,
+   "decision": "keep",
+   "reason": "action taken: location cleaned",
+   "text": "The Department of Sanitation cleaned the location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 8094,
+   "decision": "keep",
+   "reason": "vehicle claimed; request closed, no further action",
+   "text": "The owner claimed the vehicle.Â Your request is now closed and no further action will be taken.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 7638,
+   "decision": "keep",
+   "reason": "condition not found",
+   "text": "The Department of Sanitation (DSNY) couldn't find the condition. Please file a new Service Request with more details about the location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 7422,
+   "decision": "exclude",
+   "reason": "referral: will be referred to NYPD",
+   "text": "The Department of Sanitation does NOT have jurisdiction over vehicles (abandoned or otherwise) that have license plates affixed to them. Your request will be referred to the NYPD for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 7418,
+   "decision": "keep",
+   "reason": "Notice of Violation issued",
+   "text": "The Department of Sanitation investigated this complaint and issued a Notice of Violation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 7280,
+   "decision": "keep",
+   "reason": "action taken: items removed",
+   "text": "The Department of Sanitation removed the items.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 6906,
+   "decision": "exclude",
+   "reason": "'N/A': no resolution, no status information",
+   "text": "N/A",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 5698,
+   "decision": "exclude",
+   "reason": "referral: forwarded to NYPD",
+   "text": "The vehicle you reported exceeds the monetary value eligible for collection as junk. The Department of Sanitation has forwarded the request to the NYPD for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 5636,
+   "decision": "keep",
+   "reason": "action taken: E-waste collected",
+   "text": "The Department of Sanitation collected the E-waste.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 3615,
+   "decision": "keep",
+   "reason": "request being closed (a prior report is actioned)",
+   "text": "DSNY already has a request to investigate this reportedly abandoned vehicle and cannot open multiple service requests for the same vehicle at once. Your request is being closed while we action the prior report.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 3466,
+   "decision": "keep",
+   "reason": "action taken: graffiti removed",
+   "text": "The City has removed the graffiti from this property.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 3193,
+   "decision": "keep",
+   "reason": "investigated and addressed",
+   "text": "The Department of Sanitation has investigated the complaint and addressed the issue. If the problem persists, call 311 to enter a new complaint. If you are outside of New York City, please call (212) NEW-YORK (212-639-9675).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 2958,
+   "decision": "exclude",
+   "reason": "will provide educational outreach - future action",
+   "text": "The Department of Sanitation will address the situation at the location by providing educational outreach about proper sanitation procedures.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 2687,
+   "decision": "keep",
+   "reason": "out of jurisdiction and not a valid complaint: final outcome",
+   "text": "The Department of Sanitation investigated and found this complaint to be out of jurisdiction. The Department of Sanitation reviewed this and found it not to be meeting the criteria for a complaint or service request.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 2448,
+   "decision": "exclude",
+   "reason": "no DSNY violation, but referred elsewhere for further action - ambiguous",
+   "text": "The Department of Sanitation investigated this complaint and no DSNY related conditions/violations were observed. Location will be referred to the appropriate agency for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 1706,
+   "decision": "exclude",
+   "reason": "an open request already exists; closure not stated - duplicate",
+   "text": "The Department of Sanitation found an open service request already exists for the same location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 1630,
+   "decision": "keep",
+   "reason": "action taken: postings removed (a later NOV only once a party is identified)",
+   "text": "The Department of Sanitation has removed illegal postings from the location. The Department will issue a Notice of Violation to the responsible party once it is identified.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 1216,
+   "decision": "keep",
+   "reason": "determined not eligible for a litter basket: final outcome",
+   "text": "The location does not meet the criteria for Litter Basket placement.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 1054,
+   "decision": "keep",
+   "reason": "action taken: vehicle removed",
+   "text": "The vehicle you reported has been removed by the Department of Sanitation.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 1012,
+   "decision": "keep",
+   "reason": "no E-waste found",
+   "text": "The Department of Sanitation did not find any E-Waste at the location. Call 311 to make another appointment if you still need E-Waste removal.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 906,
+   "decision": "exclude",
+   "reason": "'N/A; SR auto closes': no resolution given - ambiguous",
+   "text": "N/A; SR auto closes",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 792,
+   "decision": "keep",
+   "reason": "inspection: no graffiti found",
+   "text": "The City inspected the property for cleaning, but no graffiti was found.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 678,
+   "decision": "keep",
+   "reason": "vehicle not abandoned; request closed",
+   "text": "The Department of Sanitation (DSNY) tagged the vehicle to confirm it was abandoned. When DSNY returned, the vehicle wasn't in the same exact location. This indicated that the vehicle wasn't abandoned. DSNY closed your Service Request. No further action will be taken.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 669,
+   "decision": "keep",
+   "reason": "action taken: litter basket placed",
+   "text": "A Litter Basket was placed at the location.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 629,
+   "decision": "keep",
+   "reason": "investigated: bike not derelict",
+   "text": "The Department of Sanitation investigated and found that the bike did not meet the criteria to be classified as derelict.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 610,
+   "decision": "keep",
+   "reason": "vehicle claimed; request closed",
+   "text": "The Department of Sanitation (DSNY) tagged the vehicle to confirm it was abandoned. The owner then claimed the vehicle. DSNY closed your Service Request. No further action will be taken.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 413,
+   "decision": "exclude",
+   "reason": "location noted for future surveillance - future action",
+   "text": "The Department of Sanitation will note this location for periodic surveillance, which may take place at various times.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 371,
+   "decision": "exclude",
+   "reason": "postings observed, summons once a party is identified - not finished",
+   "text": "The Department of Sanitation observed illegal postings at the location. The Department will issue a Summons to the responsible party once it is identified.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 356,
+   "decision": "keep",
+   "reason": "action taken: personnel counseled",
+   "text": "The personnel involved in the incident were counseled and reminded of the proper procedures to follow.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 328,
+   "decision": "keep",
+   "reason": "follow-up inspection: lot clean",
+   "text": "The Department of Sanitation (DSNY) inspected the lot and notified the property owner that they must clean it. At the agency's follow-up inspection, they found the lot was clean.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 313,
+   "decision": "keep",
+   "reason": "surveillance: no violations observed",
+   "text": "The Department of Sanitation periodically conducted surveillance at the location and during those times no violations were observed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 312,
+   "decision": "exclude",
+   "reason": "information-only: rules for vehicle removal",
+   "text": "The Department of Sanitation (DSNY) will only remove abandoned motor vehicles (no boats) without license plates from private property.Â  If a motor vehicle is left abandoned on your property, you may ask the DSNY to remove it. Vehicles owned by the property owner are not eligible for this service. The property owner must complete a waiver and email it to customerservice@dsny.nyc.gov.Â  Access to the property is required and there will be a fee for removal.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 306,
+   "decision": "keep",
+   "reason": "request closed (an earlier one exists)",
+   "text": "The Department of Sanitation (DSNY) found an open Service Request already exists for the same location.   DSNY's system can't accept more than one complaint per address at a time. Your Service Request has been closed. DSNY will address the Service Request that was filed previously.  If you filed that Service Request, you can get the status with your Service Request number at nyc.gov/311 or by calling 311.  If you didn't file it, you can get the status by calling DSNY at (212) 291-1220.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 284,
+   "decision": "exclude",
+   "reason": "'not within its jurisdiction and/or unsubstantiated' - ambiguous",
+   "text": "This Service Request is not within the Department of Sanitationâs jurisdiction and/or was found to be unsubstantiated.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 233,
+   "decision": "keep",
+   "reason": "collection appointment cancelled",
+   "text": "The E-Waste collection appointment was cancelled.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 134,
+   "decision": "exclude",
+   "reason": "no access to the graffiti, not said closed",
+   "text": "The cleaning crew was not able to access the graffiti.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 94,
+   "decision": "keep",
+   "reason": "action taken: lot cleaned",
+   "text": "The Department of Sanitation (DSNY) cleaned the lot.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 94,
+   "decision": "keep",
+   "reason": "request closed (referred to NYPD)",
+   "text": "The Department of Sanitation (DSNY) closed your Service Request. After tagging the vehicle, DSNY found that the vehicle had license plates. DSNY doesn't have jurisdiction over vehicles with license plates on them. DSNY will refer your request to the NYPD for further action.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 91,
+   "decision": "keep",
+   "reason": "request closed (vehicle not eligible)",
+   "text": "The Department of Sanitation (DSNY) closed your Service Request. DSNY determined the vehicle isn't eligible for removal. DSNY doesn't have jurisdiction over vehicles showing signs of active ownership. They also can't remove vehicles that would cause DSNY to damage property to remove them.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 68,
+   "decision": "keep",
+   "reason": "request closed (lot under construction)",
+   "text": "The lot you reported is under construction. Your Service Request has been closed because DSNY only clean lots that are vacant.  To report an unclean construction site, please contact the construction project manager.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 66,
+   "decision": "exclude",
+   "reason": "failed attempt (property not located), not said closed",
+   "text": "The cleaning crew could not locate the property requiring graffiti removal.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 62,
+   "decision": "keep",
+   "reason": "owner claimed the bicycle: final outcome",
+   "text": "The owner claimed the bicycle was not abandoned.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 52,
+   "decision": "keep",
+   "reason": "action taken: location cleaned",
+   "text": "The Department of Sanitation inspected the location and had it cleaned.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 47,
+   "decision": "keep",
+   "reason": "owner refused removal: final outcome",
+   "text": "The cleaning crew was dispatched, but the owner refused to have the graffiti removed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 43,
+   "decision": "exclude",
+   "reason": "partially cleaned, could not finish over ownership issues - ambiguous",
+   "text": "The Department of Sanitation (DSNY) inspected and partially cleaned the lot. Due to multiple issues with who owns and is responsible for the lot, DSNY could not clean it.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 35,
+   "decision": "keep",
+   "reason": "visit: no violations",
+   "text": "The Department of Sanitation (DSNY) visited the location and didn't see any violations.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 35,
+   "decision": "exclude",
+   "reason": "appointment could not be serviced (inaccessible), not said closed",
+   "text": "The E-Waste appointment could not be serviced due to inaccessibility or some other problem.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 32,
+   "decision": "keep",
+   "reason": "action taken: litter basket removed",
+   "text": "A Litter Basket was removed from this location due to household and/or commercial waste being placed in and/or alongside the basket.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 29,
+   "decision": "keep",
+   "reason": "request closed (vehicle referred for removal)",
+   "text": "The Department of Sanitation (DSNY) closed your Service Request. DSNY referred the vehicle for removal. If it still meets the criteria for removal at the next inspection, DSNY will remove it.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 28,
+   "decision": "exclude",
+   "reason": "location noted as of concern - no outcome",
+   "text": "The Department of Sanitation has noted this as a location of concern.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 28,
+   "decision": "keep",
+   "reason": "action taken: area salted",
+   "text": "The Department of Sanitation investigated this complaint and salted the area.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "DSNY",
+   "jan_aug_rows": 24,
+   "decision": "keep",
+   "reason": "owner declined removal: final outcome",
+   "text": "The property owner is aware of the graffiti and ordered it not to be removed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "EDC",
+   "jan_aug_rows": 34961,
+   "decision": "exclude",
+   "reason": "not within its jurisdiction, file with the FAA - referral",
+   "text": "The New York City Economic Development Corporation determined that this issue is not within its jurisdiction because the helicopter did not belong to a tour company departing from a NYC heliport.Â  Instead, it was most likely a law enforcement or news gathering helicopter not subject to the routing protocols established for tour helicopters. It may also have been a helicopter that departed as a charter or tour from another City but flew over NYC airspace. Helicopter tours originating from outside NYC are not subject to the same City regulations as tours departing from heliports managed by NYCEDC. Any City regulation of these flights is pre-empted by federal law and subject only to the jurisdiction of the Federal Aviation Administration. To file a complaint with the FAA, you can contact the New York Flight Standards District Office at the following web address:Â https://www.faa.gov/about/office_org/field_offices/fsdo/",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "EDC",
+   "jan_aug_rows": 1001,
+   "decision": "keep",
+   "reason": "determined the operator was within the routing plan: no violation",
+   "text": "The New York City Economic Development Corporation determined that the helicopter tour operator was operating within the limits of the New York City Helicopter Sightseeing Plan which establishes specific over water routing for tour flights.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "EDC",
+   "jan_aug_rows": 77,
+   "decision": "keep",
+   "reason": "not enough information to act: final outcome",
+   "text": "The New York City Economic Development Corporation received your complaint. You did not provide enough information for the agency to be able to act on your request. Â In the future if you could note the date, time and place of the sighting and the direction the helicopter was travelling, as well as whether it was hovering or not, it would help in our review.Â  We can thenÂ  associate your complaint with a specific flight track from Port Authority or FAA records.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 157228,
+   "decision": "keep",
+   "reason": "inspected: no violations; complaint closed",
+   "text": "The Department of Housing Preservation and Development inspected the following conditions. No violations were issued. The complaint has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 70476,
+   "decision": "keep",
+   "reason": "inspected: violations issued",
+   "text": "The Department of Housing Preservation and Development inspected the following conditions. Violations were issued. Information about specific violations is available at www.nyc.gov/hpd",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 37056,
+   "decision": "keep",
+   "reason": "no access; complaint closed",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to inspect the following conditions. The complaint has been closed. If the condition still exists, please file a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 34983,
+   "decision": "exclude",
+   "reason": "duplicate; the original complaint is still open",
+   "text": "The complaint you filed is a duplicate of a condition already reported by another tenant for a building-wide condition. The original complaint is still open. HPD may attempt to contact you to verify the correction of the condition or may conduct an inspection of your unit if the original complainant is not available for verification.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 23339,
+   "decision": "keep",
+   "reason": "heat and hot water restored",
+   "text": "The Department of Housing Preservation and Development responded to a complaint of no heat or hot water and was advised by a tenant in the building that heat and hot water had been restored. If the condition still exists, please file a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 19803,
+   "decision": "keep",
+   "reason": "conditions verified corrected; complaint closed",
+   "text": "The Department of Housing Preservation and Development contacted an occupant of the apartment and verified that the following conditions were corrected. The complaint has been closed. If the condition still exists, please file a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 15646,
+   "decision": "keep",
+   "reason": "no access; complaint closed",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to your apartment or others in the building to inspect for a lack of heat or hot water. The complaint has been closed. If the condition still exists, please file a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 14620,
+   "decision": "keep",
+   "reason": "conditions verified corrected; complaint closed",
+   "text": "The Department of Housing Preservation and Development contacted a tenant in the building and verified that the following conditions were corrected. The complaint has been closed. If the condition still exists, please file a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 10600,
+   "decision": "exclude",
+   "reason": "status pointer: 'conducted or attempted' an inspection, results online",
+   "text": "The Department of Housing Preservation and Development conducted or attempted to conduct an inspection.  More information about inspection results can be found through HPD's website at www.nyc.gov/hpd by using HPDONLINE (enter your address on the home page) and entering your SR number under the complaint status option.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 4408,
+   "decision": "keep",
+   "reason": "inspected: violations previously issued",
+   "text": "The Department of Housing Preservation and Development inspected the following conditions. Violations were previously issued for these conditions. Information about specific violations is available at www.nyc.gov/hpd.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 2507,
+   "decision": "keep",
+   "reason": "no access to the rooms, no violations; complaint closed",
+   "text": "The Department of Housing Preservation and Development was unable to access the rooms where the following  conditions were reported. No violations were issued. The complaint has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 1676,
+   "decision": "keep",
+   "reason": "heat not required, no violations",
+   "text": "The Department of Housing Preservation and Development responded to a complaint of no heat or hot water. Heat was not required at the time of the inspection. No violations were issued. If the condition still exists, please file a new complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 1143,
+   "decision": "keep",
+   "reason": "verified addressed; complaint closed",
+   "text": "The Department of Housing Preservation and Development contacted an occupant of the apartment or building and verified that the complaint was addressed.  The complaint has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 951,
+   "decision": "keep",
+   "reason": "violation issued",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to your apartment to inspect for a lack of heat or hot water. However, HPD was able to verify that heat or hot water was inadequate by inspecting another apartment and a violation was issued. Information about specific violations is available at www.nyc.gov/hpd.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 770,
+   "decision": "keep",
+   "reason": "no access to the rooms, no violations; complaint closed",
+   "text": "The Department of Housing Preservation and Development was unable to access the rooms where the following conditions were reported. No violations were issued. The complaint has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 146,
+   "decision": "exclude",
+   "reason": "follow-up lead inspection to be scheduled - not finished",
+   "text": "The Department of Housing Preservation and Development conducted an inspection for the following conditions and identified potential lead-based paint conditions. HPD will attempt to contact you to schedule a follow-up inspection to test the paint for lead.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 117,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to inspect the conditions. If the conditions still exist and an inspection is required, please contact the borough office with your complaint number at 718 579-6777 (BRONX).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 98,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to inspect the conditions. If the conditions still exist and an inspection is required, please contact the borough office with your complaint number at 718 827 - 1955 (BROOKLYN).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 65,
+   "decision": "keep",
+   "reason": "Section 8 Failure issued",
+   "text": "The Department of Housing Preservation and Development inspected the following conditions. A Section 8 Failure was issued. Both the tenant and the property owner will receive a notice in the mail regarding the details of the Failure and the resulting action by the Agency.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 40,
+   "decision": "keep",
+   "reason": "closed administratively",
+   "text": "The Department of Housing Preservation and Development has closed this complaint administratively. More information can be found through HPD's website at www.nyc.gov/hpd by using HPDONLINE (enter your address on the home page) and entering your SR number under the complaint status option.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 37,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to inspect the conditions. If the conditions still exist and an inspection is required, please contact the borough office with your complaint number at 718 286 - 0823 (QUEENS).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 34,
+   "decision": "keep",
+   "reason": "condition corrected; complaint closed",
+   "text": "HPD called the telephone number on file for this complaint.  Someone at that number indicated that the condition was corrected. The complaint has been closed. Please submit a new service request with 311 if the condition still exists.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 34,
+   "decision": "exclude",
+   "reason": "no access, not said closed",
+   "text": "The Department of Housing Preservation and Development was not able to gain access to inspect the conditions. If the conditions still exist and an inspection is required, please contact the borough office with your complaint number at 212 234 - 7485 (MANHATTAN).",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "HPD",
+   "jan_aug_rows": 25,
+   "decision": "keep",
+   "reason": "inspection: no housing-law violation; complaint closed",
+   "text": "HPD conducted an inspection of this complaint. The conditions observed by the inspector did not violate the housing laws enforced by HPD. The complaint has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 266832,
+   "decision": "keep",
+   "reason": "action taken to fix the condition",
+   "text": "The Police Department responded to the complaint and took action to fix the condition.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 234763,
+   "decision": "keep",
+   "reason": "no evidence of the violation observed",
+   "text": "The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 134735,
+   "decision": "keep",
+   "reason": "determined police action was not necessary",
+   "text": "The Police Department responded to the complaint and determined that police action was not necessary.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 106494,
+   "decision": "keep",
+   "reason": "those responsible were gone",
+   "text": "The Police Department responded and upon arrival those responsible for the condition were gone.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 91030,
+   "decision": "keep",
+   "reason": "summons issued",
+   "text": "The Police Department issued a summons in response to the complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 27651,
+   "decision": "exclude",
+   "reason": "information-only: 'provided additional information below'",
+   "text": "The Police Department reviewed your complaint and provided additional information below.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 17078,
+   "decision": "exclude",
+   "reason": "unable to gain entry, not said closed",
+   "text": "The Police Department responded to the complaint but officers were unable to gain entry into the premises.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 16058,
+   "decision": "exclude",
+   "reason": "not its jurisdiction, no closure stated - implicit referral",
+   "text": "This complaint does not fall under the Police Department's jurisdiction.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 10368,
+   "decision": "keep",
+   "reason": "visit: no encampment found",
+   "text": "The Police Department visited the location and no Encampment was found.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 4946,
+   "decision": "exclude",
+   "reason": "referral: to DHS, which will inspect - not finished",
+   "text": "The Police Department visited the location and has referred the complaint to the Department of Homeless Services (DHS) for further action. DHS will inspect the condition and update your Service Request with more information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 4479,
+   "decision": "keep",
+   "reason": "request cannot be processed (insufficient contact information): final outcome",
+   "text": "Your request can not be processed at this time because of insufficient contact information. Please create a new Service Request on NYC.gov and provide more detailed contact information.",
+   "borderline": true
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 2615,
+   "decision": "keep",
+   "reason": "responded; report prepared",
+   "text": "The Police Department responded to the complaint and a report was prepared.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 410,
+   "decision": "keep",
+   "reason": "arrest made",
+   "text": "The Police Department made an arrest in response to the complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "NYPD",
+   "jan_aug_rows": 25,
+   "decision": "exclude",
+   "reason": "acknowledgement; information available later - not finished",
+   "text": "Your complaint has been received by the Police Department and additional information will be available later.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "OTI",
+   "jan_aug_rows": 56,
+   "decision": "exclude",
+   "reason": "referral: to the vendor CityBridge",
+   "text": "Your complaint was referred to the vendor, CityBridge.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "OTI",
+   "jan_aug_rows": 35,
+   "decision": "keep",
+   "reason": "reviewed: issue not found",
+   "text": "The Office of Technology and Innovation reviewed and determined that this issue was not found.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 6225,
+   "decision": "keep",
+   "reason": "determined a hearing is not necessary or possible",
+   "text": "Based on the information provided by the customer, the Taxi and Limousine Commission has determined that a hearing is not necessary or not possible.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 4838,
+   "decision": "keep",
+   "reason": "driver pled guilty and paid a fine",
+   "text": "The Taxi and Limousine Commission (TLC) reviewed your complaint. The driver or owner pled guilty to a violation and paid a fine. TLC has sent you a written confirmation of this outcome.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 4572,
+   "decision": "exclude",
+   "reason": "information pointer: 'see notes'",
+   "text": "See notes for information.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 4161,
+   "decision": "exclude",
+   "reason": "hearing scheduled - not finished",
+   "text": "A hearing was scheduled at the OATH/Taxi and Limousine Tribunal.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 358,
+   "decision": "keep",
+   "reason": "driver pled guilty and paid a fine",
+   "text": "The Taxi and Limousine Commission reviewed your complaint. The driver or owner pled guilty to a violation and paid a fine. TLC has sent you a written confirmation of this outcome.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 176,
+   "decision": "keep",
+   "reason": "duplicate; TLC closed this complaint",
+   "text": "The Taxi and Limousine Commission (TLC) has determined that this complaint is a duplicate of another complaint on file. TLC has closed this complaint and is proceeding with the other complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 63,
+   "decision": "exclude",
+   "reason": "information pointer: 'see notes'",
+   "text": "See notes for more information",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 52,
+   "decision": "exclude",
+   "reason": "could not identify the driver - failed attempt, not said closed",
+   "text": "The Taxi and Limousine Commission was unable to identify the driver or car service company named in your complaint.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 51,
+   "decision": "keep",
+   "reason": "could not reach you; TLC closed the complaint",
+   "text": "A representative from the Taxi and Limousine Commission (TLC) called and left a message for you and emailed you but has not been able to get in touch with you to confirm the details of your complaint. As a result, the TLC has closed your complaint. If you would like to have your complaint reopened, please call (718) 391-5617.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 32,
+   "decision": "keep",
+   "reason": "no response within 14 days; complaint closed",
+   "text": "The Taxi and Limousine Commission (TLC) called and left a message for you. They needed to confirm the details of your complaint. When you did not respond within 14 days, your complaint was closed. If you still want to pursue this complaint, you can open a new Service Request with a daytime phone number included.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 31,
+   "decision": "keep",
+   "reason": "hearing attendance required; complaint closed",
+   "text": "The Taxi and Limousine Commission requires you to attend a hearing to process a complaint against a driver or car service company. Your complaint has been closed.",
+   "borderline": false
+  },
+  {
+   "kind": "closed",
+   "agency": "TLC",
+   "jan_aug_rows": 23,
+   "decision": "exclude",
+   "reason": "could not identify the driver - failed attempt, not said closed",
+   "text": "The Taxi and Limousine Commission was unable to identify the driver or medallion owner in relation to your complaint.",
+   "borderline": false
+  }
+ ]
+}

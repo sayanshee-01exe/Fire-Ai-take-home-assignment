@@ -1,0 +1,171 @@
+--- raw_v2.py	2026-11-21 02:13:05
++++ reviewed.py	2026-11-21 02:14:55
+@@ -1,10 +1,7 @@
+-# LLM-compiled tax engine: raw compile 2 (UNREVIEWED; generated, not hand-edited)
+-# model: gemini-3.5-flash-lite   role: compiler   temperature: 0.2   run_index: 1
+-# prompt_sha256: 924637088322a06ef88f455a069826a5af059df6867bdb7271f9d586464cf530
++# LLM-compiled tax engine FY 2025-26: REVIEWED version of raw compile 2 (see REVIEW.md and reviewed.diff)
++# base: raw_v2.py, cache_key 331ad420e0348847f6e649918bc96401295cef58d06821f9836d0e9abf936604
+ # rules: RULES_FY2025_26.md sha256 62601fbe20d73cef82a1028accb799c42ccdfb1cef71666781e05641ba86d10f (FY 2025-26)
+-# written_at: 2026-11-20T20:43:05+00:00   from cache: False   cache_key: 331ad420e0348847f6e649918bc96401295cef58d06821f9836d0e9abf936604
+-# tokens: prompt 2944, output 4930 (thinking 0)   latency_s: 9.17
+-# allow-list: passed
++# edits: D1 exact HRA, D2 exact surcharge and cess, D3 invented constant removed, D4 trace labels
+ 
+ def compute(inp):
+   fy = inp["fy"]
+@@ -27,12 +24,12 @@
+   else:
+     hra_factor = 40
+ 
+-  hra_b = (basic_salary * hra_factor) // 100
+-  hra_c = rent_paid - ((basic_salary * 10) // 100)
++  hra_b = basic_salary * hra_factor                       # D1: x100, exact (was // 100)
++  hra_c = rent_paid * 100 - basic_salary * 10
+   if hra_c < 0:
+     hra_c = 0
+ 
+-  exempt_hra = hra_received
++  exempt_hra = hra_received * 100
+   if hra_b < exempt_hra:
+     exempt_hra = hra_b
+   if hra_c < exempt_hra:
+@@ -40,9 +37,9 @@
+   if exempt_hra < 0:
+     exempt_hra = 0
+ 
+-  salary_after_hra = gross_salary - exempt_hra
++  salary_after_hra = gross_salary * 100 - exempt_hra
+ 
+-  std_old = 50000
++  std_old = 50000 * 100
+   if std_old > salary_after_hra:
+     std_old = salary_after_hra
+ 
+@@ -54,7 +51,7 @@
+   if ded_24b < 0:
+     ded_24b = 0
+ 
+-  old_after_24b = old_after_std - ded_24b
++  old_after_24b = old_after_std - ded_24b * 100
+   if old_after_24b < 0:
+     old_after_24b = 0
+ 
+@@ -90,9 +87,10 @@
+ 
+   ch_via = c_80c_val + c_80ccd1b_val + c_80d_self_val + c_80d_parents_val
+ 
+-  old_ti_raw = old_after_24b - ch_via
++  old_ti_raw = old_after_24b - ch_via * 100
+   if old_ti_raw < 0:
+     old_ti_raw = 0
++  old_ti_raw = old_ti_raw // 100                          # D1: paise ignored once, on the total
+ 
+   rem_old = old_ti_raw % 10
+   old_ti = old_ti_raw - rem_old
+@@ -159,7 +157,7 @@
+   if old_ti > 50000000:
+     old_surcharge_rate = 37
+ 
+-  old_surcharge = (old_tax_after_rebate * old_surcharge_rate) // 100
++  old_total = old_tax_after_rebate * (100 + old_surcharge_rate)   # D2: x100, exact (was // 100)
+ 
+   old_threshold_income = 0
+   old_threshold_tax_base = 0
+@@ -209,17 +207,13 @@
+         elif old_threshold_income == 50000000:
+           t_slab = 100000 + (50000000 - 1000000) * 30 // 100
+ 
+-    t_surcharge = (t_slab * old_threshold_surcharge_rate) // 100
+-    t_total = t_slab + t_surcharge + (old_ti - old_threshold_income)
+-    current_total = old_tax_after_rebate + old_surcharge
+-    if current_total > t_total:
+-      old_surcharge = t_total - old_tax_after_rebate
+-      if old_surcharge < 0:
+-        old_surcharge = 0
++    t_total = t_slab * (100 + old_threshold_surcharge_rate) + (old_ti - old_threshold_income) * 100
++    if old_total > t_total:
++      old_total = t_total
+ 
+-  old_tax_plus_sur = old_tax_after_rebate + old_surcharge
+-  old_cess = (old_tax_plus_sur * 4) // 100
+-  old_final_raw = old_tax_plus_sur + old_cess
++  old_tax_plus_sur = old_total / 100
++  old_cess = old_total * 4 / 10000
++  old_final_raw = old_total * 104 // 10000               # D2: paise ignored once, on the final figure
+ 
+   rem_old_tax = old_final_raw % 10
+   old_tax = old_final_raw - rem_old_tax
+@@ -255,7 +249,7 @@
+   if new_tax_after_rebate < 0:
+     new_tax_after_rebate = 0
+ 
+-  if new_ti > 1200000 and new_ti <= 1276595:
++  if new_ti > 1200000:                                    # D3: no invented upper limit (was <= 1276595)
+     mr_tax_limit = new_ti - 1200000
+     if new_tax_after_rebate > mr_tax_limit:
+       new_tax_after_rebate = mr_tax_limit
+@@ -270,7 +264,7 @@
+   if new_ti > 50000000:
+     new_surcharge_rate = 25
+ 
+-  new_surcharge = (new_tax_after_rebate * new_surcharge_rate) // 100
++  new_total = new_tax_after_rebate * (100 + new_surcharge_rate)   # D2: x100, exact (was // 100)
+ 
+   new_threshold_income = 0
+   new_threshold_tax_base = 0
+@@ -287,17 +281,13 @@
+ 
+   if new_threshold_income > 0:
+     t_slab_new = 300000 + (new_threshold_income - 2400000) * 30 // 100
+-    t_surcharge_new = (t_slab_new * new_threshold_surcharge_rate) // 100
+-    t_total_new = t_slab_new + t_surcharge_new + (new_ti - new_threshold_income)
+-    current_total_new = new_tax_after_rebate + new_surcharge
+-    if current_total_new > t_total_new:
+-      new_surcharge = t_total_new - new_tax_after_rebate
+-      if new_surcharge < 0:
+-        new_surcharge = 0
++    t_total_new = t_slab_new * (100 + new_threshold_surcharge_rate) + (new_ti - new_threshold_income) * 100
++    if new_total > t_total_new:
++      new_total = t_total_new
+ 
+-  new_tax_plus_sur = new_tax_after_rebate + new_surcharge
+-  new_cess = (new_tax_plus_sur * 4) // 100
+-  new_final_raw = new_tax_plus_sur + new_cess
++  new_tax_plus_sur = new_total / 100
++  new_cess = new_total * 4 / 10000
++  new_final_raw = new_total * 104 // 10000               # D2: paise ignored once, on the final figure
+ 
+   rem_new_tax = new_final_raw % 10
+   new_tax = new_final_raw - rem_new_tax
+@@ -309,8 +299,8 @@
+     best_regime = "old"
+ 
+   steps = []
+-  steps = steps + [["C-HRA", exempt_hra]]
+-  steps = steps + [["C-STD-OLD", std_old]]
++  steps = steps + [["C-HRA", exempt_hra / 100]]
++  steps = steps + [["C-STD-OLD", std_old / 100]]
+   steps = steps + [["C-24B", ded_24b]]
+   steps = steps + [["C-80C", c_80c_val]]
+   steps = steps + [["C-80CCD1B", c_80ccd1b_val]]
+@@ -320,13 +310,15 @@
+   steps = steps + [["C-STD-NEW", std_new]]
+   steps = steps + [["C-288A", new_ti]]
+   steps = steps + [["C-SLAB-OLD", old_slab_tax]]
+-  steps = steps + [["C-87A-OLD", old_tax_after_rebate]]
++  steps = steps + [["C-87A-OLD", old_rebate]]            # D4: the rebate, not the tax after it
+   steps = steps + [["C-SUR", old_tax_plus_sur]]
+-  steps = steps + [["C-CESS", old_tax]]
++  steps = steps + [["C-CESS", old_cess]]                  # D4: the cess, not the final tax
++  steps = steps + [["C-288B", old_tax]]
+   steps = steps + [["C-SLAB-NEW", new_slab_tax]]
+-  steps = steps + [["C-87A-NEW", new_tax_after_rebate]]
++  steps = steps + [["C-87A-NEW", new_slab_tax - new_tax_after_rebate]]   # D4: rebate plus any relief
+   steps = steps + [["C-SUR", new_tax_plus_sur]]
+-  steps = steps + [["C-CESS", new_tax]]
++  steps = steps + [["C-CESS", new_cess]]
++  steps = steps + [["C-288B", new_tax]]
+ 
+   return {
+     "old_total_income": old_ti,

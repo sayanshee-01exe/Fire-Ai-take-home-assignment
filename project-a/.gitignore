@@ -1,0 +1,18 @@
+# secrets and local environment
+.env
+.env.*
+.venv/
+venv/
+# Python and tool caches
+__pycache__/
+*.pyc
+.pytest_cache/
+# editor and OS files
+.DS_Store
+.vscode/
+.idea/
+# reproduce.py output (regenerated on every run)
+reproduce_out/
+# the assignment brief (third-party document, not part of the submission)
+Rules vs LLMs Take-Home Assignment for AI Eng.pdf
+# llm_cache/ is deliberately NOT ignored: it holds the recorded LLM calls that reproduce.py replays.
